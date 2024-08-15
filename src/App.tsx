@@ -1,7 +1,15 @@
+import { Switch } from "./components/ui/switch";
+import { Button } from "./components/ui/button";
+import { Slider } from "./components/ui/slider";
+import { Input } from "./components/ui/input";
+
 function App() {
   return (
     <>
-    <h1>Я РАБОТАЮЮЮЮЮЮЮЮЮЮЮЮЮЮ!!!!</h1>
+    <Button>Моя кнопка</Button>
+    <Switch/>
+    <Slider/>
+    <Input/>
     </>
   );
 }
