@@ -20,7 +20,7 @@ const Header = () => {
         <div className="flex items-center gap-6">
           <Avatar>
             <AvatarImage src="https://github.com/shadcn.png" />
-            <div>///???</div>
+            <div></div>
             <AvatarFallback>EV</AvatarFallback>
           </Avatar>
           <span className="text-[#4E3F6F] font-bold text-base">Екатерина Варнава</span>
