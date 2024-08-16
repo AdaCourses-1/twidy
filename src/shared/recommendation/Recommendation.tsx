@@ -1,7 +1,5 @@
 import "./Recommendation.css";
 
-
-
 const Recommendation = () => {
 
   return (
@@ -10,8 +8,8 @@ const Recommendation = () => {
         <h1 className="text-[#4E3F6F] font-bold text-4xl  ">Рекомендуем</h1>
       </div>
       <div className="flex gap-7">
-        <div className="m-4 column relative">
-          <img className="" src="src/assets/Photo.png" alt="sdfghj" />
+        <div className="m-4 column relative rounded-2xl">
+          <img className="image-Ekaterina"  src="src/assets/Photo.png" alt="sdfghj" />
           <div className="absolute -mt-60 bg-[#FFA012] rounded-md right-5 top-64">
             <p className=" text-[#FFFFFF] pl-4 pr-4 pt-1 pb-1 font-bold text-base">
               10$
@@ -28,8 +26,8 @@ const Recommendation = () => {
             </span>
           </div>
         </div>
-        <div className="m-4 column-mini relative">
-          <img src="src/assets/Photo (1).png" alt="wefg" />
+        <div className="rounded-2xl m-4 column-mini relative">
+          <img  src="src/assets/Photo (1).png" alt="wefg" />
           <div className="absolute -mt-60 bg-[#FFA012] rounded-md right-11 top-64">
             <p className=" text-[#FFFFFF] pl-4 pr-4 pt-1 pb-1/2 mb-1 font-bold text-base">
               10$
@@ -43,7 +41,7 @@ const Recommendation = () => {
             </span>
           </div>
         </div>
-        <div className="m-4 column-mini relative">
+        <div className="rounded-2xl m-4 column-mini relative">
           <img src="src/assets/Photo (2).png" alt="wefg" />
           <div className="absolute -mt-60 bg-[#FFA012] rounded-md right-11 top-64">
             <p className=" text-[#FFFFFF] pl-4 pr-4 pt-1 pb-1/2 mb-1 font-bold text-base">
@@ -60,8 +58,8 @@ const Recommendation = () => {
         </div>
       </div>
       <div className="flex mt-10">
-        <div className="m-4 column-mini relative">
-          <img src="src/assets/Photo (3).png" alt="wefg" />
+        <div className="rounded-2xl m-4 column-mini relative">
+          <img    src="src/assets/Photo (3).png" alt="wefg" />
           <div className="absolute -mt-60 bg-[#FFA012] rounded-md right-11 top-64">
             <p className=" text-[#FFFFFF] pl-4 pr-4 pt-1 pb-1/2 mb-1 font-bold text-base">
               10$
@@ -75,8 +73,8 @@ const Recommendation = () => {
             </span>
           </div>
         </div>
-        <div className="m-4 column-mini relative">
-          <img src="src/assets/Photo (4).png" alt="wefg" />
+        <div className="rounded-2xl m-4 column-mini relative">
+          <img   src="src/assets/Photo (4).png" alt="wefg" />
           <div className="absolute -mt-60 bg-[#FFA012] rounded-md right-11 top-64">
             <p className=" text-[#FFFFFF] pl-4 pr-4 pt-1 pb-1/2 mb-1 font-bold text-base">
               10$
@@ -90,8 +88,8 @@ const Recommendation = () => {
             </span>
           </div>
         </div>
-        <div className="m-4 column-mini relative">
-          <img src="src/assets/Photo (5).png" alt="wefg" />
+        <div className="rounded-2xl m-4 column-mini relative">
+          <img   src="src/assets/Photo (5).png" alt="wefg" />
           <div className="absolute -mt-60 bg-[#FFA012] rounded-md right-11 top-64">
             <p className=" text-[#FFFFFF] pl-4 pr-4 pt-1 pb-1/2 mb-1 font-bold text-base">
               10$
