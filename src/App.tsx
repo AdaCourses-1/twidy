@@ -1,6 +1,7 @@
 import Header from "./shared/header/Header";
 import "./App.css";
 import Category from "./shared/category/Category";
+import Recommendation from "./shared/recommendation/Recommendation";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <main className="pl-12">
         <Category />
+        <Recommendation/>
       </main>
     </div>
   );
