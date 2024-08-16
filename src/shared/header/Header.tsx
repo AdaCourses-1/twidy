@@ -9,7 +9,7 @@ const Header = () => {
     <header className="pl-12 pr-14">
       <div className="flex gap-12">
         <Label className="relative flex-1">
-          <Input placeholder="Поиск" />
+          <Input placeholder="Поиск" className="font-bold text-base text-[#4E3F6F]" />
           <Search
             strokeWidth={3}
             size={16}
