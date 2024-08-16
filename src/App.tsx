@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="pt-10 bg-[#F2F2FE] min-h-[100vh] max-w-[1440px] mx-auto">
       <Header />
-      <main className="pl-12">
+      <main className="pl-12 pr-14">
         <Category />
       </main>
     </div>
