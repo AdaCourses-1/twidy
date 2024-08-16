@@ -11,7 +11,7 @@ const Recommendation = () => {
         <div className="m-4 max-w-[571px] relative rounded-2xl">
           <img className="max-w-[541px] max-h-[263px]"  src="src/assets/Photo.png" alt="sdfghj" />
           <div className="absolute -mt-60 bg-[#FFA012] rounded-md right-5 top-64">
-            <p className=" text-[#FFFFFF] pl-4 pr-4 pt-1 pb-1 font-bold text-base">
+            <p className="text-[#FFFFFF] pl-4 pr-4 pt-1 pb-1 font-bold text-base">
               10$
             </p>
           </div>
