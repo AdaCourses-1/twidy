@@ -38,10 +38,7 @@ const Header = () => {
               <span className="text-[#4E3F6F] font-bold text-base">Выход</span>
             </>
           )}
-          {!user && (
-          <>
-            <Button className="h-full min-w-40">Войти</Button>
-          </>)}
+          {!user && <Button>Войти</Button>}
         </div>
       </div>
     </header>

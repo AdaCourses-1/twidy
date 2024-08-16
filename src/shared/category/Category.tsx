@@ -14,7 +14,7 @@ const Category = () => {
         Категори
       </h3>
 
-      <div className="flex flex-wrap gap-7 mb-7">
+      <div className="flex flex-wrap justify-between gap-7 mb-7">
         {items.map((item, index) => (
           <div
             key={index}
