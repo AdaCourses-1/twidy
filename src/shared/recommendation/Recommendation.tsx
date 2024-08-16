@@ -10,31 +10,31 @@ const Recommendation = () => {
       imgURL: "src/assets/Photo (1).png",
       name: "Айза Анюхина",
       description: "Актёр и шоумен. Ведущий программы Вечерний Ур...",
-      price: "10$",
+      price: "30$",
     },
     {
       imgURL: "src/assets/Photo (2).png",
       name: "Егор Крид",
       description: "Российская бьюти-блогер, бывшая жена Тимати ре...",
-      price: "10$",
+      price: "50$",
     },
     {
       imgURL: "src/assets/Photo (3).png",
       name: "Екатерина Варнава",
       description: "Актёр и шоумен. Ведущий программы Вечерний Ур...",
-      price: "10$",
+      price: "20$",
     },
     {
       imgURL: "src/assets/Photo (4).png",
       name: "Айза Анюхина",
       description: "Российская бьюти-блогер, бывшая жена Тимати ре...",
-      price: "10$",
+      price: "40$",
     },
     {
       imgURL: "src/assets/Photo (5).png",
       name: "Айза Анюхина",
       description: "Актёр и шоумен. Ведущий программы Вечерний Ур...",
-      price: "10$",
+      price: "100$",
     },
   ];
 
