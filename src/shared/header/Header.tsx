@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Search } from "lucide-react";
-import { AuthorizationDrawer } from "../authorizationDrawer/AuthorizationDrawer";
+import AuthrizationDrawer  from "../authorizationDrawer/AuthorizationDrawer";
 
 const Header = () => {
   const user = null;
@@ -41,9 +41,9 @@ const Header = () => {
           )}
 
           {!user && (
-            <AuthorizationDrawer>
+            <AuthrizationDrawer>
               <Button>Войти</Button>
-            </AuthorizationDrawer>
+            </AuthrizationDrawer>
           )}
         </div>
       </div>
