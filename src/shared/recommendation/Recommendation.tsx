@@ -8,7 +8,7 @@ const Recommendation = () => {
         <h1 className="text-[#4E3F6F] font-bold text-4xl  ">Рекомендуем</h1>
       </div>
       <div className="flex gap-7">
-        <div className="m-4 max-w-[571px] relative rounded-2xl">
+        <div className="bg-[#FFFFFF]  m-4 max-w-[571px] relative rounded-2xl">
           <img className="max-w-[541px] max-h-[263px]"  src="src/assets/Photo.png" alt="sdfghj" />
           <div className="absolute -mt-60 bg-[#FFA012] rounded-md right-5 top-64">
             <p className="text-[#FFFFFF] pl-4 pr-4 pt-1 pb-1 font-bold text-base">
@@ -26,7 +26,7 @@ const Recommendation = () => {
             </span>
           </div>
         </div>
-        <div className="rounded-2xl m-4 max-w-[271px] relative">
+        <div className="bg-[#FFFFFF] rounded-2xl m-4 max-w-[271px] relative">
           <img  src="src/assets/Photo (1).png" alt="wefg" />
           <div className="absolute -mt-60 bg-[#FFA012] rounded-md right-11 top-64">
             <p className=" text-[#FFFFFF] pl-4 pr-4 pt-1 pb-1/2 mb-1 font-bold text-base">
@@ -41,7 +41,7 @@ const Recommendation = () => {
             </span>
           </div>
         </div>
-        <div className="rounded-2xl m-4 max-w-[271px] relative">
+        <div className="bg-[#FFFFFF] rounded-2xl m-4 max-w-[271px] relative">
           <img src="src/assets/Photo (2).png" alt="wefg" />
           <div className="absolute -mt-60 bg-[#FFA012] rounded-md right-11 top-64">
             <p className=" text-[#FFFFFF] pl-4 pr-4 pt-1 pb-1/2 mb-1 font-bold text-base">
@@ -58,7 +58,7 @@ const Recommendation = () => {
         </div>
       </div>
       <div className="flex mt-10">
-        <div className="rounded-2xl m-4 max-w-[271px] relative">
+        <div className="bg-[#FFFFFF] rounded-2xl m-4 max-w-[271px] relative">
           <img    src="src/assets/Photo (3).png" alt="wefg" />
           <div className="absolute -mt-60 bg-[#FFA012] rounded-md right-11 top-64">
             <p className=" text-[#FFFFFF] pl-4 pr-4 pt-1 pb-1/2 mb-1 font-bold text-base">
@@ -73,7 +73,7 @@ const Recommendation = () => {
             </span>
           </div>
         </div>
-        <div className="rounded-2xl m-4 max-w-[271px] relative">
+        <div className="bg-[#FFFFFF] rounded-2xl m-4 max-w-[271px] relative">
           <img   src="src/assets/Photo (4).png" alt="wefg" />
           <div className="absolute -mt-60 bg-[#FFA012] rounded-md right-11 top-64">
             <p className=" text-[#FFFFFF] pl-4 pr-4 pt-1 pb-1/2 mb-1 font-bold text-base">
@@ -88,7 +88,7 @@ const Recommendation = () => {
             </span>
           </div>
         </div>
-        <div className="rounded-2xl m-4 max-w-[271px] relative">
+        <div className="bg-[#FFFFFF] rounded-2xl m-4 max-w-[271px] relative">
           <img   src="src/assets/Photo (5).png" alt="wefg" />
           <div className="absolute -mt-60 bg-[#FFA012] rounded-md right-11 top-64">
             <p className=" text-[#FFFFFF] pl-4 pr-4 pt-1 pb-1/2 mb-1 font-bold text-base">
