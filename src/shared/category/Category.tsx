@@ -13,7 +13,7 @@ const Category = () => {
   return (
     <div>
       <h3 className="text-[#4E3F6F] font-bold text-4xl pl-20 pt-24">
-        Категории
+        Категори
       </h3>
 
       <div className="flex flex-wrap gap-7 mb-7">
