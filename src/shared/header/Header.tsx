@@ -23,8 +23,10 @@ const Header = () => {
             <div></div>
             <AvatarFallback>EV</AvatarFallback>
           </Avatar>
-          <span className="text-[#4E3F6F] font-bold text-base">Екатерина Варнава</span>
-          <Separator orientation="vertical" className="w-1 rounded-sm"/>
+          <span className="text-[#4E3F6F] font-bold text-base">
+            Екатерина Варнава
+          </span>
+          <Separator orientation="vertical" className="w-1 rounded-sm" />
           <span className="text-[#4E3F6F] font-bold text-base">Выход</span>
         </div>
       </div>
