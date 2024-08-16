@@ -1,10 +1,13 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Search } from "lucide-react";
 
 const Header = () => {
+  const user = null;
+
   return (
     <header className="pl-12 pr-14">
       <div className="flex gap-12">
@@ -21,16 +24,24 @@ const Header = () => {
           />
         </Label>
         <div className="flex items-center gap-6">
-          <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" />
-            <div></div>
-            <AvatarFallback>EV</AvatarFallback>
-          </Avatar>
-          <span className="text-[#4E3F6F] font-bold text-base">
-            Екатерина Варнава
-          </span>
-          <Separator orientation="vertical" className="w-1 rounded-sm" />
-          <span className="text-[#4E3F6F] font-bold text-base">Выход</span>
+          {user && (
+            <>
+              <Avatar>
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <div></div>
+                <AvatarFallback>EV</AvatarFallback>
+              </Avatar>
+              <span className="text-[#4E3F6F] font-bold text-base">
+                Екатерина Варнава
+              </span>
+              <Separator orientation="vertical" className="w-1 rounded-sm" />
+              <span className="text-[#4E3F6F] font-bold text-base">Выход</span>
+            </>
+          )}
+          {!user && (
+          <>
+            <Button className="h-full min-w-40">Войти</Button>
+          </>)}
         </div>
       </div>
     </header>
