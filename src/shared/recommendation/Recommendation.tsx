@@ -3,7 +3,7 @@
 const Recommendation = () => {
 
   return (
-    <div className="container">
+    <div className="container mb-28">
       <div className="ml-7 min-h-28 content-center">
         <h1 className="text-[#4E3F6F] font-bold text-4xl  ">Рекомендуем</h1>
       </div>
