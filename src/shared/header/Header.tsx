@@ -1,9 +1,8 @@
-import React from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Search } from "lucide-react";
-import { Avatar,AvatarImage,AvatarFallback } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
+import { Search } from "lucide-react";
 
 const Header = () => {
   return (
@@ -18,11 +17,11 @@ const Header = () => {
             className="absolute right-4 top-1/2 -translate-y-1/2"
           />
         </Label>
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-6">
           <Avatar>
             <AvatarImage src="https://github.com/shadcn.png" />
             <div></div>
-            <AvatarFallback>ЕВ</AvatarFallback>
+            <AvatarFallback>EV</AvatarFallback>
           </Avatar>
           <span className="text-[#4E3F6F] font-bold text-base">Екатерина Варнава</span>
           <Separator orientation="vertical" className="w-1 rounded-sm"/>
