@@ -1,5 +1,3 @@
-import React from "react";
-
 const Category = () => {
   const items = [
     { name: "Музыканты", imgURL: "src/assets/Music.svg" },
@@ -12,7 +10,7 @@ const Category = () => {
 
   return (
     <div>
-      <h3 className="text-[#4E3F6F] font-bold text-4xl pl-20 pt-24">
+      <h3 className="text-[#4E3F6F] font-bold text-4xl pl-10 pt-24">
         Категори
       </h3>
 
@@ -20,7 +18,7 @@ const Category = () => {
         {items.map((item, index) => (
           <div
             key={index}
-            className="flex items-center justify-around gap-20 ml-12 mt-7 bg-[#Fff] w-[371px] h-[114px] rounded-[20px]"
+            className="flex items-center justify-around gap-20 mt-7 bg-[#Fff] w-[100%] xl:w-[30%] h-[114px] rounded-[20px]"
           >
             <span className=" text-lg text-[#4E3F6F] font-bold">
               {item.name}
