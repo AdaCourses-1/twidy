@@ -35,7 +35,7 @@ export default function AuthorizationDrawer(props: LayoutProps) {
             <Input
               id="email"
               value="Jyldyz Akylbekova"
-              className="h-14"
+              className="h-14 bg-[#F2F2FE]"
             />
             </div>
             <div className="mb-4">
@@ -45,7 +45,7 @@ export default function AuthorizationDrawer(props: LayoutProps) {
             <Input
               id="password"
               value="ice-capuchinno"
-              className="h-14"
+              className="h-14 bg-[#F2F2FE]"
             />
           </div>
           <SheetFooter>
@@ -61,8 +61,8 @@ export default function AuthorizationDrawer(props: LayoutProps) {
             </Label>
             <Input
               id="name"
-              value="Jyldyz Akylbekova"
-              className="h-14"
+              value="Jyldyz Akylbekova "
+              className="h-14 bg-[#F2F2FE]"
             />
             </div>
             <div className="mb-4">
@@ -72,7 +72,7 @@ export default function AuthorizationDrawer(props: LayoutProps) {
             <Input
               id="email"
               value="jyldyz@gmail.com"
-              className="h-14"
+              className="h-14 bg-[#F2F2FE]"
             />
             </div>
             <div className="mb-4">
@@ -82,7 +82,7 @@ export default function AuthorizationDrawer(props: LayoutProps) {
             <Input
               id="password"
               value="ice-capuchinno"
-              className="h-14"
+              className="h-14 bg-[#F2F2FE]"
             />
           </div>
           <SheetFooter>
