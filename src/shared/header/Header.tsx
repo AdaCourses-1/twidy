@@ -10,7 +10,7 @@ const Header = () => {
   const user = null;
 
   return (
-    <header className="pl-12 pr-14">
+    <header className="pr-14">
       <div className="flex gap-12">
         <Label className="relative flex-1">
           <Input
