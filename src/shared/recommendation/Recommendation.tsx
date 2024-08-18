@@ -48,8 +48,8 @@ const Recommendation = () => {
         {recommendationActer.map((item, index) => (
           <div
             key={index}
-            className={`p-4 rounded-t-2xl bg-[#FFFFFF] rounded-2xl m-4 relative ${
-              index === 0 ? "max-w-[571px]" : "max-w-[251px]"
+            className={`p-4 rounded-t-2xl bg-[#FFFFFF] rounded-2xl  relative ${
+              index === 0 ? "max-w-[571px]" : "max-w-[271px]"
             }`}
           >
             <img
