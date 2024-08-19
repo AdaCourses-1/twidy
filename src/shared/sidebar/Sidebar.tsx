@@ -14,7 +14,7 @@ import { useState } from "react";
   
     return (
       <div className="flex flex-col items-center max-w-[208px]">
-        <img className="px-16" src="src/assets/sidebar/twidy-logo.svg" alt="Twidy Logo" />
+        <img src="src/assets/sidebar/twidy-logo.svg" alt="Twidy Logo" />
         {items.map((item, index) => (
           <div
             key={index}
