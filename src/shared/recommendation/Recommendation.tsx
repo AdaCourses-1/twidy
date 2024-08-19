@@ -65,7 +65,6 @@ const Recommendation = () => {
 
               <p className="text-[#FFFFFF] px-4 py-1 font-bold text-base">
                 {" "}
-                {/* Удалены отступы pl-4 pr-4 pt-1 pb-1/2 mb-1 */}
                 {item.price}
               </p>
             </div>
