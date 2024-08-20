@@ -21,3 +21,11 @@ function App() {
 }
 
 export default App;
+
+
+
+// <Header />
+//       <main className="pl-12 pr-14">
+//         <Category />
+//         <Recommendation/>
+//       </main>

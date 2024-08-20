@@ -1,18 +1,21 @@
 import Header from "@/shared/header/Header";
-import useravatar from "../../assets/Photo (3).png";
+import userAvatar from "../../assets/Photo (3).png";
+import { TwitterIcon } from "lucide-react";
+import Instagramm from "../../assets/inst.svg";
 import Twitter from "../../assets/twit.svg";
-import Instagram from "../../assets/inst.svg";
 import Vk from "../../assets/vk.svg";
-import { Separator } from "@/components/ui/separator";
-
+import { Separator } from "@radix-ui/react-separator";
 const Settings = () => {
   return (
+
     <div className="settings-page w-full">
+
       <Header />
       <div>
-        <h3 className="text-[#4E3F6F] font-bold text-4xl pl-16 pt-10">
+        <h3 className="text-[#4E3F6F] font-bold text-4xl pl-16 pt-10 ">
           Дарья Небесная
         </h3>
+
         <div className="flex pt-8 pl-10">
           <aside className="p-4 bg-white rounded-[20px] max-w-[400px]">
             <div className="relative">
@@ -90,11 +93,32 @@ const Settings = () => {
                   <span className="text-base text-[#8C8CB6] font-bold">
                     время ответа
                   </span>
+
                 </li>
               </ul>
+              <Separator
+                orientation="vertical"
+                className="bg-[#FFA012] w-[3px] h-5 rounded-sm"
+              />
+              <span className="text-base font-bold text-[#4E3F6F]">Russia</span>
             </div>
-          </aside>
-        </div>
+            <ul className="pt-6 pb-9">
+              <li className="flex items-end gap-2 mb-3">
+                <span className="text-4xl text-[#4E3F6F] font-bold">169к</span>
+                <span className="text-base text-[#8C8CB6] font-bold"> подписчиков</span>
+              </li>
+              <li className="flex items-end gap-2 mb-3">
+                <span className="text-4xl text-[#4E3F6F] font-bold">4.3</span>
+                <span className="text-base text-[#8C8CB6] font-bold">рейтинг</span>
+              </li>
+              <li className="flex items-end gap-2 mb-3">
+                <span className="text-4xl text-[#4E3F6F] font-bold">3ч.</span>
+                <span className="text-base text-[#8C8CB6] font-bold">время ответа</span>
+              </li>
+            </ul>
+          </div>
+        </aside>
+        <div></div>
       </div>
     </div>
   );
