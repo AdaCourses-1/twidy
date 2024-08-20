@@ -1,6 +1,5 @@
 import Header from "@/shared/header/Header";
 import userAvatar from "../../assets/Photo (3).png";
-import { TwitterIcon } from "lucide-react";
 import Instagramm from "../../assets/inst.svg";
 import Twitter from "../../assets/twit.svg";
 import Vk from "../../assets/vk.svg";
