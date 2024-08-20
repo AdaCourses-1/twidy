@@ -72,16 +72,24 @@ const Settings = () => {
               </div>
               <ul className="pt-6 pb-9">
                 <li className="flex items-end gap-2 mb-3">
-                    <span className="text-4x1 text-[#4E3F6F] font-bold">169к</span>
-                    <span className="text-base text-[#8C8CB6] font-bold">подписчиков</span>
+                  <span className="text-4x1 text-[#4E3F6F] font-bold">
+                    169к
+                  </span>
+                  <span className="text-base text-[#8C8CB6] font-bold">
+                    подписчиков
+                  </span>
                 </li>
                 <li className="flex items-end gap-2 mb-3">
-                    <span className="text-4x1 text-[#4E3F6F] font-bold">4.3</span>
-                    <span className="text-base text-[#8C8CB6] font-bold">рейтинг</span>
+                  <span className="text-4x1 text-[#4E3F6F] font-bold">4.3</span>
+                  <span className="text-base text-[#8C8CB6] font-bold">
+                    рейтинг
+                  </span>
                 </li>
                 <li className="flex items-end gap-2 mb-3">
-                    <span className="text-4x1 text-[#4E3F6F] font-bold">3ч</span>
-                    <span className="text-base text-[#8C8CB6] font-bold">время ответа</span>
+                  <span className="text-4x1 text-[#4E3F6F] font-bold">3ч</span>
+                  <span className="text-base text-[#8C8CB6] font-bold">
+                    время ответа
+                  </span>
                 </li>
               </ul>
             </div>
