@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Search } from "lucide-react";
 
-import AuthrizationDrawer from "../authorization-drawer/AuthorizationDrawer";
+import AuthrizationDrawer from "../authorizationDrawer/AuthorizationDrawer";
 
 
 const Header = () => {
