@@ -14,7 +14,7 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-export default function AuthrizationDrawer(props: LayoutProps) {
+export default function AuthorizationDrawer(props: LayoutProps) {
   return (
     <Sheet>
       <SheetTrigger asChild>{props.children}</SheetTrigger>
