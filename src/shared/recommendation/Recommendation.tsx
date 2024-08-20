@@ -44,12 +44,15 @@ const Recommendation = () => {
       <div className="mt-10 pl-10 mb-4">
         <h2 className="text-[#4E3F6F] font-bold text-4xl ">Рекомендуем</h2>
       </div>
-      <div className="flex flex-wrap gap-7">
+
+      <div className=" flex flex-wrap gap-7">
         {recommendationActer.map((item, index) => (
           <div
             key={index}
-            className={`bg-[#FFFFFF] rounded-2xl m-4 relative ${
-              index === 0 ? "max-w-[571px]" : "max-w-[241px]"
+            className={`p-4 rounded-t-2xl bg-[#FFFFFF] rounded-2xl m-4 relative ${
+              index === 0 ? "max-w-[571px]" : "max-w-[251px]"
+
+    
             }`}
           >
             <img
@@ -58,7 +61,10 @@ const Recommendation = () => {
               className="max-w-full max-h-[263px] rounded-t-2xl"
             />
 
-            <div className="absolute -mt-60 bg-[#FFA012] rounded-md right-5 top-64">
+
+            <div className="absolute -mt-60 bg-[#FFA012] rounded-md right-7 top-[268px]">
+
+
               <p className="text-[#FFFFFF] px-4 py-1 font-bold text-base">
                 {" "}
                 {/* Удалены отступы pl-4 pr-4 pt-1 pb-1/2 mb-1 */}
