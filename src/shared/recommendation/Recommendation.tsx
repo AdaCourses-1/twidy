@@ -40,7 +40,7 @@ const Recommendation = () => {
   ];
 
   return (
-    <div className="mb-28">
+    <div className="mb-28 pl-10">
       <div className="mt-10 pl-10 mb-4">
         <h2 className="text-[#4E3F6F] font-bold text-4xl ">Рекомендуем</h2>
       </div>

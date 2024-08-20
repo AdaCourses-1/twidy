@@ -6,6 +6,11 @@ export const ITEMS = [
     path: "/messages",
   },
   {
+    name: "Профили",
+    iconUrl: "src/assets/sidebar/user.svg",
+    path: "/users",
+  },
+  {
     name: "Настройки",
     iconUrl: "src/assets/sidebar/settings.svg",
     path: "/settings",
