@@ -1,21 +1,22 @@
-import Header from "./shared/header/Header";
 import "./App.css";
-import Category from "./shared/category/Category";
-import Recommendation from "./shared/recommendation/Recommendation";
-import Sidebar from "./shared/sidebar/Sidebar";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/home/Home";
+import Messages from "./pages/messages/Messages";
+import Settings from "./pages/settings/Settings";
+import  Sidebar  from "./shared/sidebar/Sidebar";
 
 function App() {
   return (
     <div className="pt-10 bg-[#F2F2FE] min-h-[100vh] max-w-[1440px] mx-auto flex">
+      <>
       <Sidebar />
-      <div>
-        <main className="pl-12 pr-14">
-          <Header />
-          <Category />
-          <Recommendation />
-        </main>
+      </>
+        <Routes>
+          <Route path="/" Component={Home} />
+          <Route path="/messages" Component={Messages} />
+          <Route path="/settings" Component={Settings} />
+        </Routes>
       </div>
-    </div>
   );
 }
 
