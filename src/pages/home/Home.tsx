@@ -2,6 +2,7 @@ import Category from '@/shared/category/Category'
 import Header from '@/shared/header/Header'
 import Recommendation from '@/shared/recommendation/Recommendation'
 
+
 const Home = () => {
   return (
     <div>
@@ -15,3 +16,4 @@ const Home = () => {
 }
 
 export default Home
+

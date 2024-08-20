@@ -42,17 +42,15 @@ const Recommendation = () => {
   return (
     <div className="mb-28">
       <div className="mt-10 pl-10 mb-4">
-        <h2 className="text-[#4E3F6F] font-bold text-4xl ">Рекомендуем</h2>
+        <h2 className="text-[#4E3F6F] font-bold text-4xl ">Популярные личности</h2>
       </div>
-
       <div className=" flex flex-wrap gap-7">
         {recommendationActer.map((item, index) => (
           <div
             key={index}
-            className={`p-4 rounded-t-2xl bg-[#FFFFFF] rounded-2xl m-4 relative ${
-              index === 0 ? "max-w-[571px]" : "max-w-[251px]"
+            className={`p-4 rounded-t-2xl bg-[#FFFFFF] rounded-2xl  relative ${
+              index === 0 ? "max-w-[571px]" : "max-w-[271px]"
 
-    
             }`}
           >
             <img
@@ -67,7 +65,6 @@ const Recommendation = () => {
 
               <p className="text-[#FFFFFF] px-4 py-1 font-bold text-base">
                 {" "}
-                {/* Удалены отступы pl-4 pr-4 pt-1 pb-1/2 mb-1 */}
                 {item.price}
               </p>
             </div>

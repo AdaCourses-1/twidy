@@ -41,9 +41,6 @@ const Header = () => {
               <span className="text-[#4E3F6F] font-bold text-base">Выход</span>
             </>
           )}
-
-
-
           {!user && (
             <AuthrizationDrawer>
               <Button>Войти</Button>
