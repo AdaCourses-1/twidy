@@ -42,7 +42,7 @@ const Recommendation = () => {
   return (
     <div className="mb-28">
       <div className="mt-10 pl-10 mb-4">
-        <h2 className="text-[#4E3F6F] font-bold text-4xl ">Рекомендуем</h2>
+        <h2 className="text-[#4E3F6F] font-bold text-4xl ">Популярные личности</h2>
       </div>
       <div className=" flex flex-wrap gap-7">
         {recommendationActer.map((item, index) => (
