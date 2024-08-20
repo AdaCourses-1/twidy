@@ -9,7 +9,7 @@ const Category = () => {
   ];
 
   return (
-    <div>
+    <div className="pl-14">
       <h3 className="text-[#4E3F6F] font-bold text-4xl pl-10 pt-24">
         Категори
       </h3>
