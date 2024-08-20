@@ -20,7 +20,7 @@ const Recommendation = () => {
       price: "10$",
     },
     {
-      imgURL: "src/assets/Photo (3).png",
+      imgURL: "src/assets/photo-3.png",
       name: "Екатерина Варнава",
       description: "Актёр и шоумен. Ведущий программы Вечерний Ур...",
       price: "10$",
