@@ -7,7 +7,7 @@ export const ITEMS = [
   },
   {
     name: "Профили",
-    iconUrl: "src/assets/sidebar/users.svg",
+    iconUrl: "src/assets/sidebar/user.svg",
     path: "/users",
   },
   {
