@@ -1,18 +1,32 @@
-import Header from "./shared/header/Header";
+
 import "./App.css";
-import Category from "./shared/category/Category";
-import Recommendation from "./shared/recommendation/Recommendation";
+
+import { Route, Routes } from "react-router-dom";
+import Messages from "./pages/messages/Messages";
+import Home from "./pages/home/Home";
+import Settings from "./pages/settings/Settings";
+
+
 
 function App() {
   return (
     <div className="pt-10 bg-[#F2F2FE] min-h-[100vh] max-w-[1440px] mx-auto">
-      <Header />
-      <main className="pl-12 pr-14">
-        <Category />
-        <Recommendation/>
-      </main>
+      <Routes>
+        <Route  path="/" Component={Home}/>
+        <Route  path="/messages" Component={Messages}/>
+        <Route  path="/settings" Component={Settings}/>
+      </Routes>
     </div>
   );
 }
 
 export default App;
+
+
+
+
+// <Header />
+//       <main className="pl-12 pr-14">
+//         <Category />
+//         <Recommendation/>
+//       </main>
