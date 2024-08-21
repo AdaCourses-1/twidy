@@ -4,6 +4,8 @@ import Twitter from "../../assets/twit.svg";
 import Instagram from "../../assets/inst.svg";
 import Vk from "../../assets/vk.svg";
 import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
+import UserServices from "@/shared/userServices/UserServices";
 
 const Settings = () => {
   return (
@@ -14,7 +16,8 @@ const Settings = () => {
           Дарья Небесная
         </h3>
         <div className="flex pt-8 pl-10">
-          <aside className="p-4 bg-white rounded-[20px] max-w-[400px]">
+           <div>
+            <aside className="p-4 bg-white rounded-[20px] max-w-[400px]">
             <div className="relative">
               <span className="absolute left-4 top-4 bg-[#FFA012] rounded-lg text-white py-1 p-3 text-base font-bold">
                 @Ahmedka
@@ -92,8 +95,22 @@ const Settings = () => {
                   </span>
                 </li>
               </ul>
+              <Button>Связаться</Button>
             </div>
-          </aside>
+           </aside>
+           <div className="flex items-center pt-6">
+                <Button variant="ghost">Заблокировать</Button>
+                <Separator
+                  orientation="vertical"
+                  className="w-[3px] h-8 rounded-sm"
+                />
+                <Button variant="ghost">Пожаловаться</Button>
+           </div>
+          </div>
+          <div className="flex-1">
+            <UserServices />
+            <div></div>
+          </div>
         </div>
       </div>
     </div>
