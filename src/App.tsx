@@ -13,7 +13,7 @@ function App() {
       </>
       <Routes>
         <Route path="/" Component={Home} />
-          <Route path="/messages" Component={Messages} />
+        <Route path="/messages" Component={Messages} />
         <Route path="/settings" Component={Settings} />
       </Routes>
     </div>
@@ -21,9 +21,3 @@ function App() {
 }
 
 export default App;
-
-// <Header />
-//       <main className="pl-12 pr-14">
-//         <Category />
-//         <Recommendation/>
-//       </main>
