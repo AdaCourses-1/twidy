@@ -45,7 +45,7 @@ const Settings = () => {
                     <li className="flex">
                       <a
                         href="#"
-                        className="bg-[#1DA1F2] inline-block p-2 rounded-[10px] w-8 h-8"
+                       
                       >
                         <img src={Twitter} alt="twitter" />
                       </a>
@@ -53,7 +53,7 @@ const Settings = () => {
                     <li className="flex">
                       <a
                         href="#"
-                        className="bg-[#E4405F] inline-block p-2 rounded-[10px] w-8 h-8"
+                        
                       >
                         <img src={Instagram} alt="instagram" />
                       </a>
@@ -61,7 +61,7 @@ const Settings = () => {
                     <li className="flex">
                       <a
                         href="#"
-                        className="bg-[#4C75A3] inline-block p-2 rounded-[10px] w-8 h-8"
+                       
                       >
                         <img src={Vk} alt="vk" />
                       </a>
@@ -69,7 +69,7 @@ const Settings = () => {
                   </ul>
                   <Separator
                     orientation="vertical"
-                    className="bg-[#FFA012] w-[3px] h-5 rounded-sm"
+                    className="bg-[#E1E2EB] w-[3px] h-5 rounded-sm"
                   />
                   <span className="text-base font-bold text-[#4E3F6F]">
                     Russia
@@ -108,7 +108,7 @@ const Settings = () => {
               <Button variant="ghost">Заблокировать</Button>
               <Separator
                 orientation="vertical"
-                className="bg-[#FFA012] w-[3px] h-8 rounded-sm"
+                className="bg-[#E1E2EB] w-[3px] h-8 rounded-sm"
               />
               <Button variant="ghost">Пожаловаться</Button>
             </div>
