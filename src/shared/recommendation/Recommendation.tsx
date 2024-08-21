@@ -53,12 +53,13 @@ const Recommendation = () => {
 
             }`}
           >
+            <a href="./settings">
             <img
               src={item.imgURL}
               alt={item.name}
-              className="max-w-full max-h-[263px] rounded-t-2xl"
-            />
-
+              className="max-w-full max-h-[263px] rounded-t-2xl  cursor-pointer"/>
+            </a>
+           
 
             <div className="absolute -mt-60 bg-[#FFA012] rounded-md right-7 top-[268px]">
 
