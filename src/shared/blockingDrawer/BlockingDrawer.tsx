@@ -1,11 +1,11 @@
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   Sheet,
   SheetClose,
   SheetContent,
   SheetFooter,
   SheetTrigger,
-} from "@/components/ui/sheet";
+} from '@/components/ui/sheet';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -27,7 +27,9 @@ export default function BlockingDrawer(props: LayoutProps) {
             <SheetClose>
               <div className="flex mt-8">
                 <Button type="submit">Отправить</Button>
-                <Button variant="ghost" className="text-[#4E3F6F]">Отмена</Button>
+                <Button variant="ghost" className="text-[#4E3F6F]">
+                  Отмена
+                </Button>
               </div>
             </SheetClose>
           </SheetFooter>

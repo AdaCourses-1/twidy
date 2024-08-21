@@ -1,11 +1,11 @@
 const Category = () => {
   const items = [
-    { name: "Музыканты", imgURL: "src/assets/Music.svg" },
-    { name: "Актёры", imgURL: "src/assets/acter.svg" },
-    { name: "YouTubers", imgURL: "src/assets/youtuber.svg" },
-    { name: "Блогеры", imgURL: "src/assets/bloger.svg" },
-    { name: "Комики", imgURL: "src/assets/comic.svg" },
-    { name: "Модели", imgURL: "src/assets/model.svg" },
+    { name: 'Музыканты', imgURL: 'src/assets/Music.svg' },
+    { name: 'Актёры', imgURL: 'src/assets/acter.svg' },
+    { name: 'YouTubers', imgURL: 'src/assets/youtuber.svg' },
+    { name: 'Блогеры', imgURL: 'src/assets/bloger.svg' },
+    { name: 'Комики', imgURL: 'src/assets/comic.svg' },
+    { name: 'Модели', imgURL: 'src/assets/model.svg' },
   ];
 
   return (

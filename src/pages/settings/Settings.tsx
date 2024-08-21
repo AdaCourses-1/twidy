@@ -1,13 +1,13 @@
-import Header from "@/shared/header/Header";
-import useravatar from "../../assets/Photo (3).png";
-import Twitter from "../../assets/twit.svg";
-import Instagram from "../../assets/inst.svg";
-import Vk from "../../assets/vk.svg";
-import { Separator } from "@/components/ui/separator";
-import { Button } from "@/components/ui/button";
-import UserServices from "@/shared/userServices/UserServices";
-import BlockingDrawer from "@/shared/blockingDrawer/BlockingDrawer";
-import ComplainDrawer from "@/shared/complainDrawer/ComplainDrawer";
+import Header from '@/shared/header/Header';
+import useravatar from '../../assets/Photo (3).png';
+import Twitter from '../../assets/twit.svg';
+import Instagram from '../../assets/inst.svg';
+import Vk from '../../assets/vk.svg';
+import { Separator } from '@/components/ui/separator';
+import { Button } from '@/components/ui/button';
+import UserServices from '@/shared/userServices/UserServices';
+import BlockingDrawer from '@/shared/blockingDrawer/BlockingDrawer';
+import ComplainDrawer from '@/shared/complainDrawer/ComplainDrawer';
 
 const Settings = () => {
   return (
