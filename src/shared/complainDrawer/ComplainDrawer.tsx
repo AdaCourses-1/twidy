@@ -7,8 +7,9 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@radix-ui/react-label";
-import { RadioGroup, RadioGroupItem } from "@radix-ui/react-radio-group";
+import { DialogTitle } from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -20,27 +21,27 @@ export default function ComplainDrawer(props: LayoutProps) {
       <SheetTrigger asChild>{props.children}</SheetTrigger>
       <SheetContent className="pt-24">
         <div className="ml-4">
-          <h3 className="text-[#4E3F6F] text-3xl font-bold pb-3">
+          <DialogTitle className="text-[#4E3F6F] text-3xl font-bold pb-3">
             Пожаловаться
-          </h3>
+          </DialogTitle>
           <span className="text-[#4E3F6F] text-base font-bold">Укажите причину</span>
-          <RadioGroup className="flex flex-col gap-3 pt-7 pb-5" defaultValue="comfortable">
+          <RadioGroup className="flex flex-col gap-3 pt-7 pb-5" defaultValue="complains">
             <div className="flex items-center space-x-2">
-              <RadioGroupItem value="default" id="r1" />
-              <Label className="text-[#4E3F6F] text-base font-bold" htmlFor="r1">Оскорбление</Label>
+              <RadioGroupItem value="complains" id="complains" />
+              <Label className="text-[#4E3F6F] text-base font-bold" htmlFor="complains">Оскорбление</Label>
             </div>
             <div className="flex items-center space-x-2">
-              <RadioGroupItem value="comfortable" id="r2" />
-              <Label className="text-[#4E3F6F] text-base font-bold" htmlFor="r2">Спам</Label>
+              <RadioGroupItem value="spam" id="spam" />
+              <Label className="text-[#4E3F6F] text-base font-bold" htmlFor="spam">Спам</Label>
             </div>
             <div className="flex items-center space-x-2">
-              <RadioGroupItem className="color-[#4E3F6F]"value="compact" id="r3" />
-              <Label className="text-[#4E3F6F] text-base font-bold" htmlFor="r3">Что-то еще</Label>
+              <RadioGroupItem className="color-[#4E3F6F]"value="another" id="another" />
+              <Label className="text-[#4E3F6F] text-base font-bold" htmlFor="another">Что-то еще</Label>
             </div>
           </RadioGroup>
              <Textarea className="text-[#4E3F6F] bg-[#F2F2FE]" placeholder="Комментарий" />
           <SheetFooter>
-            <SheetClose>
+            <SheetClose asChild>
               <div className="flex mt-8">
                 <Button type="submit">Отправить</Button>
                 <Button variant="ghost" className="text-[#4E3F6F]">
