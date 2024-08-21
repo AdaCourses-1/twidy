@@ -6,7 +6,7 @@ import Vk from "../../assets/vk.svg";
 import { Separator } from "@radix-ui/react-separator";
 import { Button } from "@/components/ui/button";
 import UserServices from "@/shared/userServices/UserServices";
-import Answer from "@/shared/answer/Answer";
+
 
 const Settings = () => {
   return (
@@ -115,7 +115,7 @@ const Settings = () => {
           </div>
           <div className="flex-1">
             <UserServices />
-            <Answer/>
+    
           </div>
         </div>
         <div></div>
