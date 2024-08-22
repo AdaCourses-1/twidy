@@ -1,4 +1,4 @@
-import Rectongle from '@/assets/Rectongle.png';
+import Varnava from '@/assets/Varnava.png';
 
 const Answer = () => {
   return (
@@ -9,7 +9,7 @@ const Answer = () => {
       <div className="flex">
         <div className="relative max-w-[200px] ml-11 ">
           <img
-            src={Rectongle}
+            src={Varnava}
             alt="Екатерина Варнава"
             className="rounded-[20px]"
           />
@@ -27,7 +27,7 @@ const Answer = () => {
         </div>
         <div className="relative max-w-[200px] ml-11 ">
           <img
-            src={Rectongle}
+            src={Varnava}
             alt="Екатерина Варнава"
             className="rounded-[20px]"
           />
@@ -45,7 +45,7 @@ const Answer = () => {
         </div>
         <div className="relative max-w-[200px] ml-11 ">
           <img
-            src={Rectongle}
+            src={Varnava}
             alt="Екатерина Варнава"
             className="rounded-[20px]"
           />

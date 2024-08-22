@@ -7,6 +7,7 @@ import { Separator } from "@radix-ui/react-separator";
 import { Button } from "@/components/ui/button";
 import UserServices from "@/shared/userServices/UserServices";
 import Answer from "@/shared/answer/Answer";
+import { Link } from "react-router-dom";
 
 const Settings = () => {
   return (
@@ -43,28 +44,28 @@ const Settings = () => {
                 <div className="flex items-center gap-4 pt-4">
                   <ul className="flex items-center gap-3 ">
                     <li className="flex">
-                      <a
+                      <Link
                         href="#"
-                       
+                         className="bg-[#1DA1F2] inline-block p-2 rounded-[10px] w-8 h-8"
                       >
                         <img src={Twitter} alt="twitter" />
-                      </a>
+                      </Link>
                     </li>
                     <li className="flex">
-                      <a
+                      <Link
                         href="#"
-                        
+                          className="bg-[#1DA1F2] inline-block p-2 rounded-[10px] w-8 h-8"
                       >
                         <img src={Instagram} alt="instagram" />
-                      </a>
+                      </Link>
                     </li>
                     <li className="flex">
-                      <a
+                      <Link
                         href="#"
-                       
+                         className="bg-[#1DA1F2] inline-block p-2 rounded-[10px] w-8 h-8"
                       >
                         <img src={Vk} alt="vk" />
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                   <Separator
