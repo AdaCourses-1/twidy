@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import UserServices from '@/shared/userServices/UserServices';
 import BlockingDrawer from '@/shared/blockingDrawer/BlockingDrawer';
 import ComplainDrawer from '@/shared/complainDrawer/ComplainDrawer';
+import Answer from '@/shared/answer/Answer';
 
 const Settings = () => {
   return (
@@ -119,6 +120,7 @@ const Settings = () => {
           </div>
           <div className="flex-1">
             <UserServices />
+            <Answer />
             <div></div>
           </div>
         </div>
