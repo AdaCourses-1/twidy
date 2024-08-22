@@ -18,7 +18,7 @@ const Settings = () => {
           Дарья Небесная
         </h3>
         <div className="flex pt-8 pl-10">
-          <div>
+          <div className='flex flex-col items-center'>
             <aside className="p-4 bg-white rounded-[20px] max-w-[400px]">
               <div className="relative">
                 <span className="absolute left-4 top-4 bg-[#FFA012] rounded-lg text-white py-1 p-3 text-base font-bold">
@@ -105,7 +105,6 @@ const Settings = () => {
               </div>
             </aside>
             <div className="flex items-center pt-6">
-               
               <BlockingDrawer>
                 <Button variant="ghost">Заблокировать</Button>
               </BlockingDrawer>

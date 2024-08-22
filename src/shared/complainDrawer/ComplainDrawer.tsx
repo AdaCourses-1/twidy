@@ -20,7 +20,7 @@ export default function ComplainDrawer(props: LayoutProps) {
     <Sheet>
       <SheetTrigger asChild>{props.children}</SheetTrigger>
       <SheetContent className="pt-24">
-        <div className="ml-4">
+        <div className="ml-4 flex flex-col items-start">
           <DialogTitle className="text-[#4E3F6F] text-3xl font-bold pb-3">
             Пожаловаться
           </DialogTitle>
@@ -34,16 +34,16 @@ export default function ComplainDrawer(props: LayoutProps) {
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="complains" id="complains" />
               <Label
-                className="text-[#4E3F6F] text-base font-bold"
+                className="text-[#4E3F6F] text-base font-bold hover:cursor-pointer"
                 htmlFor="complains"
               >
                 Оскорбление
               </Label>
             </div>
             <div className="flex items-center space-x-2">
-              <RadioGroupItem value="spam" id="spam" />
+              <RadioGroupItem value="spam" id="spam"/>
               <Label
-                className="text-[#4E3F6F] text-base font-bold"
+                className="text-[#4E3F6F] text-base font-bold hover:cursor-pointer"
                 htmlFor="spam"
               >
                 Спам
@@ -56,7 +56,7 @@ export default function ComplainDrawer(props: LayoutProps) {
                 id="another"
               />
               <Label
-                className="text-[#4E3F6F] text-base font-bold"
+                className="text-[#4E3F6F] text-base font-bold hover:cursor-pointer"
                 htmlFor="another"
               >
                 Что-то еще
@@ -64,14 +64,14 @@ export default function ComplainDrawer(props: LayoutProps) {
             </div>
           </RadioGroup>
           <Textarea
-            className="text-[#4E3F6F] bg-[#F2F2FE]"
+            className="text-[#4E3F6F] bg-[#F2F2FE] w-100% h-40"
             placeholder="Комментарий"
           />
           <SheetFooter>
             <SheetClose asChild>
               <div className="flex mt-8">
-                <Button type="submit">Отправить</Button>
-                <Button variant="ghost" className="text-[#4E3F6F]">
+                <Button type="submit" className='font-semibold'>Отправить</Button>
+                <Button variant="ghost" className="text-[#4E3F6F] font-semibold">
                   Отмена
                 </Button>
               </div>

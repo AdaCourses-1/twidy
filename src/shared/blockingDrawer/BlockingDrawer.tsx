@@ -26,8 +26,8 @@ export default function BlockingDrawer(props: LayoutProps) {
           <SheetFooter>
             <SheetClose>
               <div className="flex mt-8">
-                <Button type="submit">Отправить</Button>
-                <Button variant="ghost" className="text-[#4E3F6F]">
+                <Button type="submit" className='font-semibold'>Отправить</Button>
+                <Button variant="ghost" className="text-[#4E3F6F] font-semibold">
                   Отмена
                 </Button>
               </div>
