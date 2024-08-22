@@ -1,5 +1,5 @@
-import Rectongle from '@/assets/Rectongle.png';
 import { ANSWER_ITEMS } from './const';
+import { AnswerItem } from './types';
 
 const Answer = () => {
   return (
@@ -8,15 +8,17 @@ const Answer = () => {
         Ответы на запросы
       </h3>
       <div className="flex">
-        {ANSWER_ITEMS.map((answer: AnswerItem) => (
-          <div className="relative max-w-[200px] ml-11 ">
+        {ANSWER_ITEMS.map((answer: AnswerItem, i: number) => (
+          <div key={i} className="relative max-w-[200px] ml-11">
             <img
-              src={answer.imgURL}
-              alt="Екатерина Варнава"
+              src={answer.imgUrl}
+              alt={answer.title}
               className="rounded-[20px]"
             />
             <div className="bg-[#4E3F6F] absolute py-1 px-4 rounded-[20px] top-3 right-2 ">
-              <p className="text-white text-base font-bold">2:20</p>
+              <p className="text-white text-base font-bold">
+                {answer.duration}
+              </p>
             </div>
             <div className="mt-4">
               <h5 className="mb-1 text-base font-bold text-[#4E3F6F]">

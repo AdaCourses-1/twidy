@@ -1,18 +1,23 @@
+import homeIcon from '@/assets/sidebar/home.svg';
+import messagesIcon from '@/assets/sidebar/messages.svg';
+import userIcon from '@/assets/sidebar/user.svg';
+import settingsIcon from '@/assets/sidebar/settings.svg';
+
 export const ITEMS = [
-  { name: "Главная", iconUrl: "src/assets/sidebar/home.svg", path: "/" },
+  { name: 'Главная', iconUrl: homeIcon, path: '/' },
   {
-    name: "Сообщение",
-    iconUrl: "src/assets/sidebar/messages.svg",
-    path: "/messages",
+    name: 'Сообщение',
+    iconUrl: messagesIcon,
+    path: '/messages',
   },
   {
-    name: "Профили",
-    iconUrl: "src/assets/sidebar/user.svg",
-    path: "/users",
+    name: 'Профили',
+    iconUrl: userIcon,
+    path: '/users',
   },
   {
-    name: "Настройки",
-    iconUrl: "src/assets/sidebar/settings.svg",
-    path: "/settings",
+    name: 'Настройки',
+    iconUrl: settingsIcon,
+    path: '/settings',
   },
 ];

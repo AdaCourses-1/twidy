@@ -4,6 +4,7 @@ import Home from "./pages/home/Home";
 import Messages from "./pages/messages/Messages";
 import Settings from "./pages/settings/Settings";
 import Sidebar from "./shared/sidebar/Sidebar";
+import UserProfile from "./pages/profiles/[...id]/UserProfile";
 
 function App() {
   return (
@@ -15,17 +16,10 @@ function App() {
         <Route path="/" Component={Home} />
         <Route path="/messages" Component={Messages} />
         <Route path="/settings" Component={Settings} />
+        <Route path="/users/:id" Component={UserProfile} />
       </Routes>
     </div>
   );
 }
 
 export default App;
-
-
-
-// <Header />
-//       <main className="pl-12 pr-14">
-//         <Category />
-//         <Recommendation/>
-//       </main>

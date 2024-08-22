@@ -15,7 +15,7 @@ export const SERVICE_ITEMS: ServiceItem[] = [
   },
   {
     name: 'Урок пения',
-    description: 'Одно индивидуальное занятие по пению',
+    description: 'Одно индивидуальное занятие на пения',
     price: 13,
     currency: '$',
   },
