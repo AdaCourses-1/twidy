@@ -1,5 +1,6 @@
-import { useNavigate, useLocation } from "react-router-dom";
-import { ITEMS } from "./const";
+import { useNavigate, useLocation } from 'react-router-dom';
+import logoIcon from '@/assets/sidebar/twidy-logo.svg';
+import { ITEMS } from './const';
 
 const Sidebar = () => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ const Sidebar = () => {
 
   return (
     <div className="flex flex-col items-center max-w-[208px]">
-      <img src="src/assets/sidebar/twidy-logo.svg" alt="Twidy Logo" />
+      <img src={logoIcon} alt="Twidy Logo" />
       {ITEMS.map((item, index) => (
         <div
           key={index}
@@ -23,13 +24,13 @@ const Sidebar = () => {
             alt={item.name}
             style={{
               filter: isActivePath(item.path)
-                ? "invert(20%) sepia(100%) saturate(5000%) hue-rotate(220deg) brightness(95%) contrast(95%)"
-                : "none",
+                ? 'invert(20%) sepia(100%) saturate(5000%) hue-rotate(220deg) brightness(95%) contrast(95%)'
+                : 'none',
             }}
           />
           <span
             className={`pt-4 text-center text-base font-bold ${
-              isActivePath(item.path) ? "text-[#4E3F6F]" : "text-[#8C8CB6]"
+              isActivePath(item.path) ? 'text-[#4E3F6F]' : 'text-[#8C8CB6]'
             }`}
           >
             {item.name}

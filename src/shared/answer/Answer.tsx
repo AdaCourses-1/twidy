@@ -8,8 +8,8 @@ const Answer = () => {
         Ответы на запросы
       </h3>
       <div className="flex">
-        {ANSWER_ITEMS.map((answer: AnswerItem) => (
-          <div className="relative max-w-[200px] ml-11">
+        {ANSWER_ITEMS.map((answer: AnswerItem, i: number) => (
+          <div key={i} className="relative max-w-[200px] ml-11">
             <img
               src={answer.imgUrl}
               alt={answer.title}
