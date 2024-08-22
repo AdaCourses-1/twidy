@@ -1,5 +1,3 @@
-
-
 import { AnswerItem } from './type';
 
 import { ANSWER_ITEMS } from './const';
@@ -12,24 +10,24 @@ const Answer = () => {
       </h3>
       <div className="flex">
         {ANSWER_ITEMS.map((answer: AnswerItem) => (
- <div className="relative max-w-[200px] ml-11 ">
- <img
-   src={answer.imgUrl}
-   alt={answer.title}
-   className="rounded-[20px]"
- />
- <div className="bg-[#4E3F6F] absolute py-1 px-4 rounded-[20px] top-3 right-2 ">
-   <p className="text-white text-base font-bold">{answer.date}</p>
- </div>
- <div className="mt-4">
-   <h5 className="mb-1 text-base font-bold text-[#4E3F6F]">
-     {answer.title}
-   </h5>
-   <span className="text-lg font-semibold text-[#8C8CB6]">
-     {answer.description}
-   </span>
- </div>
-</div>
+          <div className="relative max-w-[200px] ml-11 ">
+            <img
+              src={answer.imgUrl}
+              alt={answer.title}
+              className="rounded-[20px]"
+            />
+            <div className="bg-[#4E3F6F] absolute py-1 px-4 rounded-[20px] top-3 right-2 ">
+              <p className="text-white text-base font-bold">{answer.date}</p>
+            </div>
+            <div className="mt-4">
+              <h5 className="mb-1 text-base font-bold text-[#4E3F6F]">
+                {answer.title}
+              </h5>
+              <span className="text-lg font-semibold text-[#8C8CB6]">
+                {answer.description}
+              </span>
+            </div>
+          </div>
         ))}
       </div>
     </div>
