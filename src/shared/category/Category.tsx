@@ -1,54 +1,52 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 const Category = () => {
   const items = [
     {
-      name: "Музыканты",
-      imgURL: "src/assets/Music.svg",
-      title: "Категория “Музыканты”",
+      name: 'Музыканты',
+      imgURL: 'src/assets/Music.svg',
+      title: 'Категория “Музыканты”',
     },
     {
-      name: "Актёры",
-      imgURL: "src/assets/acter.svg",
-      title: "Категория “Актёры”",
+      name: 'Актёры',
+      imgURL: 'src/assets/acter.svg',
+      title: 'Категория “Актёры”',
     },
     {
-      name: "YouTubers",
-      imgURL: "src/assets/youtuber.svg",
-      title: "Категория “YouTubers”",
+      name: 'YouTubers',
+      imgURL: 'src/assets/youtuber.svg',
+      title: 'Категория “YouTubers”',
     },
     {
-      name: "Блогеры",
-      imgURL: "src/assets/bloger.svg",
-      title: "Категория “Блогеры”",
+      name: 'Блогеры',
+      imgURL: 'src/assets/bloger.svg',
+      title: 'Категория “Блогеры”',
     },
     {
-      name: "Комики",
-      imgURL: "src/assets/comic.svg",
-      title: "Категория “Комики”",
+      name: 'Комики',
+      imgURL: 'src/assets/comic.svg',
+      title: 'Категория “Комики”',
     },
     {
-      name: "Модели",
-      imgURL: "src/assets/model.svg",
-      title: "Категория “Модели”",
+      name: 'Модели',
+      imgURL: 'src/assets/model.svg',
+      title: 'Категория “Модели”',
     },
   ];
 
-  // Получение состояния из localStorage или установка начального значения
   const [selectedCategory, setSelectedCategory] = useState(() => {
-    const savedCategory = localStorage.getItem("selectedCategory");
+    const savedCategory = localStorage.getItem('selectedCategory');
     return savedCategory ? JSON.parse(savedCategory) : null;
   });
 
-  // Сохранение состояния в localStorage при изменении
   useEffect(() => {
     if (selectedCategory) {
       localStorage.setItem(
-        "selectedCategory",
+        'selectedCategory',
         JSON.stringify(selectedCategory)
       );
     } else {
-      localStorage.removeItem("selectedCategory");
+      localStorage.removeItem('selectedCategory');
     }
   }, [selectedCategory]);
 
@@ -63,7 +61,7 @@ const Category = () => {
   return (
     <div className="pl-14">
       <h3 className="text-[#4E3F6F] font-bold text-4xl pl-10 pt-24">
-        {selectedCategory ? selectedCategory.title : "Категори"}
+        {selectedCategory ? selectedCategory.title : 'Категори'}
       </h3>
 
       {selectedCategory ? (
