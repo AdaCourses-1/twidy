@@ -1,24 +1,29 @@
-import Rectongle from '@/assets/Rectongle.png'
-import { AnswerItems } from './types'
+import Rectongle from '@/assets/Rectongle.png';
+import { AnswerItem } from './types';
 
-
-export const ANSWER_ITEMS:AnswerItems[]=[
-    {
-       img: Rectongle,
-       duration: '1.24',
-       message: 'Поздравление для Александра',
-       time: '2 назад ',
-    },
-    {
-        img: Rectongle,
-        duration: '1.24',
-        message: 'Поздравление для Александра',
-        time: '2 назад ',
-     },
-     {
-        img: Rectongle,
-        duration: '1.24',
-        message: 'Поздравление для Александра',
-        time: '2 назад ',
-     }
-]
+export const ANSWER_ITEMS: AnswerItem[] = [
+  {
+    title: 'Поздравление для Александра',
+    date: '2 часа назад',
+    imgUrl: Rectongle,
+    duration: '1:24',
+  },
+  {
+    title: 'Поздравление для Александра',
+    date: '2 часа назад',
+    imgUrl: Rectongle,
+    duration: '1:24',
+  },
+  {
+    title: 'Поздравление для Александра',
+    date: '2 часа назад',
+    imgUrl: Rectongle,
+    duration: '1:24',
+  },
+  {
+    title: 'Поздравление для Александра',
+    date: '2 часа назад',
+    imgUrl: Rectongle,
+    duration: '1:24',
+  },
+];

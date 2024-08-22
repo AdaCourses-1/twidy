@@ -1,4 +1,5 @@
 import { useNavigate, useLocation } from 'react-router-dom';
+import logoIcon from '@/assets/sidebar/twidy-logo.svg';
 import { ITEMS } from './const';
 
 const Sidebar = () => {
@@ -11,7 +12,7 @@ const Sidebar = () => {
 
   return (
     <div className="flex flex-col items-center max-w-[208px]">
-      <img src="src/assets/sidebar/twidy-logo.svg" alt="Twidy Logo" />
+      <img src={logoIcon} alt="Twidy Logo" />
       {ITEMS.map((item, index) => (
         <div
           key={index}

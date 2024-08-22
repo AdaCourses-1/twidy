@@ -1,6 +1,6 @@
-export interface ServiceItems{
-    name: string;
-    description: string;
-    price: number;
-    currency: string;
+export interface ServiceItem {
+  name: string;
+  description: string;
+  price: number;
+  currency: string;
 }

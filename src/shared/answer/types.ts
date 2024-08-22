@@ -1,6 +1,6 @@
-export interface AnswerItems{
-   img: string;
-   duration: string;
-   message: string;
-   time: string;
+export interface AnswerItem {
+  title: string;
+  date: string;
+  imgUrl: string;
+  duration: string;
 }
