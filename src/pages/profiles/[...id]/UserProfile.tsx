@@ -7,6 +7,8 @@ import { Separator } from '@radix-ui/react-separator';
 import { Button } from '@/components/ui/button';
 import UserServices from '@/shared/userServices/UserServices';
 import Answer from '@/shared/answer/Answer';
+import BlockingDrawer from '@/shared/blockingDrawer/BlockingDrawer';
+import ComplainDrawer from '@/shared/complainDrawer/ComplainDrawer';
 
 const UserProfile = () => {
   return (
@@ -69,7 +71,7 @@ const UserProfile = () => {
                   </ul>
                   <Separator
                     orientation="vertical"
-                    className="bg-[#FFA012] w-[3px] h-5 rounded-sm"
+                    className="bg-[#E1E2EB] w-[3px] h-5 rounded-sm"
                   />
                   <span className="text-base font-bold text-[#4E3F6F]">
                     Russia
@@ -104,13 +106,17 @@ const UserProfile = () => {
                 </ul>
               </div>
             </aside>
-            <div className="flex items-center pt-6">
-              <Button variant="ghost">Заблокировать</Button>
+            <div className="flex items-center pt-6 -ml-3">
+              <BlockingDrawer>
+                <Button variant="ghost">Заблокировать</Button>
+              </BlockingDrawer>
               <Separator
                 orientation="vertical"
-                className="bg-[#FFA012] w-[3px] h-8 rounded-sm"
+                className="w-[3px] h-8 rounded-sm bg-[#E1E2EB]"
               />
-              <Button variant="ghost">Пожаловаться</Button>
+              <ComplainDrawer>
+                <Button variant="ghost">Пожаловаться</Button>
+              </ComplainDrawer>
             </div>
           </div>
           <div className="flex-1">
