@@ -1,54 +1,46 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const Category = () => {
   const items = [
     {
+      id: 1,
       name: 'Музыканты',
       imgURL: 'src/assets/Music.svg',
       title: 'Категория "Музыканты"',
     },
     {
+      id: 2,
       name: 'Актёры',
       imgURL: 'src/assets/acter.svg',
       title: 'Категория "Актёры"',
     },
     {
+      id: 3,
       name: 'YouTubers',
       imgURL: 'src/assets/youtuber.svg',
       title: 'Категория "YouTubers"',
     },
     {
+      id: 4,
       name: 'Блогеры',
       imgURL: 'src/assets/bloger.svg',
       title: 'Категория "Блогеры"',
     },
     {
+      id: 5,
       name: 'Комики',
       imgURL: 'src/assets/comic.svg',
       title: 'Категория "Комики"',
     },
     {
+      id: 6,
       name: 'Модели',
       imgURL: 'src/assets/model.svg',
       title: 'Категория "Модели"',
     },
   ];
 
-  const [selectedCategory, setSelectedCategory] = useState(() => {
-    const savedCategory = localStorage.getItem('selectedCategory');
-    return savedCategory ? JSON.parse(savedCategory) : null;
-  });
-
-  useEffect(() => {
-    if (selectedCategory) {
-      localStorage.setItem(
-        'selectedCategory',
-        JSON.stringify(selectedCategory)
-      );
-    } else {
-      localStorage.removeItem('selectedCategory');
-    }
-  }, [selectedCategory]);
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   const handleCardClick = (item) => {
     setSelectedCategory(item);
@@ -75,9 +67,9 @@ const Category = () => {
 
       {!selectedCategory && (
         <div className="flex flex-wrap justify-between gap-7 mb-7">
-          {items.map((item, index) => (
+          {items.map((item) => (
             <div
-              key={index}
+              key={item.id}
               onClick={() => handleCardClick(item)}
               className="flex items-center justify-around gap-20 mt-7 bg-[#Fff] w-[100%] xl:w-[30%] h-[114px] rounded-[20px] cursor-pointer"
             >
