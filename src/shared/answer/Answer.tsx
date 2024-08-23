@@ -1,6 +1,7 @@
+import { ANSWER_ITEMS } from './const';
+
 import { AnswerItem } from './types';
 
-import { ANSWER_ITEMS } from './const';
 
 const Answer = () => {
   return (
