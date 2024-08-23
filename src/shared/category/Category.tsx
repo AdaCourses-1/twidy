@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 const Category = () => {
   const items = [
@@ -56,14 +56,14 @@ const Category = () => {
         {selectedCategory ? selectedCategory.title : 'Категории'}
       </h3>
 
-      {selectedCategory ? (
+      {selectedCategory && (
         <button
           onClick={handleBackClick}
           className="text-[#4E3F6F] font-bold text-lg pl-10 pt-4"
         >
           Назад
         </button>
-      ) : null}
+      )}
 
       {!selectedCategory && (
         <div className="flex flex-wrap justify-between gap-7 mb-7">
