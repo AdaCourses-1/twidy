@@ -1,9 +1,9 @@
 
 import { Link } from 'react-router-dom';
-import { Recommendation } from './types';
-import { RECOMMENDATION_ACTER } from './const';
+import { RecommendationItem } from './types';
+import { RECOMMENDATION_ACTOR } from './const';
 
-const recommendation = () => {
+const Recommendation = () => {
   return (
     <div className="mb-28 pl-10">
       <div className="mt-10 pl-10 mb-4">
@@ -12,8 +12,8 @@ const recommendation = () => {
         </h2>
       </div>
       <div className=" flex flex-wrap gap-7">
-        {RECOMMENDATION_ACTER.map(
-          (recommendation: Recommendation, index: number) => (
+        {RECOMMENDATION_ACTOR.map(
+          (recommendation: RecommendationItem, index: number) => (
             <div
               key={index}
               className={`p-4 rounded-t-2xl bg-[#FFFFFF] rounded-2xl  relative ${
@@ -50,4 +50,4 @@ const recommendation = () => {
   );
 };
 
-export default recommendation;
+export default Recommendation;

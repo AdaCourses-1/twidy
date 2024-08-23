@@ -4,9 +4,9 @@ import Photo2 from '@/assets/Photo (2).png';
 import Photo3 from '@/assets/Photo (3).png';
 import Photo4 from '@/assets/Photo (4).png';
 import Photo5 from '@/assets/Photo (5).png';
-import { Recommendation } from './types';
+import { RecommendationItem } from './types';
 
-export const RECOMMENDATION_ACTER: Recommendation[] = [
+export const RECOMMENDATION_ACTOR: RecommendationItem[] = [
   {
     imgURL: Photo,
     name: 'Екатерина Варнава',
