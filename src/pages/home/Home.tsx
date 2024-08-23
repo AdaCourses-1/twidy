@@ -1,7 +1,6 @@
-import Category from '@/shared/category/Category'
-import Header from '@/shared/header/Header'
-import Recommendation from '@/shared/recommendation/Recommendation'
-
+import Category from '@/shared/category/Category';
+import Header from '@/shared/header/Header';
+import Recommendation from '@/shared/recommendation/Recommendation';
 
 const Home = () => {
   return (
@@ -12,8 +11,7 @@ const Home = () => {
         <Recommendation />
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default Home
-
+export default Home;

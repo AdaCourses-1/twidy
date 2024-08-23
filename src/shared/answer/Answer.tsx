@@ -23,7 +23,7 @@ const Answer = () => {
       
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Answer
+export default Answer;
