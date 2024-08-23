@@ -2,12 +2,36 @@ import React, { useState, useEffect } from 'react';
 
 const Category = () => {
   const items = [
-    { name: 'Музыканты', imgURL: 'src/assets/Music.svg' },
-    { name: 'Актёры', imgURL: 'src/assets/acter.svg' },
-    { name: 'YouTubers', imgURL: 'src/assets/youtuber.svg' },
-    { name: 'Блогеры', imgURL: 'src/assets/bloger.svg' },
-    { name: 'Комики', imgURL: 'src/assets/comic.svg' },
-    { name: 'Модели', imgURL: 'src/assets/model.svg' },
+    {
+      name: 'Музыканты',
+      imgURL: 'src/assets/Music.svg',
+      title: 'Категория "Музыканты"',
+    },
+    {
+      name: 'Актёры',
+      imgURL: 'src/assets/acter.svg',
+      title: 'Категория "Актёры"',
+    },
+    {
+      name: 'YouTubers',
+      imgURL: 'src/assets/youtuber.svg',
+      title: 'Категория "YouTubers"',
+    },
+    {
+      name: 'Блогеры',
+      imgURL: 'src/assets/bloger.svg',
+      title: 'Категория "Блогеры"',
+    },
+    {
+      name: 'Комики',
+      imgURL: 'src/assets/comic.svg',
+      title: 'Категория "Комики"',
+    },
+    {
+      name: 'Модели',
+      imgURL: 'src/assets/model.svg',
+      title: 'Категория "Модели"',
+    },
   ];
 
   const [selectedCategory, setSelectedCategory] = useState(() => {
@@ -37,7 +61,7 @@ const Category = () => {
   return (
     <div className="pl-14">
       <h3 className="text-[#4E3F6F] font-bold text-4xl pl-10 pt-24">
-        {selectedCategory ? selectedCategory.title : 'Категори'}
+        {selectedCategory ? selectedCategory.title : 'Категории'}
       </h3>
 
       {selectedCategory ? (
