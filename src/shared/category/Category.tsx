@@ -3,9 +3,7 @@ import { CATEGORY_ITEMS } from './const'; // Убедитесь, что путь
 import { CategoryItem } from './types'; // Убедитесь, что путь верен
 
 const Category = () => {
-  const [selectedCategory, setSelectedCategory] = useState<CategoryItem | null>(
-    null
-  );
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   const handleCardClick = (category: CategoryItem) => {
     setSelectedCategory(category);
