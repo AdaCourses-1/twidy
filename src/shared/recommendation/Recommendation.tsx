@@ -54,7 +54,7 @@ const Recommendation = () => {
               index === 0 ? 'max-w-[571px]' : 'max-w-[271px]'
             }`}
           >
-            <a href="./settings">
+            <a href="./users/:id">
             <img
               src={item.imgURL}
               alt={item.name}
