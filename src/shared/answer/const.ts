@@ -1,5 +1,5 @@
 import { AnswerItem } from "./types";
-import Rectongle from '@/assets/Rectongle.png'
+import Rectongle from '@/assets/Rectongle.png';
 
 export const ANSWER_ITEMS: AnswerItem[] = [
     {

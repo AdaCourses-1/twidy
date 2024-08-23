@@ -97,26 +97,3 @@ export default VideoGrid;
 
 
 
-
-
-
-
-
-
-
-// const Video = () => {
-//     const videoActor = [
-//         {imgURL: "src/assets/Photo (1).png",}
-//         {imgURL: "src/assets/play.svg",}
-        
-//     ];
-
-//     return (
-//         <div className="">
-
-//         </div>
-//     )
-// }
-
-
-// export default Video;
