@@ -1,32 +1,32 @@
 import { HISTORY_ITEMS } from '@/shared/history/const';
 import { HistoryItem } from '@/shared/history/types';
 
-const History = () => {
+const HistoryTransaction = () => {
   return (
     <div className="pl-14">
       <h3 className="text-[#4E3F6F] font-bold text-4xl pl-10 pt-[17px]">
         История
       </h3>
       <div className="flex flex-col justify-between gap-5">
-        {HISTORY_ITEMS.map((setting: HistoryItem, i: number) => (
+        {HISTORY_ITEMS.map((transaction: HistoryItem) => (
           <div
-            key={i}
-            className="flex justify-between items-center gap-5 mt-7 bg-[#Fff] h-max-[104px]  xl:w-[70%] rounded-[20px]"
+            key={transaction.date}
+            className="flex justify-between items-center mt-7 bg-[#Fff] h-max-[104px]  xl:w-[70%] rounded-[20px]"
           >
             <img
-              src={setting.imgUrl}
+              src={transaction.imgUrl}
               className="ml-4 mt-4 mb-4 rounded-2xl"
-              alt={setting.name}
+              alt={transaction.name}
             />
             <span className="text-base text-[#4E3F6F] font-bold">
-              {setting.name}
+              {transaction.name}
             </span>
             <span className="text-[#8C8CB6] text-base font-bold">
-              {setting.date}
+              {transaction.date}
             </span>
             <span className="text-[#8C8CB6] text-base font-bold pr-7">
-              {setting.price}
-              {setting.currency}
+              {transaction.price}
+              {transaction.currency}
             </span>
           </div>
         ))}
@@ -35,4 +35,4 @@ const History = () => {
   );
 };
 
-export default History;
+export default HistoryTransaction;
