@@ -1,4 +1,4 @@
-import { Users } from 'lucide-react';
+
 import { Link } from 'react-router-dom';
 import { Recommendation } from './types';
 import { RECOMMENDATION_ACTER } from './const';
