@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { SERVICE_ITEMS } from "./const";
-import { ServiceItem } from "./type";
+import { ServiceItem } from "./types";
 
 
 

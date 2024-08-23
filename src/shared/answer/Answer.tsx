@@ -1,4 +1,4 @@
-import { AnswerItem } from './type';
+import { AnswerItem } from './types';
 
 import { ANSWER_ITEMS } from './const';
 

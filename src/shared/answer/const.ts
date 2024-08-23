@@ -1,5 +1,5 @@
 
-import { AnswerItem } from "./type";
+import { AnswerItem } from "./types";
 import Varnava from '@/assets/Varnava.png';
 
 export const ANSWER_ITEMS: AnswerItem[] = [
