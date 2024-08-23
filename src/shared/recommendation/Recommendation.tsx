@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { RecommendationItem } from './types';
 import { RECOMMENDATION_ACTOR } from './const';

@@ -1,4 +1,3 @@
-
 import { AnswerItem } from "./types";
 import Varnava from '@/assets/Varnava.png';
 
