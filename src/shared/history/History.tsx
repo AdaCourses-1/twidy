@@ -10,7 +10,7 @@ const HistoryTransaction = () => {
       <div className="flex flex-col justify-between gap-5">
         {HISTORY_ITEMS.map((transaction: HistoryItem) => (
           <div
-            key={transaction.date}
+            key={transaction.id}
             className="flex justify-between items-center mt-7 bg-[#Fff] h-max-[104px]  xl:w-[70%] rounded-[20px]"
           >
             <img
