@@ -1,7 +1,5 @@
 import { ANSWER_ITEMS } from './const';
-
 import { AnswerItem } from './types';
-
 
 const Answer = () => {
   return (
