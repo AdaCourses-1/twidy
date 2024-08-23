@@ -11,7 +11,7 @@ const History = () => {
         {HISTORY_ITEMS.map((setting: HistoryItem, i: number) => (
           <div
             key={i}
-            className="flex justify-between items-center gap-20 mt-7 bg-[#Fff] h-max-[104px]  xl:w-[70%] rounded-[20px]"
+            className="flex justify-between items-center gap-5 mt-7 bg-[#Fff] h-max-[104px]  xl:w-[70%] rounded-[20px]"
           >
             <img
               src={setting.imgUrl}
