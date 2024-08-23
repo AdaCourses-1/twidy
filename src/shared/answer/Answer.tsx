@@ -9,7 +9,7 @@ const Answer = () => {
         Ответы на запросы
       </h3>
       <div className="flex">
-      {ANSWER_ITEMS.map((answer: AnswerItem, i: number) => (
+        {ANSWER_ITEMS.map((answer: AnswerItem, i: number) => (
           <div key={i} className="relative max-w-[200px] ml-11">
             <img
               src={answer.imgUrl}
@@ -17,14 +17,16 @@ const Answer = () => {
               className="rounded-[20px]"
             />
             <div className="bg-[#4E3F6F] absolute py-1 px-4 rounded-[20px] top-3 right-2 ">
-              <p className="text-white text-base font-bold">{answer.duration}</p>
+              <p className="text-white text-base font-bold">
+                {answer.duration}
+              </p>
             </div>
             <div className="mt-4">
               <h5 className="mb-1 text-base font-bold text-[#4E3F6F]">
                 {answer.title}
               </h5>
               <span className="text-lg font-semibold text-[#8C8CB6]">
-              {answer.date}
+                {answer.date}
               </span>
             </div>
           </div>
