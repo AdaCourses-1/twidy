@@ -1,15 +1,15 @@
 const Category = () => {
   const items = [
-    { name: "Музыканты", imgURL: "src/assets/Music.svg" },
-    { name: "Актёры", imgURL: "src/assets/acter.svg" },
-    { name: "YouTubers", imgURL: "src/assets/youtuber.svg" },
-    { name: "Блогеры", imgURL: "src/assets/bloger.svg" },
-    { name: "Комики", imgURL: "src/assets/comic.svg" },
-    { name: "Модели", imgURL: "src/assets/model.svg" },
+    { name: 'Музыканты', imgURL: 'src/assets/Music.svg' },
+    { name: 'Актёры', imgURL: 'src/assets/acter.svg' },
+    { name: 'YouTubers', imgURL: 'src/assets/youtuber.svg' },
+    { name: 'Блогеры', imgURL: 'src/assets/bloger.svg' },
+    { name: 'Комики', imgURL: 'src/assets/comic.svg' },
+    { name: 'Модели', imgURL: 'src/assets/model.svg' },
   ];
 
   return (
-    <div>
+    <div className="pl-14">
       <h3 className="text-[#4E3F6F] font-bold text-4xl pl-10 pt-24">
         Категори
       </h3>
