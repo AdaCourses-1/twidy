@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { CATEGORY_ITEMS } from "./const"; // Убедитесь, что путь верен
-import { CategoryItem } from "./types"; // Убедитесь, что путь верен
+import { useState } from 'react';
+import { CATEGORY_ITEMS } from './const';
+import { CategoryItem } from './types';
 
 const Category = () => {
   const [selectedCategory, setSelectedCategory] = useState<CategoryItem | null>(
@@ -8,17 +8,17 @@ const Category = () => {
   );
 
   const handleCardClick = (category: CategoryItem) => {
-    setSelectedCategory(category); // Исправлено: устанавливаем выбранную категорию
+    setSelectedCategory(category);
   };
 
   const handleBackClick = () => {
-    setSelectedCategory(null); // Очищаем выбранную категорию
+    setSelectedCategory(null);
   };
 
   return (
     <div className="pl-14">
       <h3 className="text-[#4E3F6F] font-bold text-4xl pl-10 pt-24">
-        {selectedCategory?.title || "Категории"}
+        {selectedCategory?.title || 'Категории'}
       </h3>
 
       {selectedCategory && (
