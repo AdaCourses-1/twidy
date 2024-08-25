@@ -9,11 +9,13 @@ import UserServices from '@/shared/userServices/UserServices';
 import Answer from '@/shared/answer/Answer';
 import BlockingDrawer from '@/shared/blockingDrawer/BlockingDrawer';
 import ComplainDrawer from '@/shared/complainDrawer/ComplainDrawer';
+import TabNavigation from '@/shared/navigate/Navigate';
 
 const UserProfile = () => {
   return (
     <div className="settings-page w-full mb-20">
       <Header />
+      <TabNavigation />
       <div>
         <h3 className="text-[#4E3F6F] font-bold text-4xl pl-16 pt-10 ">
           Дарья Небесная
