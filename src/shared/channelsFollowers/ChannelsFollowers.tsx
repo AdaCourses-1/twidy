@@ -3,15 +3,13 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { CHANNEL_ITEMS } from './const';
 import { ChannelItem } from './types';
-import { SheetContent, SheetTrigger,Sheet } from '@/components/ui/sheet';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Search } from 'lucide-react';
+import { Search, X } from 'lucide-react';
 import { useState } from 'react';
 
 interface LayoutProps {
   children: React.ReactNode;
 }
-
 
 const ChannelsFollowers = (props: LayoutProps) => {
   const [activeTab, setActiveTab] = useState('');
@@ -20,7 +18,7 @@ const ChannelsFollowers = (props: LayoutProps) => {
     <div className="pl-14">
     <h3 className="text-[#4E3F6F] font-bold text-4xl pb-4">Каналы и подписки</h3>
       <Tabs defaultValue="follower">
-        <TabsList className="w-max-[257px]">
+        <TabsList className="w-max-[257px] items-center pb-5 pt-3">
           <TabsTrigger className="text-[#8C8C6B] hover:text-[#4E3F6F]" value="follower" onClick={() => setActiveTab('follower')}>Подписки</TabsTrigger>
           <TabsTrigger className="text-[#8C8C6B] hover:text-[#4E3F6F]" value="manage" onClick={() => setActiveTab('manage')}>Управления</TabsTrigger>
           {activeTab === 'follower' && (
@@ -44,18 +42,18 @@ const ChannelsFollowers = (props: LayoutProps) => {
       </div>
       <div className="flex flex-col justify-between gap-5 pt-7">
         {CHANNEL_ITEMS.map((channelItem: ChannelItem)=>(
-           <div key={channelItem.id} className='flex items-center  bg-[#Fff] h-max-[74px] max-w-[716px] rounded-[15px]'>
-           <img className='mr-8 ml-4 mt-4 mb-4 rounded-2xl ' src={channelItem.imgUrl}/>
+           <div key={channelItem.id} className='flex items-center bg-[#Fff] h-max-[74px] max-w-[716px] rounded-[15px]'>
+           <img className='mr-8 ml-4 mt-4 mb-4 rounded-2xl ' src={channelItem.imgUrl} alt={channelItem.title}/>
              <div className="flex  flex-col max-w-[285px]">
                <span className='flex gap-2 text-[#4E3F6F] font-bold text-xs pb-2'>{channelItem.name}
-                 <span className='text-[#FFFF] bg-[#FFA012] font-semibold text-xs rounded-[6px] pl-2 pr-2'>{channelItem.price}{channelItem.currency}</span>
+                 <span className='text-[#FFFF] bg-[#FFA012] font-semibold text-xs rounded-[10px] pl-2 pr-2 pt-[2px] pb-[2px]'>{channelItem.price}{channelItem.currency}</span>
                </span>
                <span className='text-[#8C8CB6]'>{channelItem.description}</span>
              </div>
              <div className="">
                <span className='text-[#8C8CB6] pl-14'>{channelItem.title}</span>
            </div>
-           <img className='ml-12 pt-13 pb-13' src={channelItem.icon}/>
+           <X className='ml-auto mr-4 pt-13 pb-13 stroke-[#8C8CB6]'/>
          </div>
         ))}
       </div>

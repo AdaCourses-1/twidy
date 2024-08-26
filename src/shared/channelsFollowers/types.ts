@@ -6,5 +6,4 @@ export interface ChannelItem{
     title: string;
     price: number;
     currency: string;
-    icon: string,
 }

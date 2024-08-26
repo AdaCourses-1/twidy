@@ -1,7 +1,5 @@
 import { ChannelItem } from "./types";
 import img1 from '@/assets/channel/channel-1.png';
-import icon from '@/assets/channel/channel-iconX.svg'
-
 
 export const CHANNEL_ITEMS: ChannelItem[]=[
     {
@@ -12,7 +10,6 @@ export const CHANNEL_ITEMS: ChannelItem[]=[
         currency:'$',
         description: 'Участница проекта Дом-2 бла бла бла(2006-200). Соведущая.',
         title: 'Актеры/Певцы',
-        icon: icon,
     },
     {
         id:2,
@@ -22,7 +19,6 @@ export const CHANNEL_ITEMS: ChannelItem[]=[
         currency:'$',
         description: 'Участница проекта Дом-2 бла бла бла(2006-200). Соведущая.',
         title: 'Актеры/Певцы',
-        icon: icon,
     },
     {
         id:3,
@@ -32,7 +28,6 @@ export const CHANNEL_ITEMS: ChannelItem[]=[
         currency:'$',
         description: 'Участница проекта Дом-2 бла бла бла(2006-200). Соведущая.',
         title: 'Актеры/Певцы',
-        icon: icon,
     },
     {
         id:4,
@@ -42,6 +37,5 @@ export const CHANNEL_ITEMS: ChannelItem[]=[
         currency:'$',
         description: 'Участница проекта Дом-2 бла бла бла(2006-200). Соведущая.',
         title: 'Актеры/Певцы',
-        icon: icon,
     }
 ]
