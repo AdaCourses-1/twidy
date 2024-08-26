@@ -1,3 +1,4 @@
+import ChannelsFollowers from '@/shared/channelsFollowers/ChannelsFollowers';
 import Header from '@/shared/header/Header';
 import HistoryTransaction from '@/shared/history/History';
 
