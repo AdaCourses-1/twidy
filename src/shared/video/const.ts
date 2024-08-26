@@ -1,7 +1,7 @@
 import { VideoGridItem } from "./types";
 import photo1 from '@/assets/Photo (1).png';
 import photo2 from "@/assets/Photo (3).png";
-import varnava from "@/assets/varnava.png";
+import varnava from "@/assets/varnava1.png";
 import play from "@/assets/play.svg"
 
 export const VIDEOGRID_ITEMS: VideoGridItem[] = [
