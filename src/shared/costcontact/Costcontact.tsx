@@ -16,7 +16,7 @@ const Costcontact = () => {
               <h5 className="text-white text-lg font-bold mt-6 mb-[69px]">
                 {costcontact.title}
               </h5>
-              <p className=" text-white text-4xl font-bold ">
+              <p className="text-white text-4xl font-bold ">
                 {costcontact.price}{costcontact.currency}
               </p>
               <span className="text-white text-base font-bold">
