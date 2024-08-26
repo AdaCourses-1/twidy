@@ -1,4 +1,3 @@
-import Rectongle from '@/assets/Rectongle.png'
 import { ANSWER_ITEMS } from './const'
 import { AnswerItem } from './types'
 
@@ -9,7 +8,7 @@ const Answer = () => {
       <div className='flex'>
         {ANSWER_ITEMS.map((answer: AnswerItem) => (
           <div className='relative max-w-[200px] ml-11 '> 
-        <img src={Rectongle} alt="Екатерина Варнава" className='rounded-[20px]' />
+        <img src={answer.imgURL} alt="Екатерина Варнава" className='rounded-[20px]' />
         <div className='bg-[#4E3F6F] absolute py-1 px-4 rounded-[20px] top-3 right-2 '>
         <p className='text-white text-base font-bold'>{answer.duration}</p>
         </div>

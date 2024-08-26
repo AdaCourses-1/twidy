@@ -1,8 +1,9 @@
-import VideoGrid from "@/shared/video/Video";
+import { Video } from "@/shared/video/video";
+
 
 const Messages = () => {
   return <div>
-    <VideoGrid/>
+    <Video/>
   </div>;
 };
 
