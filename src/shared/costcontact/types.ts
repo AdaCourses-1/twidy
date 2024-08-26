@@ -1,9 +1,8 @@
-
-
-export interface CostcontactItem {
+export interface CostContactItem {
   title: string;
   imgUrl: string;
-  change: string;
+  currency: string;
   price: string;
   color: string;
+  alt: string;
 }

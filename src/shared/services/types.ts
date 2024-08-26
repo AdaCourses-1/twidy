@@ -3,6 +3,6 @@ export interface ServicesItem {
   description: string;
   price: number;
   currency: string;
-  change: string;
+
 
 }

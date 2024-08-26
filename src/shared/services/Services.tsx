@@ -4,8 +4,6 @@ import { ServicesItem } from './types';
 import { useState } from 'react';
 import Add from '@/assets/add.png';
 
-
-
 const Services = () => {
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
 
@@ -30,7 +28,7 @@ const Services = () => {
               activeIndexes.includes(index) ? 'opacity-100' : 'opacity-60'
             }`}
           >
-            <div className='ml-[37px]'>
+            <div className="ml-[37px]">
               <h5 className="mb-[10px] text-lg items-start font-bold text-[#4E3F6F]">
                 {services.name}
               </h5>
@@ -45,7 +43,7 @@ const Services = () => {
                   {services.currency}
                 </p>
                 <span className="text-[#8C8CB6] font-bold text-base">
-                  {services.change}
+                  Изменение
                 </span>
               </div>
               <div>
