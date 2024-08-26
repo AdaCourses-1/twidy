@@ -2,7 +2,7 @@ export interface CostContactItem {
   title: string;
   imgUrl: string;
   currency: string;
-  price: string;
+  price: number;
   color: string;
   alt: string;
 }

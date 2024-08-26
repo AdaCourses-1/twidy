@@ -1,4 +1,4 @@
-import Services from '../services/Services';
+import Services from '@/shared/services/Services';
 import { COSTCONTACT_ITEMS } from './const';
 import { CostContactItem } from './types';
 
