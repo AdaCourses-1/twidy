@@ -33,9 +33,9 @@ const GeneralSettings = () => {
                   alt="Дарья Небесная"
                   className="object-cover"
                 />
-                <span className="absolute right-28 bottom-4 rounded-lg text-white  bg-[#FFA012] py-1 p-5 text-base font-bold">
+                <button className="absolute right-28 bottom-4 rounded-lg text-white  bg-[#FFA012] py-1 p-5 text-base font-bold">
                   Изменить фото
-                </span>
+                </button>
               </div>
               <div className="pt-5">
                 <div className="mb-5 ">

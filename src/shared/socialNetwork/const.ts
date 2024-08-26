@@ -14,7 +14,7 @@ export const SOCIAL_NETWORK: Network[] = [
   },
   {
     name: 'Подключить Facebook',
-    description: '432 123 подписчиков',
+    // description: '432 123 подписчиков',
     imgURL: Facebook,
   },
 
@@ -25,7 +25,7 @@ export const SOCIAL_NETWORK: Network[] = [
   },
   {
     name: 'Подключить Twitch',
-    description: '432 123 подписчиков',
+    // description: '432 123 подписчиков',
     imgURL: Twitch,
   },
   {
@@ -35,7 +35,7 @@ export const SOCIAL_NETWORK: Network[] = [
   },
   {
     name: 'Подключить Linkedln',
-    description: '432 123 подписчиков',
+    // description: '432 123 подписчиков',
     imgURL: Linkedln,
   },
 ];
