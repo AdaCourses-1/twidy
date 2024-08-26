@@ -1,14 +1,16 @@
 import userAvatar from '@/assets/Photo (3).png';
+
 import { Button } from '@/components/ui/button';
-import SocialNetwork from '../socialNetwork/SocialNetwork';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+
+import SocialNetwork from '../socialNetwork/SocialNetwork';
 
 const GeneralSettings = () => {
   return (
     <div className="settings-page w-full mb-20">
       <div>
-        <h3 className="text-[#4E3F6F] font-bold text-4xl pl-16 pt-10 ">
+        <h3 className="text-[#4E3F6F] font-bold text-4xl pl-16 pt-10">
           Профиль
         </h3>
 
@@ -28,37 +30,36 @@ const GeneralSettings = () => {
                 </button>
               </div>
               <div className="pt-5">
-                <div className="mb-5 ">
+                <div className="mb-5">
                   <Input
                     placeholder="Екатерина"
-                    className=" bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
+                    className="bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
                   />
                 </div>
                 <div className="mb-4">
                   <Input
                     placeholder="Варнава"
-                    className=" bg-[#F2F2FE] text-base font-bold text-[#4E3F6F] "
+                    className="bg-[#F2F2FE] text-base font-bold text-[#4E3F6F] "
                   />
                 </div>
                 <div className="mb-4">
                   <Input
                     placeholder="@VanilnoeNebo"
-                    className=" bg-[#F2F2FE] text-base font-bold text-[#4E3F6F] "
+                    className="bg-[#F2F2FE] text-base font-bold text-[#4E3F6F] "
                   />
                 </div>
                 <Textarea
-                  className=" text-base text-[#4E3F6F] bg-[#F2F2FE] pl-5 pt-4 h-36 "
+                  className="text-base text-[#4E3F6F] bg-[#F2F2FE] pl-5 pt-4 h-36 "
                   placeholder="Привет, меня зовут Аня, мне 25 лет, я из Санкт-Петербурга. Веду блог по правильному питанию. Хочешь персональную рекомендацию?"
                 />
               </div>
               <Button className="mt-4">Сохранить</Button>
             </aside>
           </div>
-          <div className="flex-1 -mt-16 ">
+          <div className="flex-1 -mt-16">
             <SocialNetwork />
           </div>
         </div>
-        <div></div>
       </div>
     </div>
   );

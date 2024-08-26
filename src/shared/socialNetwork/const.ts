@@ -4,6 +4,7 @@ import Vk from '@/assets/vk.svg';
 import Facebook from '@/assets/Facebook.svg';
 import Twitch from '@/assets/Twitch.svg';
 import Linkedln from '@/assets/Linkedln.svg';
+
 import { Network } from './types';
 
 export const SOCIAL_NETWORK: Network[] = [

@@ -11,7 +11,7 @@ const SocialNetwork = () => {
         {SOCIAL_NETWORK.map((network: Network) => (
           <div
             key={network.id}
-            className="flex items-center  bg-white p-8 rounded-[20px]"
+            className="flex items-center bg-white p-8 rounded-[20px]"
           >
             <img
               src={network.imgURL}
