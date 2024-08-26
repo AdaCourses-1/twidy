@@ -1,4 +1,5 @@
-import {ServiceItem} from './types';
+
+import { ServiceItem } from './types';
 
 export const SERVICE_ITEMS: ServiceItem[] = [
     {
@@ -20,3 +21,4 @@ export const SERVICE_ITEMS: ServiceItem[] = [
         currency: '$',
     },
 ];
+

@@ -1,23 +1,23 @@
 import { AnswerItem } from "./types";
-import Rectongle from '@/assets/Rectongle.png';
+import Varnava from '@/assets/Varnava.png';
 
 export const ANSWER_ITEMS: AnswerItem[] = [
-    {
-        title: 'Поздравление для Александра',
-        imgURL: Rectongle,
-        duration: '1:24',
-        date: '2 часа назад',
-    },
-    {
-        title: 'Поздравление для Александра',
-        imgURL: Rectongle,
-        duration: '1:24',
-        date: '2 часа назад',
-    },
-    {
-        title: 'Поздравление для Александра',
-        imgURL: Rectongle,
-        duration: '1:24',
-        date: '2 часа назад',
-    },
+  {
+    imgUrl: Varnava,
+    title: "Поздравление для Александра",
+    date: "2 часа назад",
+    duration: "1:24",
+  },
+  {
+    imgUrl: Varnava,
+    title: "Поздравление для Александра",
+    date: "2 часа назад",
+    duration: "1:24",
+  },
+  {
+    imgUrl: Varnava,
+    title: "Поздравление для Александра",
+    date: "2 часа назад",
+    duration: "1:24",
+  },
 ];
