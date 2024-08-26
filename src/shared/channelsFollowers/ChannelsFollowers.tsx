@@ -12,7 +12,7 @@ interface LayoutProps {
 }
 
 const ChannelsFollowers = (props: LayoutProps) => {
-  const [activeTab, setActiveTab] = useState('');
+  const [activeTab, setActiveTab] = useState('follower');
 
   return (
     <div className="pl-14">
