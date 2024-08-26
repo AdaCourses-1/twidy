@@ -1,6 +1,6 @@
 import { CostContactItem } from './types';
 import SMS from '@/assets/SMS.png';
-import Call from '@/assets/Call Icon.png';
+import Call from '@/assets/CallIcon.png';
 import Videocall from '@/assets/VideoIcon.svg';
 
 export const COSTCONTACT_ITEMS: CostContactItem[] = [
