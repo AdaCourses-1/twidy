@@ -1,10 +1,12 @@
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 import { CHANNEL_ITEMS } from './const';
 import { ChannelItem } from './types';
 import { SheetContent, SheetTrigger,Sheet } from '@/components/ui/sheet';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Search } from 'lucide-react';
+import { useState } from 'react';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -12,15 +14,20 @@ interface LayoutProps {
 
 
 const ChannelsFollowers = (props: LayoutProps) => {
+  const [activeTab, setActiveTab] = useState('');
+
   return (
     <div className="pl-14">
-    <h3 className="text-[#4E3F6F] font-bold text-4xl">Каналы и подписки</h3>
-      <Tabs defaultValue="sign-in">
-        <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="sign-in">Подписки</TabsTrigger>
-          <TabsTrigger value="sign-up">Управления</TabsTrigger>
+    <h3 className="text-[#4E3F6F] font-bold text-4xl pb-4">Каналы и подписки</h3>
+      <Tabs defaultValue="follower">
+        <TabsList className="w-max-[257px]">
+          <TabsTrigger className="text-[#8C8C6B] hover:text-[#4E3F6F]" value="follower" onClick={() => setActiveTab('follower')}>Подписки</TabsTrigger>
+          <TabsTrigger className="text-[#8C8C6B] hover:text-[#4E3F6F]" value="manage" onClick={() => setActiveTab('manage')}>Управления</TabsTrigger>
+          {activeTab === 'follower' && (
+        <Button className="ml-[300px] w-max-[184px]">Создать канал</Button>
+      )}
         </TabsList>
-        <TabsContent value="sign-in">
+        <TabsContent value="follower">
       <div className="flex items-center max-w-[716px] max-h-[68px] pt-10">
       <Label className="relative flex-1">
           <Input
