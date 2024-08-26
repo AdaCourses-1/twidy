@@ -1,21 +1,21 @@
 import { AnswerItem } from "./types";
-import Varnava from '@/assets/Varnava.png';
+import Varnava from '@/assets/varnava1.png';
 
 export const ANSWER_ITEMS: AnswerItem[] = [
   {
-    imgUrl: Varnava,
+    imgURL: Varnava,
     title: "Поздравление для Александра",
     date: "2 часа назад",
     duration: "1:24",
   },
   {
-    imgUrl: Varnava,
+    imgURL: Varnava,
     title: "Поздравление для Александра",
     date: "2 часа назад",
     duration: "1:24",
   },
   {
-    imgUrl: Varnava,
+    imgURL: Varnava,
     title: "Поздравление для Александра",
     date: "2 часа назад",
     duration: "1:24",

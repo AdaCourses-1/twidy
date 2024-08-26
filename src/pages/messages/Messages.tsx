@@ -1,9 +1,9 @@
-import { Video } from "@/shared/video/video";
+import VideoSection from "@/shared/video/VideoSection";
 
 
 const Messages = () => {
   return <div>
-    <Video/>
+    <VideoSection />
   </div>;
 };
 

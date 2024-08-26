@@ -1,6 +1,6 @@
 import { VIDEOGRID_ITEMS } from "@/shared/video/const";
 
-const VideoGrid = () => {
+const VideoSection = () => {
    
       
   return (
@@ -22,4 +22,4 @@ const VideoGrid = () => {
   );
 };
 
-export default VideoGrid;
+export default VideoSection;
