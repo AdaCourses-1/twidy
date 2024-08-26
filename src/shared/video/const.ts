@@ -1,41 +1,41 @@
-// import { VideoGridItem } from "./types";
-// import Photo (1) from "@/assets/Photo (1).png";
-// import Photo (3) from "@/assets/Photo (3).png";
-// import varnava from "@/assets/varnava.png";
+import { VideoGridItem } from "./types";
+import photo1 from '@/assets/Photo (1).png';
+import photo2 from "@/assets/Photo (3).png";
+import varnava from "@/assets/varnava.png";
+import play from "@/assets/play.svg"
 
-// export const VIDEOGRID_ITEMS: VideoGridItem = [] => {
-//     const videos = [
-//         {
-//           thumbnail: Photo (1),
-//           videoUrl: varnava,
-//         },
-//         {
-//           thumbnail: "src/assets/Photo (3).png",
-//           videoUrl: 'src/assets/video.svg',
-//         },
-//         {
-//           thumbnail: "src/assets/varnava.png",
-//           videoUrl: 'src/assets/video.svg',
-//         },
-//         {
-//           thumbnail: Photo (1),
-//           videoUrl: 'src/assets/video.svg',
-//         },
-//         {
-//           thumbnail: "src/assets/Photo (3).png",
-//           videoUrl: 'src/assets/video.svg',
-//         },
-//         {
-//           thumbnail: "src/assets/varnava.png",
-//           videoUrl: 'src/assets/video.svg',
-//         },
-//         {
-//             thumbnail: Photo (1),
-//             videoUrl: 'src/assets/video.svg',
-//         },
-//         {
-//             thumbnail: "src/assets/Photo (3).png",
-//             videoUrl: 'src/assets/video.svg',
-//         },
-//       ];
-// };
+export const VIDEOGRID_ITEMS: VideoGridItem[] = [
+    {   id:1,
+        thumbnail: photo1,
+        videoUrl: play,
+      },
+      { id:2,
+        thumbnail: photo2,
+        videoUrl: play,
+      },
+      { id:3,
+        thumbnail: varnava,
+        videoUrl: play,
+      },
+      { id:4,
+        thumbnail: photo1,
+        videoUrl: play,
+      },
+      { id:5,
+        thumbnail: photo2,
+        videoUrl: play,
+      },
+      { id:6,
+        thumbnail: varnava,
+        videoUrl: play,
+      },
+      { id:7,
+        thumbnail: photo1,
+        videoUrl: play,
+      },
+      { id:8,
+        thumbnail: photo2,
+        videoUrl: play,
+      },
+      
+];

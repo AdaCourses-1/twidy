@@ -1,4 +1,5 @@
-// export interface VideoGridItem {
-//     videoUrl: string;
-//     thumbnail: string;
-// }
+export interface VideoGridItem {
+    id: number
+    thumbnail: string;
+    videoUrl: string;
+}
