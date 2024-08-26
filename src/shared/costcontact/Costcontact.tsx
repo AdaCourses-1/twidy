@@ -13,13 +13,13 @@ const Costcontact = () => {
           <div className={`w-[270px] h-[344px] rounded-[20px] bg-[${costcontact.color}]`}>
             <div key={costcontact.color}  className="pt-10 pb-8 ml-9 max-w-[150px]">
               <img src={costcontact.imgUrl} alt={costcontact.alt} />
-              <h5 className="text-white  text-lg font-bold mt-6 mb-[69px]">
+              <h5 className="text-white text-lg font-bold mt-6 mb-[69px]">
                 {costcontact.title}
               </h5>
-              <p className=" text-white  text-4xl font-bold ">
+              <p className=" text-white text-4xl font-bold ">
                 {costcontact.price}{costcontact.currency}
               </p>
-              <span className="text-white  text-base font-bold">
+              <span className="text-white text-base font-bold">
                 Изменение
               </span>
             </div>
