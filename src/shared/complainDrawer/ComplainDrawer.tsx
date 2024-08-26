@@ -64,7 +64,7 @@ export default function ComplainDrawer(props: LayoutProps) {
             </div>
           </RadioGroup>
           <Textarea
-            className="text-[#4E3F6F] bg-[#F2F2FE] w-100% max-h-40"
+            className="text-[#4E3F6F] bg-[#F2F2FE] w-100% h-40"
             placeholder="Комментарий"
           />
           <SheetFooter>
