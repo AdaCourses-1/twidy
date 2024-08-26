@@ -1,17 +1,7 @@
-import React from 'react';
 import userAvatar from '@/assets/Photo (3).png';
-import Instagram from '@/assets/inst.svg';
-import Twitter from '@/assets/twit.svg';
-import Vk from '@/assets/vk.svg';
-import { Separator } from '@radix-ui/react-separator';
 import { Button } from '@/components/ui/button';
-import UserServices from '@/shared/userServices/UserServices';
-import Answer from '@/shared/answer/Answer';
-import BlockingDrawer from '@/shared/blockingDrawer/BlockingDrawer';
-import ComplainDrawer from '@/shared/complainDrawer/ComplainDrawer';
 import SocialNetwork from '../socialNetwork/SocialNetwork';
 import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 
 const GeneralSettings = () => {

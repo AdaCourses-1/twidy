@@ -8,34 +8,40 @@ import { Network } from './types';
 
 export const SOCIAL_NETWORK: Network[] = [
   {
+    id: 0,
     name: 'Vanilnoe_nebo_1',
     description: '432 123 подписчиков',
     imgURL: Twitter,
   },
   {
+    id: 1,
     name: 'Подключить Facebook',
-    // description: '432 123 подписчиков',
+    description: '',
     imgURL: Facebook,
   },
 
   {
+    id: 2,
     name: 'Vanilnoe_nebo_1',
     description: '432 123 подписчиков',
     imgURL: Instagram,
   },
   {
+    id: 3,
     name: 'Подключить Twitch',
-    // description: '432 123 подписчиков',
+    description: '',
     imgURL: Twitch,
   },
   {
+    id: 4,
     name: 'Vanilnoe_nebo_1',
     description: '432 123 подписчиков',
     imgURL: Vk,
   },
   {
+    id: 5,
     name: 'Подключить Linkedln',
-    // description: '432 123 подписчиков',
+    description: '',
     imgURL: Linkedln,
   },
 ];

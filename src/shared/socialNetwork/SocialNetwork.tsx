@@ -1,4 +1,3 @@
-import React from 'react';
 import { SOCIAL_NETWORK } from './const';
 import { Network } from './types';
 
@@ -11,7 +10,7 @@ const SocialNetwork = () => {
       <div className="ml-8 flex-1 grid grid-cols-2 gap-5">
         {SOCIAL_NETWORK.map((network: Network) => (
           <div
-            key={network.name}
+            key={network.id}
             className="flex items-center  bg-white p-8 rounded-[20px]"
           >
             <img
