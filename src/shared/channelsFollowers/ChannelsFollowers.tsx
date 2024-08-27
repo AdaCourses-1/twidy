@@ -17,7 +17,9 @@ const ChannelsFollowers = () => {
     if(!search){
       setChannelItems(CHANNEL_ITEMS)
     }else{
-      setChannelItems(CHANNEL_ITEMS.filter((item)=>item.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())));
+      setChannelItems(CHANNEL_ITEMS.filter((item)=>
+      item.name.toLocaleLowerCase()
+      .includes(search.toLocaleLowerCase())));
     }
   };
 
