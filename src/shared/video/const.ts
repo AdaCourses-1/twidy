@@ -1,41 +1,32 @@
-import { VideoGridItem } from "./types";
-import photo1 from '@/assets/Photo (1).png';
-import photo2 from "@/assets/Photo (3).png";
-import varnava from "@/assets/varnava1.png";
-import play from "@/assets/play.svg"
+import { VideoItem } from "./types";
+import Photo1 from '@/assets/Photo (1).png';
+import Photo2 from "@/assets/Photo (3).png";
+import Varnava from "@/assets/varnava1.png";
 
-export const VIDEOGRID_ITEMS: VideoGridItem[] = [
+export const VIDEO_ITEMS: VideoItem[] = [
     {   id:1,
-        thumbnail: photo1,
-        videoUrl: play,
+       thumbnail: Photo1, 
       },
       { id:2,
-        thumbnail: photo2,
-        videoUrl: play,
+        thumbnail: Photo2,
       },
       { id:3,
-        thumbnail: varnava,
-        videoUrl: play,
+        thumbnail: Varnava,
       },
       { id:4,
-        thumbnail: photo1,
-        videoUrl: play,
+        thumbnail: Photo1,
       },
       { id:5,
-        thumbnail: photo2,
-        videoUrl: play,
+        thumbnail: Photo2,
       },
       { id:6,
-        thumbnail: varnava,
-        videoUrl: play,
+        thumbnail: Varnava,
       },
       { id:7,
-        thumbnail: photo1,
-        videoUrl: play,
+        thumbnail: Photo1,
       },
       { id:8,
-        thumbnail: photo2,
-        videoUrl: play,
+        thumbnail: Photo2,
       },
       
 ];

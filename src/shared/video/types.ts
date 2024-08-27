@@ -1,5 +1,4 @@
-export interface VideoGridItem {
+export interface VideoItem {
     id: number
     thumbnail: string;
-    videoUrl: string;
 }
