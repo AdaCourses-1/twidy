@@ -19,11 +19,13 @@ const ChannelsFollowers = () => {
     if (!search){
       setChannelItems(CHANNEL_ITEMS)
     } else {
-      setChannelItems(CHANNEL_ITEMS.filter((item)=>
-      item.name.toLocaleLowerCase()
-      .includes(search.toLocaleLowerCase())));
+      setChannelItems(filterItems);
     }
   };
+
+  const filterItems = (CHANNEL_ITEMS.filter((item)=>
+  item.name.toLocaleLowerCase()
+  .includes(search.toLocaleLowerCase())))
 
   const onSearchChange = (event: React.ChangeEvent<HTMLInputElement>) =>{
     setSearch(event.target.value);
