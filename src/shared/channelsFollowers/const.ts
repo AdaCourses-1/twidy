@@ -14,7 +14,7 @@ export const CHANNEL_ITEMS: ChannelItem[]=[
     {
         id:2,
         imgUrl: img1,
-        name: 'Кристапсас Дончич',
+        name: 'Екатерина Варнава',
         price: 15,
         currency:'$',
         description: 'Участница проекта Дом-2 бла бла бла(2006-200). Соведущая.',
@@ -23,7 +23,7 @@ export const CHANNEL_ITEMS: ChannelItem[]=[
     {
         id:3,
         imgUrl: img1,
-        name: 'Кристапсас Дончич',
+        name: 'Кристина Асмус',
         price: 15,
         currency:'$',
         description: 'Участница проекта Дом-2 бла бла бла(2006-200). Соведущая.',
@@ -32,7 +32,16 @@ export const CHANNEL_ITEMS: ChannelItem[]=[
     {
         id:4,
         imgUrl: img1,
-        name: 'Кристапсас Дончич',
+        name: 'Ляйсан Утяшева',
+        price: 15,
+        currency:'$',
+        description: 'Участница проекта Дом-2 бла бла бла(2006-200). Соведущая.',
+        title: 'Актеры/Певцы',
+    },
+    {
+        id:5,
+        imgUrl: img1,
+        name: 'Александра Бортич',
         price: 15,
         currency:'$',
         description: 'Участница проекта Дом-2 бла бла бла(2006-200). Соведущая.',

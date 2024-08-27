@@ -5,7 +5,7 @@ import { CHANNEL_ITEMS } from './const';
 import { ChannelItem } from './types';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Search, X } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -13,6 +13,27 @@ interface LayoutProps {
 
 const ChannelsFollowers = (props: LayoutProps) => {
   const [activeTab, setActiveTab] = useState('follower');
+  const [channelItems,setChannelItems] = useState<ChannelItem[]>(CHANNEL_ITEMS);
+  const [search, setSearch] = useState<string>('');
+
+  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>)=>{
+    if(!search){
+      setChannelItems(CHANNEL_ITEMS)
+    }else{
+      setChannelItems(CHANNEL_ITEMS.filter((item)=>item.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())));
+    }
+  };
+
+  useEffect(() => {
+    handleSearch({
+      target: { value: '' },
+    } as React.ChangeEvent<HTMLInputElement>);
+  }, [search]);
+
+  const onSearchChange = (event: React.ChangeEvent<HTMLInputElement>) =>{
+    setSearch(event.target.value);
+
+  }
 
   return (
     <div className="pl-14">
@@ -29,7 +50,7 @@ const ChannelsFollowers = (props: LayoutProps) => {
       <div className="flex items-center max-w-[716px] max-h-[68px] pt-10">
       <Label className="relative flex-1">
           <Input
-            placeholder="Поиск"
+            placeholder="Поиск" value={search} onChange={onSearchChange}
             className="font-bold text-base text-[#4E3F6F]"
           />
           <Search
@@ -41,7 +62,7 @@ const ChannelsFollowers = (props: LayoutProps) => {
       </Label>
       </div>
       <div className="flex flex-col justify-between gap-5 pt-7">
-        {CHANNEL_ITEMS.map((channelItem: ChannelItem)=>(
+        {channelItems.map((channelItem: ChannelItem)=>(
            <div key={channelItem.id} className='flex items-center bg-[#Fff] h-max-[74px] max-w-[716px] rounded-[15px]'>
            <img className='mr-8 ml-4 mt-4 mb-4 rounded-2xl ' src={channelItem.imgUrl} alt={channelItem.title}/>
              <div className="flex  flex-col max-w-[285px]">
