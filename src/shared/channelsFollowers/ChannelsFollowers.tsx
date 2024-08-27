@@ -13,7 +13,7 @@ const ChannelsFollowers = () => {
   const [channelItems,setChannelItems] = useState<ChannelItem[]>(CHANNEL_ITEMS);
   const [search, setSearch] = useState<string>('');
 
-  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>)=>{
+  const handleSearch = ()=>{
     if(!search){
       setChannelItems(CHANNEL_ITEMS)
     }else{
@@ -22,10 +22,7 @@ const ChannelsFollowers = () => {
   };
 
   useEffect(() => {
-    handleSearch({
-      target: { value: '' },
-    } as React.ChangeEvent<HTMLInputElement>);
-  }, [search]);
+    handleSearch()}, [search]);
 
   const onSearchChange = (event: React.ChangeEvent<HTMLInputElement>) =>{
     setSearch(event.target.value);
