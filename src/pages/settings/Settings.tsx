@@ -1,4 +1,4 @@
-import Costcontact from '@/shared/costcontact/Costcontact';
+import Costcontact from '@/shared/cost-contact/Costcontact';
 import Header from '@/shared/header/Header';
 import HistoryTransaction from '@/shared/history/History';
 
