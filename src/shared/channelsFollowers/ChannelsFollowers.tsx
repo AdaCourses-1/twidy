@@ -25,7 +25,7 @@ const ChannelsFollowers = () => {
   };
 
   const filterItems = () => {
-    CHANNEL_ITEMS.filter((item) =>
+    return CHANNEL_ITEMS.filter((item) =>
       item.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())
     );
   };
