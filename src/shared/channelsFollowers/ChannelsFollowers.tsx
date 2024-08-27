@@ -7,11 +7,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Search, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
 
-const ChannelsFollowers = (props: LayoutProps) => {
+const ChannelsFollowers = () => {
   const [activeTab, setActiveTab] = useState('follower');
   const [channelItems,setChannelItems] = useState<ChannelItem[]>(CHANNEL_ITEMS);
   const [search, setSearch] = useState<string>('');
