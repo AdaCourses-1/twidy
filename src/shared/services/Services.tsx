@@ -76,7 +76,7 @@ const Services = () => {
           </div>
         )}
         {isLoading && (
-          <div className="flex flex-col items-center justify-center h-screen absolute top-[1100px] left-[1300px]">
+          <div className="flex-col items-center justify-center h-screen mt-[300px] ml-[500px]">
             <div className="absolute border-8 border-slate-100 border-l-violet-600 dark:border-gray-800 dark:border-l-gray-600 rounded-full after:rounded-full w-20 h-20 animate-spin"></div>
           </div>
         )}
