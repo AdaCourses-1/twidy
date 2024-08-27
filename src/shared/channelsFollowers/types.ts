@@ -1,4 +1,4 @@
-export interface ChannelItem{
+export interface ChannelItem {
     id: number;
     imgUrl: string; 
     name: string;

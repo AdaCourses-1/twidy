@@ -23,16 +23,15 @@ const ChannelsFollowers = () => {
     }
   };
 
-  const filterItems = (CHANNEL_ITEMS.filter((item)=>
-  item.name.toLocaleLowerCase()
-  .includes(search.toLocaleLowerCase())))
+  const filterItems = (CHANNEL_ITEMS.filter((item)=>item.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())))
 
   const onSearchChange = (event: React.ChangeEvent<HTMLInputElement>) =>{
     setSearch(event.target.value);
   }
 
   useEffect(() => {
-    handleSearch()}, [search]);
+    handleSearch()
+  }, [search]);
 
   return (
     <div className="pl-14">
