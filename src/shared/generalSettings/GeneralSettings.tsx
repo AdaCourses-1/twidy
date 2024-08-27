@@ -1,10 +1,13 @@
-
 import { useState, ChangeEvent } from 'react';
+
 import userAvatar from '@/assets/Photo (3).png';
+
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+
 import SocialNetwork from '../socialNetwork/SocialNetwork';
+
 import { UserInfo } from './types';
 import { INITIAL_USER } from './const';
 
