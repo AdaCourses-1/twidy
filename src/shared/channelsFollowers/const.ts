@@ -1,7 +1,7 @@
 import { ChannelItem } from "./types";
 import img1 from '@/assets/channel/channel-1.png';
 
-export const CHANNEL_ITEMS: ChannelItem[]=[
+export const CHANNEL_ITEMS: ChannelItem[] = [
     {
         id:1,
         imgUrl: img1,

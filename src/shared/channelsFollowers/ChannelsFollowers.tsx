@@ -1,34 +1,36 @@
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+
 import { CHANNEL_ITEMS } from './const';
 import { ChannelItem } from './types';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Search, X } from 'lucide-react';
-import { useEffect, useState } from 'react';
 
+import { Search, X } from 'lucide-react';
+
+import { useEffect, useState } from 'react';
 
 const ChannelsFollowers = () => {
   const [activeTab, setActiveTab] = useState('follower');
   const [channelItems,setChannelItems] = useState<ChannelItem[]>(CHANNEL_ITEMS);
   const [search, setSearch] = useState<string>('');
 
-  const handleSearch = ()=>{
-    if(!search){
+  const handleSearch = () => {
+    if (!search){
       setChannelItems(CHANNEL_ITEMS)
-    }else{
+    } else {
       setChannelItems(CHANNEL_ITEMS.filter((item)=>
       item.name.toLocaleLowerCase()
       .includes(search.toLocaleLowerCase())));
     }
   };
 
-  useEffect(() => {
-    handleSearch()}, [search]);
-
   const onSearchChange = (event: React.ChangeEvent<HTMLInputElement>) =>{
     setSearch(event.target.value);
   }
+
+  useEffect(() => {
+    handleSearch()}, [search]);
 
   return (
     <div className="pl-14">
@@ -59,7 +61,7 @@ const ChannelsFollowers = () => {
       <div className="flex flex-col justify-between gap-5 pt-7">
         {channelItems.map((channelItem: ChannelItem)=>(
            <div key={channelItem.id} className='flex items-center bg-[#Fff] h-max-[74px] max-w-[716px] rounded-[15px]'>
-           <img className='mr-8 ml-4 mt-4 mb-4 rounded-2xl ' src={channelItem.imgUrl} alt={channelItem.title}/>
+           <img className='mr-8 ml-4 mt-4 mb-4 rounded-2xl' src={channelItem.imgUrl} alt={channelItem.title}/>
              <div className="flex  flex-col max-w-[285px]">
                <span className='flex gap-2 text-[#4E3F6F] font-bold text-xs pb-2'>{channelItem.name}
                  <span className='text-[#FFFF] bg-[#FFA012] font-semibold text-xs rounded-[10px] pl-2 pr-2 pt-[2px] pb-[2px]'>{channelItem.price}{channelItem.currency}</span>
