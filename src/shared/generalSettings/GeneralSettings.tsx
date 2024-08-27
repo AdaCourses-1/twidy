@@ -19,11 +19,13 @@ function GeneralSettings() {
     toggleEditMode();
   };
 
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setUser((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -72,4 +74,52 @@ function GeneralSettings() {
                     <div className="mb-4">
                       <Input
                         placeholder="@username"
-                     
+                        name="handle"
+                        value={user.handle}
+                        onChange={handleInputChange}
+                        className="bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
+                      />
+                    </div>
+                    <Textarea
+                      placeholder="Введите информацию о себе"
+                      name="bio"
+                      value={user.bio}
+                      onChange={handleInputChange}
+                      className="text-base text-[#4E3F6F] bg-[#F2F2FE] pl-5 pt-4 h-36"
+                    />
+                  </div>
+                ) : (
+                  <div className="max-w-[300px] break-words">
+                    <p className="mb-4 text-[#4E3F6F] font-bold text-base">
+                      Name: {user.name}
+                    </p>
+                    <p className="mb-4 text-[#4E3F6F] font-bold text-base">
+                      Surname: {user.surname}
+                    </p>
+                    <p className="mb-4 text-[#4E3F6F] font-bold text-base">
+                      Email: {user.handle}
+                    </p>
+                    <p className="text-[#4E3F6F] font-bold text-base max-w-[300px] break-words">
+                      Additional information: {user.bio}
+                    </p>
+                  </div>
+                )}
+              </div>
+              <Button
+                className="mt-4"
+                onClick={isEditing ? handleSave : toggleEditMode}
+              >
+                {isEditing ? 'Сохранить' : 'Редактировать'}
+              </Button>
+            </aside>
+          </div>
+          <div className="flex-1 -mt-16">
+            <SocialNetwork />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default GeneralSettings;
