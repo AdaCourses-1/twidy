@@ -46,5 +46,14 @@ export const CHANNEL_ITEMS: ChannelItem[]=[
         currency:'$',
         description: 'Участница проекта Дом-2 бла бла бла(2006-200). Соведущая.',
         title: 'Актеры/Певцы',
+    },
+    {
+        id:6,
+        imgUrl: img1,
+        name: 'Анна Хилькевич',
+        price: 15,
+        currency:'$',
+        description: 'Участница проекта Дом-2 бла бла бла(2006-200). Соведущая.',
+        title: 'Актеры/Певцы',
     }
 ]
