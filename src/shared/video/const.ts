@@ -4,8 +4,8 @@ import Photo2 from "@/assets/Photo (3).png";
 import Varnava from "@/assets/varnava1.png";
 
 export const VIDEO_ITEMS: VideoItem[] = [
-    {   id:1,
-       thumbnail: Photo1, 
+      { id:1,
+        thumbnail: Photo1, 
       },
       { id:2,
         thumbnail: Photo2,
@@ -28,5 +28,4 @@ export const VIDEO_ITEMS: VideoItem[] = [
       { id:8,
         thumbnail: Photo2,
       },
-      
-];
+  ];
