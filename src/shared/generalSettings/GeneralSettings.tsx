@@ -4,17 +4,15 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import SocialNetwork from '../socialNetwork/SocialNetwork';
-import { UserInfo } from './types';
 import { INITIAL_USER } from './const';
 
 function GeneralSettings() {
   const [isEditing, setIsEditing] = useState(true);
-  const [user, setUser] = useState<UserInfo>(INITIAL_USER);
+  const [user, setUser] = useState(INITIAL_USER);
 
   const toggleEditMode = () => setIsEditing((prev) => !prev);
 
   const handleSave = () => {
-    // Логика для сохранения данных, если нужно
     toggleEditMode();
   };
   return (
