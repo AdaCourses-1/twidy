@@ -1,4 +1,4 @@
-// GeneralSettings.tsx
+
 import { useState, ChangeEvent } from 'react';
 import userAvatar from '@/assets/Photo (3).png';
 import { Button } from '@/components/ui/button';
@@ -15,7 +15,6 @@ function GeneralSettings() {
   const toggleEditMode = () => setIsEditing((prev) => !prev);
 
   const handleSave = () => {
-    // Здесь можно добавить логику для сохранения данных, если требуется
     toggleEditMode();
   };
 
