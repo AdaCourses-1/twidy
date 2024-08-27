@@ -1,7 +1,7 @@
 
 export interface ServiceItem {
-    name: string;
-    description: string;
-    price: number;
-    currency: string;
+  name: string;
+  description: string;
+  price: number;
+  currency: string;
 }
