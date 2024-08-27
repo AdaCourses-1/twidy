@@ -6,25 +6,24 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
-import SocialNetwork from '../socialNetwork/SocialNetwork';
+import SocialNetwork from '@/shared/socialNetwork/SocialNetwork';
 
 import { UserInfo } from './types';
 import { INITIAL_USER } from './const';
 
 function GeneralSettings() {
-  const [isEditing, setIsEditing] = useState<boolean>(true);
+  const [isEditing, setIsEditing] = useState(true);
   const [user, setUser] = useState<UserInfo>(INITIAL_USER);
 
   const toggleEditMode = () => setIsEditing((prev) => !prev);
 
-  const handleSave = () => {
-    toggleEditMode();
-  };
+  const handleSave = () => toggleEditMode();
 
   const handleInputChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
+
     setUser((prev) => ({
       ...prev,
       [name]: value,
@@ -52,59 +51,67 @@ function GeneralSettings() {
                   Изменить фото
                 </button>
               </div>
-              <div className="pt-5">
+              <div className="mb-5 pt-5">
                 {isEditing ? (
-                  <div>
-                    <div className="mb-5">
-                      <Input
-                        placeholder="Имя"
-                        name="name"
-                        value={user.name}
-                        onChange={handleInputChange}
-                        className="bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
-                      />
-                    </div>
-                    <div className="mb-4">
-                      <Input
-                        placeholder="Фамилия"
-                        name="surname"
-                        value={user.surname}
-                        onChange={handleInputChange}
-                        className="bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
-                      />
-                    </div>
-                    <div className="mb-4">
-                      <Input
-                        placeholder="@username"
-                        name="handle"
-                        value={user.handle}
-                        onChange={handleInputChange}
-                        className="bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
-                      />
-                    </div>
-                    <Textarea
-                      placeholder="Введите информацию о себе"
-                      name="bio"
-                      value={user.bio}
-                      onChange={handleInputChange}
-                      className="text-base text-[#4E3F6F] bg-[#F2F2FE] pl-5 pt-4 h-36"
-                    />
-                  </div>
+                  <Input
+                    placeholder="Имя"
+                    name="name"
+                    value={user.name}
+                    onChange={handleInputChange}
+                    className="bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
+                  />
                 ) : (
-                  <div className="max-w-[300px] break-words">
-                    <p className="mb-4 text-[#4E3F6F] font-bold text-base">
-                      Name: {user.name}
-                    </p>
-                    <p className="mb-4 text-[#4E3F6F] font-bold text-base">
-                      Surname: {user.surname}
-                    </p>
-                    <p className="mb-4 text-[#4E3F6F] font-bold text-base">
-                      Email: {user.handle}
-                    </p>
-                    <p className="text-[#4E3F6F] font-bold text-base max-w-[300px] break-words">
-                      Additional information: {user.bio}
-                    </p>
-                  </div>
+                  <p className="mb-4 text-[#4E3F6F] font-bold text-base break-words">
+                    Name: {user.name}
+                  </p>
+                )}
+              </div>
+
+              <div className="mb-5">
+                {isEditing ? (
+                  <Input
+                    placeholder="Фамилия"
+                    name="surname"
+                    value={user.surname}
+                    onChange={handleInputChange}
+                    className="bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
+                  />
+                ) : (
+                  <p className="mb-4 text-[#4E3F6F] font-bold text-base break-words">
+                    Surname: {user.surname}
+                  </p>
+                )}
+              </div>
+
+              <div className="mb-5">
+                {isEditing ? (
+                  <Input
+                    placeholder="@username"
+                    name="email"
+                    value={user.email}
+                    onChange={handleInputChange}
+                    className="bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
+                  />
+                ) : (
+                  <p className="mb-4 text-[#4E3F6F] font-bold text-base break-words">
+                    Email: {user.email}
+                  </p>
+                )}
+              </div>
+
+              <div>
+                {isEditing ? (
+                  <Textarea
+                    placeholder="Введите информацию о себе"
+                    name="bio"
+                    value={user.bio}
+                    onChange={handleInputChange}
+                    className="text-base text-[#4E3F6F] bg-[#F2F2FE] pl-5 pt-4 h-36"
+                  />
+                ) : (
+                  <p className="text-[#4E3F6F] font-bold text-base max-w-[300px] break-words">
+                    Additional information: {user.bio}
+                  </p>
                 )}
               </div>
               <Button

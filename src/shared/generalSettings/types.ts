@@ -1,6 +1,6 @@
 export interface UserInfo {
   name: string;
   surname: string;
-  handle: string;
+  email: string;
   bio: string;
 }
