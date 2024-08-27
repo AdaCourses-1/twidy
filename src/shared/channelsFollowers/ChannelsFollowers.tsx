@@ -32,7 +32,6 @@ const ChannelsFollowers = (props: LayoutProps) => {
 
   const onSearchChange = (event: React.ChangeEvent<HTMLInputElement>) =>{
     setSearch(event.target.value);
-
   }
 
   return (
@@ -84,4 +83,4 @@ const ChannelsFollowers = (props: LayoutProps) => {
   )
 }
 
-export default ChannelsFollowers
+export default ChannelsFollowers;
