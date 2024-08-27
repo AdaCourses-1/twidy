@@ -1,5 +1,11 @@
+import TabNavigation from '@/shared/navigate/tabNavigate';
+
 const Settings = () => {
-  return <div></div>;
+  return (
+    <div>
+      <TabNavigation />
+    </div>
+  );
 };
 
 export default Settings;
