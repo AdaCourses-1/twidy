@@ -10,6 +10,8 @@ import { Search, X } from 'lucide-react';
 
 import { useEffect, useState } from 'react';
 
+import CreateChannel from '../createChannel/CreateChannel';
+
 const ChannelsFollowers = () => {
   const [activeTab, setActiveTab] = useState('follower');
   const [channelItems, setChannelItems] =
@@ -60,7 +62,9 @@ const ChannelsFollowers = () => {
             Управления
           </TabsTrigger>
           {activeTab === 'follower' && (
-            <Button className="ml-[300px] w-max-[184px]">Создать канал</Button>
+            <CreateChannel>
+                <Button className="ml-[300px] w-max-[184px]">Создать канал</Button>
+            </CreateChannel>
           )}
         </TabsList>
         <TabsContent value="follower">
