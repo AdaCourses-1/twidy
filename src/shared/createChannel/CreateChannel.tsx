@@ -36,12 +36,12 @@ export function CreateChannel(props: LayoutProps) {
   };
 
   return (
-    <Dialog >
+    <Dialog>
       <DialogTrigger asChild>{props.children}</DialogTrigger>
       <DialogContent className="sm:max-w-[585px] pl-10 max-h-[790px]">
         <p className="text-[#4E3F6F] pt-[73px] pb-4 text-3xl font-bold">
           Создать канал  
-        </p>  
+        </p>
         <Tabs defaultValue="free">
           <TabsList className="grid grid-cols-3 ">
             <TabsTrigger
@@ -67,17 +67,22 @@ export function CreateChannel(props: LayoutProps) {
               Платный
             </TabsTrigger>
           </TabsList>
-          <TabsContent value="free" className='max-w-[454px]'>
+          <TabsContent value="free" className="max-w-[454px]">
             <div className="grid gap-5 py-4">
               <div className="flex items-center gap-7">
-                <div className='grid place-items-center color-[##8C8CB6] bg-[#F2F2FE] pl-[35px] pr-[35px] min-h-[99px] min-w-[99px] rounded-[20px]'>
-                <img className='max-h-[99px] max-w-[99px]' src={localImg ? localImg : channelImg}/>
+                <div className="grid place-items-center color-[##8C8CB6] bg-[#F2F2FE] pl-[35px] pr-[35px] min-h-[99px] min-w-[99px] rounded-[20px]">
+                  <img
+                    className="max-h-[99px] max-w-[99px]"
+                    src={localImg ? localImg : channelImg}
+                  />
                 </div>
-                <label
-                  className=" text-[#4E3F6F] text-base font-bold"
-                >
+                <label className=" text-[#4E3F6F] text-base font-bold">
                   Загрузить фото
-                  <input onChange = {handleChangeImage} type="file" className="hidden" />
+                  <input
+                    onChange={handleChangeImage}
+                    type="file"
+                    className="hidden"
+                  />
                 </label>
               </div>
               <div className="items-center gap-4">
@@ -102,8 +107,8 @@ export function CreateChannel(props: LayoutProps) {
               </div>
             </div>
           </TabsContent>
-          <TabsContent value="paid" className='max-w-[454px]'>
-          <div className="grid gap-5 py-4">
+          <TabsContent value="paid" className="max-w-[454px]">
+            <div className="grid gap-5 py-4">
               <div className="flex items-center gap-7">
                 <Label
                   htmlFor="photo"
@@ -136,7 +141,9 @@ export function CreateChannel(props: LayoutProps) {
             </div>
           </TabsContent>
           <DialogFooter className="flex justify-start">
-              <Button type="submit" className='mb-[60px]'>Создать</Button>
+            <Button type="submit" className="mb-[60px]">
+              Создать
+            </Button>
           </DialogFooter>
         </Tabs>
       </DialogContent>
