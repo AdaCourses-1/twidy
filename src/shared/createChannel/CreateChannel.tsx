@@ -36,9 +36,9 @@ export function CreateChannel(props: LayoutProps) {
   };
 
   return (
-    <Dialog>
+    <Dialog >
       <DialogTrigger asChild>{props.children}</DialogTrigger>
-      <DialogContent className="sm:max-w-[585px] pl-10">
+      <DialogContent className="sm:max-w-[585px] pl-10 max-h-[790px]">
         <p className="text-[#4E3F6F] pt-[73px] pb-4 text-3xl font-bold">
           Создать канал  
         </p>  
@@ -136,7 +136,7 @@ export function CreateChannel(props: LayoutProps) {
             </div>
           </TabsContent>
           <DialogFooter className="flex justify-start">
-              <Button type="submit" className='mb-[120px]'>Создать</Button>
+              <Button type="submit" className='mb-[60px]'>Создать</Button>
           </DialogFooter>
         </Tabs>
       </DialogContent>
