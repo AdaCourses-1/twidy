@@ -1,18 +1,19 @@
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 import {
   Dialog,
   DialogContent,
   DialogFooter,
-  DialogHeader,
-  DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@radix-ui/react-tabs';
-import { Camera } from 'lucide-react';
-import { useState } from 'react';
+
+import channelImg from '@/assets/channel/channelImg.svg';
+
+import { ChangeEvent, useState } from 'react';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -20,9 +21,18 @@ interface LayoutProps {
 
 export function CreateChannel(props: LayoutProps) {
   const [activeTab, setActiveTab] = useState('free');
+  const [localImg, setLocalImg] = useState<string | null>(null);
 
   const handleClick = (tab: string) => {
     setActiveTab(tab);
+  };
+
+  const handleChangeImage = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+
+    if (file) {
+      setLocalImg(URL.createObjectURL(file));
+    }
   };
 
   return (
@@ -33,10 +43,10 @@ export function CreateChannel(props: LayoutProps) {
           Создать канал  
         </p>  
         <Tabs defaultValue="free">
-          <TabsList className="grid w-full grid-cols-2">
+          <TabsList className="grid grid-cols-3 ">
             <TabsTrigger
               onClick={() => handleClick('free')}
-              className={`inline-flex items-center justify-center ${
+              className={`inline-flex items-center justify-center max-w-[147px] ${
                 activeTab === 'free'
                   ? 'text-[#FFFFFF] bg-[#615DFA] rounded-[20px] h-10 px-12 py-7 '
                   : 'text-[#4E3F6F]'
@@ -47,7 +57,7 @@ export function CreateChannel(props: LayoutProps) {
             </TabsTrigger>
             <TabsTrigger
               onClick={() => handleClick('paid')}
-              className={`inline-flex items-center justify-center  ${
+              className={`inline-flex items-center justify-center max-w-[147px] ${
                 activeTab === 'paid'
                   ? 'text-[#FFFFFF] bg-[#615DFA] rounded-[20px] h-10 px-12 py-7'
                   : 'text-[#4E3F6F]'
@@ -57,17 +67,18 @@ export function CreateChannel(props: LayoutProps) {
               Платный
             </TabsTrigger>
           </TabsList>
-          <TabsContent value="free">
+          <TabsContent value="free" className='max-w-[454px]'>
             <div className="grid gap-5 py-4">
               <div className="flex items-center gap-7">
-                <Camera className="color-[##8C8CB6] bg-[#F2F2FE] pl-[35px] pr-[35px] min-h-[99px] min-w-[99px] rounded-[20px]" />
-                <Label
-                  htmlFor="photo"
-                  className="text-[#4E3F6F] text-base font-bold"
+                <div className='grid place-items-center color-[##8C8CB6] bg-[#F2F2FE] pl-[35px] pr-[35px] min-h-[99px] min-w-[99px] rounded-[20px]'>
+                <img className='max-h-[99px] max-w-[99px]' src={localImg ? localImg : channelImg}/>
+                </div>
+                <label
+                  className=" text-[#4E3F6F] text-base font-bold"
                 >
                   Загрузить фото
-                </Label>
-                <Input id="name" className="hidden" />
+                  <input onChange = {handleChangeImage} type="file" className="hidden" />
+                </label>
               </div>
               <div className="items-center gap-4">
                 <Input
@@ -91,17 +102,16 @@ export function CreateChannel(props: LayoutProps) {
               </div>
             </div>
           </TabsContent>
-          <TabsContent value="paid">
+          <TabsContent value="paid" className='max-w-[454px]'>
           <div className="grid gap-5 py-4">
               <div className="flex items-center gap-7">
-                <Camera className="color-[##8C8CB6] bg-[#F2F2FE] pl-[35px] pr-[35px] min-h-[99px] min-w-[99px] rounded-[20px]" />
                 <Label
                   htmlFor="photo"
                   className="text-[#4E3F6F] text-base font-bold"
                 >
-                  Загрузить фото
+                  Платный
+                  <input type="file" className="hidden" />
                 </Label>
-                <Input id="name" className="hidden" />
               </div>
               <div className="items-center gap-4">
                 <Input
@@ -126,8 +136,8 @@ export function CreateChannel(props: LayoutProps) {
             </div>
           </TabsContent>
           <DialogFooter className="flex justify-start">
-              <Button type="submit">Создать</Button>
-            </DialogFooter>
+              <Button type="submit" className='mb-[120px]'>Создать</Button>
+          </DialogFooter>
         </Tabs>
       </DialogContent>
     </Dialog>
