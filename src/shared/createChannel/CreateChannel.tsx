@@ -2,7 +2,6 @@ import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -11,7 +10,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { TabsContent, TabsList, TabsTrigger } from '@radix-ui/react-tabs';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@radix-ui/react-tabs';
 import { Camera } from 'lucide-react';
 
 interface LayoutProps {
@@ -23,11 +22,11 @@ export function CreateChannel(props: LayoutProps) {
     <Dialog>
       <DialogTrigger asChild>{props.children}</DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
+      <Tabs defaultValue="free">
         <DialogHeader>
           <DialogTitle className="text-[#4E3F6F] pb-4 text-3xl font-bold">
             Создать канал
           </DialogTitle>
-            <div>
               <TabsList className="grid w-full grid-cols-2">
                 <TabsTrigger
                   className="inline-flex items-center justify-center text-[#FFFFFF] bg-[#615DFA] rounded-[20px] h-10 px-12 py-7 "
@@ -37,7 +36,6 @@ export function CreateChannel(props: LayoutProps) {
                 </TabsTrigger>
                 <TabsTrigger value="paid">Платный</TabsTrigger>
               </TabsList>
-            </div>
         </DialogHeader>
         <TabsContent value="free">
           <div className="grid gap-5 py-4">
@@ -76,6 +74,7 @@ export function CreateChannel(props: LayoutProps) {
         <DialogFooter className="flex justify-start">
           <Button type="submit">Создать</Button>
         </DialogFooter>
+        </Tabs>
       </DialogContent>
     </Dialog>
   );
