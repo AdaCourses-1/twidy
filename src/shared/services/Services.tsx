@@ -6,7 +6,7 @@ import { PlusIcon } from 'lucide-react';
 
 const Services = () => {
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState<Boolean>(false);
 
   const handleSwitchChange = (index: number) => {
     setActiveIndexes((prevIndexes) =>
