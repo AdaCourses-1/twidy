@@ -11,7 +11,7 @@ const Answer = () => {
         {ANSWER_ITEMS.map((answer: AnswerItem, i: number) => (
           <div key={i} className="relative max-w-[200px] ml-11">
             <img
-              src={answer.imgURL}
+              src={answer.imgUrl}
               alt={answer.title}
               className="rounded-[20px]"
             />

@@ -1,6 +1,6 @@
 export interface AnswerItem {
   title: string;
-  imgURL: string;
+  imgUrl: string;
   duration: string;
   date: string;
 }
