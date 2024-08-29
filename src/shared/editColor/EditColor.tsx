@@ -5,7 +5,7 @@ import { EditColorProps } from './EditColor.types';
 const EditColor = ({ selectedColor, onColorChange }: EditColorProps) => {
   return (
     <div className="ml-9 bg-white p-8 rounded-[20px] w-full">
-      <h4 className="text-[#4E3F6F] font-bold text-lg">Цвет сообщений</h4>
+      <h4 className="text-[#4E3F6F] font-bold text-lg mb-3">Цвет сообщений</h4>
       <div className="grid grid-cols-5 gap-4">
         {COLORS_LIST.map((colorItem: ColorsItem) => (
           <label
@@ -22,7 +22,7 @@ const EditColor = ({ selectedColor, onColorChange }: EditColorProps) => {
             />
             <span
               style={{ backgroundColor: colorItem.color }}
-              className={`block h-12 w-12 rounded-full border border-gray-300 cursor-pointer relative
+              className={`block h-12 w-12 rounded-full border border-gray-300 cursor-pointer relative border-none
                 ${
                   selectedColor === colorItem.color
                     ? 'after:absolute after:top-1/2 after:left-1/2 after:w-4 after:h-4 after:rounded-full after:bg-white after:transform after:-translate-x-1/2 after:-translate-y-1/2'
