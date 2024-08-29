@@ -12,7 +12,7 @@ import { UserInfo } from './types';
 import { INITIAL_USER } from './const';
 
 function GeneralSettings() {
-  const [isEditing, setIsEditing] = useState(true);
+  const [isEditing, setIsEditing] = useState<boolean>(true);
   const [user, setUser] = useState<UserInfo>(INITIAL_USER);
   const [localAvatar, setLocalAvatar] = useState<string | null>(null);
 
@@ -50,11 +50,11 @@ function GeneralSettings() {
             <aside className="p-4 bg-white rounded-[20px] max-w-[400px]">
               <div className="relative">
                 <img
-                  width={380} 
+                  width={380}
                   height={380}
                   src={localAvatar ? localAvatar : userAvatar}
                   alt="Дарья Небесная"
-                  className="object-cover rounded-sm h-[380px]" 
+                  className="object-cover rounded-sm h-[380px]"
                 />
                 <label className="absolute right-28 bottom-4 rounded-lg text-white bg-[#FFA012] py-1 px-5 text-base font-bold">
                   Изменить фото
@@ -108,7 +108,7 @@ function GeneralSettings() {
                   className="text-base text-[#4E3F6F] bg-[#F2F2FE] pl-5 pt-4 h-36 disabled:bg-[#F2F2FE] disabled:text-[#4E3F6F] disabled:opacity-100"
                 />
               </div>
-              
+
               <Button
                 className="mt-4"
                 onClick={isEditing ? handleSave : toggleEditMode}
