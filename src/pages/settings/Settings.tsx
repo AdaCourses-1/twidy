@@ -1,4 +1,5 @@
 import ChannelsFollowers from '@/shared/channelsFollowers/ChannelsFollowers';
+import Costcontact from '@/shared/cost-contact/Costcontact';
 import GeneralSettings from '@/shared/generalSettings/GeneralSettings';
 import Header from '@/shared/header/Header';
 import HistoryTransaction from '@/shared/history/History';
@@ -10,6 +11,7 @@ const Settings = () => {
       <GeneralSettings />
       <HistoryTransaction />
       <ChannelsFollowers />
+      <Costcontact />
     </div>
   );
 };
