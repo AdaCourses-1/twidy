@@ -15,7 +15,6 @@ const EditColor = ({ selectedColor, onColorChange }: EditColorProps) => {
           >
             <input
               type="radio"
-              name="color"
               value={colorItem.color}
               checked={selectedColor === colorItem.color}
               className="form-radio h-6 w-6 absolute opacity-0"
