@@ -4,17 +4,17 @@ import Aiza from '@/assets/Photo (1).png';
 
 import EditColor from '@/shared/editColor/EditColor';
 import EditFont from '@/shared/editFont/EditFont';
-import { Colors } from '../decoration/const';
+import { COLORS } from '@/shared/decoration/const';
 
 import { Button } from '@/components/ui/button';
 
 const DecorationMessages = () => {
-  const [messageColor, setMessageColor] = useState(Colors.blue);
+  const [messageColor, setMessageColor] = useState(COLORS.blue);
 
   return (
     <div>
       <h3
-        className={`text-[${Colors.violet}] font-bold text-4xl pl-16 pt-8 mb-8`}
+        className={`text-[${COLORS.violet}] font-bold text-4xl pl-16 pt-8 mb-8`}
       >
         Оформление
       </h3>
@@ -28,12 +28,12 @@ const DecorationMessages = () => {
             className="rounded-lg"
           />
           <p
-            className={`bg-[${Colors.lightPurple}] text-[${Colors.violet}] font-semibold text-base px-10 py-4 ml-5 mt-3 rounded-3xl rounded-bl-none`}
+            className={`bg-[${COLORS.lightPurple}] text-[${COLORS.violet}] font-semibold text-base px-10 py-4 ml-5 mt-3 rounded-3xl rounded-bl-none`}
           >
             Сообщение, которое присылает вам собеседник
           </p>
         </div>
-        <span className={`text-[${Colors.darkPurple}] text-base ml-20`}>
+        <span className={`text-[${COLORS.darkPurple}] text-base ml-20`}>
           16:36
         </span>
         <div className="flex items-center justify-end mb-2">
@@ -53,11 +53,11 @@ const DecorationMessages = () => {
         </div>
         <div className="flex justify-end mr-20 items-center">
           <span
-            className={`bg-[${Colors.accent}] text-white text-base px-3 py-1 rounded-sm`}
+            className={`bg-[${COLORS.accent}] text-white text-base px-3 py-1 rounded-sm`}
           >
             15$
           </span>
-          <span className={`text-[${Colors.darkPurple}] text-base pl-1`}>
+          <span className={`text-[${COLORS.darkPurple}] text-base pl-1`}>
             16:36
           </span>
         </div>
@@ -70,24 +70,24 @@ const DecorationMessages = () => {
         <EditFont />
       </div>
       <h3
-        className={`text-[${Colors.violet}] font-bold text-4xl pl-16 pt-8 mb-12`}
+        className={`text-[${COLORS.violet}] font-bold text-4xl pl-16 pt-8 mb-12`}
       >
         Безопасность
       </h3>
       <div className="flex gap-10 items-center mb-7">
         <Button className="ml-9">Двухфакторная аутентификация</Button>
-        <p className={`text-[${Colors.darkPurple}] font-semibold text-base`}>
+        <p className={`text-[${COLORS.darkPurple}] font-semibold text-base`}>
           Вы можете установить пароль, который будет запрашиваться после
           проверочного кода.
         </p>
       </div>
       <div className="flex gap-10 items-center">
         <Button
-          className={`ml-9 bg-[${Colors.red}] hover:bg-[${Colors.lightRed}]`}
+          className={`ml-9 bg-[${COLORS.red}] hover:bg-[${COLORS.lightRed}]`}
         >
           Отозвать код аварийного доступа
         </Button>
-        <p className={`text-[${Colors.darkPurple}] font-semibold text-base`}>
+        <p className={`text-[${COLORS.darkPurple}] font-semibold text-base`}>
           Если Ваш код был скомпрометирован, Вы можете отозвать его и установить
           новый.
         </p>
