@@ -63,7 +63,7 @@ const ChannelsFollowers = () => {
           </TabsTrigger>
           {activeTab === TAB_ITEM.followers && (
             <CreateChannel>
-                <Button className="ml-[300px] w-max-[184px]">Создать канал</Button>
+                <Button className="ml-[300px]">Создать канал</Button>
             </CreateChannel>
           )}
         </TabsList>
