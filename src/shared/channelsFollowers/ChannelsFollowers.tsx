@@ -46,7 +46,7 @@ const ChannelsFollowers = () => {
         Каналы и подписки
       </h3>
       <Tabs defaultValue={TAB_ITEM.followers}>
-        <TabsList className="w-max-[257px] items-center pb-5 pt-3">
+        <TabsList className="items-center pb-5 pt-3">
           <TabsTrigger
             className="text-[#8C8C6B] hover:text-[#4E3F6F]"
             value={TAB_ITEM.followers}

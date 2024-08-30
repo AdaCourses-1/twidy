@@ -21,7 +21,7 @@ interface LayoutProps {
 }
 
 export function CreateChannel(props: LayoutProps) {
-  const [activeTab, setActiveTab] = useState<string>(TAB_ITEM.free);
+  const [activeTab, setActiveTab] = useState<string>(TAB_ITEM.FREE);
   const [localImg, setLocalImg] = useState<string | null>(null);
 
   const handleClick = (tab: string) => {
@@ -46,21 +46,21 @@ export function CreateChannel(props: LayoutProps) {
         <Tabs defaultValue={activeTab}>
           <TabsList className="grid grid-cols-3 bg-inherit">
             <TabsTrigger
-              onClick={() => handleClick(TAB_ITEM.free)}
+              onClick={() => handleClick(TAB_ITEM.FREE)}
               className="data-[state=active]:bg-[#615DFA] data-[state=active]:text-[#FFFFFF] py-5 rounded-[20px]"
-              value={TAB_ITEM.free}
+              value={TAB_ITEM.FREE}
             >
               Бeсплатный
             </TabsTrigger>
             <TabsTrigger
-              onClick={() => handleClick(TAB_ITEM.paid)}
+              onClick={() => handleClick(TAB_ITEM.PAID)}
               className="data-[state=active]:bg-[#615DFA] data-[state=active]:text-[#FFFFFF] py-5 rounded-[20px]"
-              value={TAB_ITEM.paid}
+              value={TAB_ITEM.PAID}
             >
               Платный
             </TabsTrigger>
           </TabsList>
-          <TabsContent value={TAB_ITEM.free} className="max-w-[454px]">
+          <TabsContent value={TAB_ITEM.FREE} className="max-w-[454px]">
             <div className="grid gap-5 py-6">
               <label className="flex items-center gap-7">
                 <div className="grid place-items-center color-[##8C8CB6] bg-[#F2F2FE] pl-[35px] pr-[35px] min-h-[99px] min-w-[99px] rounded-[20px]">
@@ -70,7 +70,7 @@ export function CreateChannel(props: LayoutProps) {
                     <Camera strokeWidth={1} />
                   )}
                 </div>
-                <div className=" text-[#4E3F6F] text-base font-bold">
+                <div className="text-[#4E3F6F] text-base font-bold">
                   Загрузить фото
                   <input
                     onChange={handleChangeImage}
@@ -82,7 +82,7 @@ export function CreateChannel(props: LayoutProps) {
               <div className="items-center gap-4">
                 <Input
                   id="name"
-                  defaultValue="Название"
+                  placeholder="Название"
                   className="col-span-4 text-[#4E3F6F] text-base font-bold bg-[#F2F2FE] w-100%"
                 />
               </div>
@@ -95,13 +95,13 @@ export function CreateChannel(props: LayoutProps) {
               <div className="items-center gap-4">
                 <Input
                   id="category"
-                  defaultValue="Категория"
+                  placeholder="Категория"
                   className="col-span-4 text-[#4E3F6F] text-base font-bold bg-[#F2F2FE] w-100%"
                 />
               </div>
             </div>
           </TabsContent>
-          <TabsContent value={TAB_ITEM.paid} className="max-w-[454px]">
+          <TabsContent value={TAB_ITEM.PAID} className="max-w-[454px]">
           <div className="grid gap-5 py-6">
               <label className="flex items-center gap-7">
                 <div className="grid place-items-center color-[##8C8CB6] bg-[#F2F2FE] pl-[35px] pr-[35px] min-h-[99px] min-w-[99px] rounded-[20px]">
@@ -123,7 +123,7 @@ export function CreateChannel(props: LayoutProps) {
               <div className="items-center gap-4">
                 <Input
                   id="name"
-                  defaultValue="Название"
+                  placeholder="Название"
                   className="col-span-4 text-[#4E3F6F] text-base font-bold bg-[#F2F2FE] w-100%"
                 />
               </div>
@@ -136,14 +136,14 @@ export function CreateChannel(props: LayoutProps) {
               <div className="items-center gap-4">
                 <Input
                   id="category"
-                  defaultValue="Категория"
+                  placeholder="Категория"
                   className="col-span-4 text-[#4E3F6F] text-base font-bold bg-[#F2F2FE] w-100%"
                 />
               </div>
               <div className="items-center gap-4">
                 <Input
                   id="price"
-                  defaultValue="Цена"
+                  placeholder="Цена"
                   className="col-span-4 text-[#4E3F6F] text-base font-bold bg-[#F2F2FE] w-100%"
                 />
               </div>

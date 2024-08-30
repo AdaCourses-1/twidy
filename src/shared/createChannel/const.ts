@@ -1,4 +1,4 @@
 export const TAB_ITEM = {
-    free: 'free',
-    paid: 'paid',
+    FREE: 'free',
+    PAID: 'paid',
 };
