@@ -57,7 +57,7 @@ const GeneralMaterials = () => {
           </Tabs>
         </div>
         <button className="absolute -ml-6 top-[85px] w-[53px] h-[53px] rounded-full bg-[#615DFA] cursor-pointer">
-          <ArrowLeft className="text-white w-[25px] h-[25px] flex m-[14px]" />
+          <ArrowLeft className="text-white w-[25px] h-[25px] flex m-[14px]"/>
         </button>
       </>
     </div>
