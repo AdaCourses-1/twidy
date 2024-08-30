@@ -31,38 +31,38 @@ const Services = () => {
         {!isLoading && (
           <div className="flex gap-[30px] flex-wrap">
             {SERVICE_ITEMS.map((services: ServicesItem, index) => (
-              <div
-                key={services.name}
-                className={`max-w-[270px]  max-h-[375px] flex flex-col flex-wrap p-8 pl-0  justify-between bg-white rounded-[20px] ${
-                  activeIndexes.includes(index) ? 'opacity-100' : 'opacity-60'
-                }`}
-              >
-                <div className="ml-[37px]">
-                  <h5 className="mb-[10px] text-lg items-start font-bold text-[#4E3F6F]">
-                    {services.name}
-                  </h5>
-                  <span className="text-center text-lg font-semibold text-[#8C8CB6]">
-                    {services.description}
-                  </span>
-                </div>
-                <div className="flex ml-[37px]">
-                  <div>
-                    <p className="text-[#4E3F6F] font-bold text-4xl mt-[122px]">
-                      {services.price}
-                      {services.currency}
-                    </p>
-                    <span className="text-[#8C8CB6] font-bold text-base">
-                      Изменение
+                <label
+                  key={services.name}
+                  className={`max-w-[270px]  max-h-[375px] flex flex-col flex-wrap p-8 pl-0  justify-between bg-white rounded-[20px] ${
+                    activeIndexes.includes(index) ? 'opacity-100' : 'opacity-60'
+                  }`}
+                >
+                  <div className="ml-[37px]">
+                    <h5 className="mb-[10px] text-lg items-start font-bold text-[#4E3F6F]">
+                      {services.name}
+                    </h5>
+                    <span className="text-center text-lg font-semibold text-[#8C8CB6]">
+                      {services.description}
                     </span>
                   </div>
-                  <div>
-                    <Switch
-                      className="ml-[55px] mt-[145px]"
-                      onCheckedChange={() => handleSwitchChange(index)}
-                    />
+                  <div className="flex ml-[37px]">
+                    <div>
+                      <p className="text-[#4E3F6F] font-bold text-4xl mt-[122px]">
+                        {services.price}
+                        {services.currency}
+                      </p>
+                      <span className="text-[#8C8CB6] font-bold text-base">
+                        Изменение
+                      </span>
+                    </div>
+                    <div>
+                      <Switch
+                        className="ml-[55px] mt-[145px]"
+                        onCheckedChange={() => handleSwitchChange(index)}
+                      />
+                    </div>
                   </div>
-                </div>
-              </div>
+                </label>
             ))}
             <button
               onClick={handleAddServiceClick}
