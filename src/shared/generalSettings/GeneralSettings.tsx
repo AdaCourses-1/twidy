@@ -12,8 +12,9 @@ import { UserInfo } from './types';
 import { INITIAL_USER } from './const';
 
 function GeneralSettings() {
-  const [isEditing, setIsEditing] = useState(true);
+  const [isEditing, setIsEditing] = useState<boolean>(true);
   const [user, setUser] = useState<UserInfo>(INITIAL_USER);
+  const [localAvatar, setLocalAvatar] = useState<string | null>(null);
 
   const toggleEditMode = () => setIsEditing((prev) => !prev);
 
@@ -30,6 +31,14 @@ function GeneralSettings() {
     }));
   };
 
+  const handleChangeAvatar = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+
+    if (file) {
+      setLocalAvatar(URL.createObjectURL(file));
+    }
+  };
+
   return (
     <div className="settings-page w-full mb-20">
       <div>
@@ -43,77 +52,63 @@ function GeneralSettings() {
                 <img
                   width={380}
                   height={380}
-                  src={userAvatar}
+                  src={localAvatar ? localAvatar : userAvatar}
                   alt="Дарья Небесная"
-                  className="object-cover"
+                  className="object-cover rounded-sm h-[380px]"
                 />
-                <button className="absolute right-28 bottom-4 rounded-lg text-white bg-[#FFA012] py-1 px-5 text-base font-bold">
+                <label className="absolute right-28 bottom-4 rounded-lg text-white bg-[#FFA012] py-1 px-5 text-base font-bold">
                   Изменить фото
-                </button>
+                  <input
+                    onChange={handleChangeAvatar}
+                    type="file"
+                    className="hidden"
+                  />
+                </label>
               </div>
               <div className="mb-5 pt-5">
-                {isEditing ? (
-                  <Input
-                    placeholder="Имя"
-                    name="name"
-                    value={user.name}
-                    onChange={handleInputChange}
-                    className="bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
-                  />
-                ) : (
-                  <p className="mb-4 text-[#4E3F6F] font-bold text-base break-words">
-                    Name: {user.name}
-                  </p>
-                )}
+                <Input
+                  placeholder="Имя"
+                  name="name"
+                  value={user.name}
+                  onChange={handleInputChange}
+                  disabled={!isEditing}
+                  className="bg-[#F2F2FE] text-base font-bold text-[#4E3F6F] disabled:bg-[#F2F2FE] disabled:text-[#4E3F6F] disabled:opacity-100"
+                />
               </div>
 
               <div className="mb-5">
-                {isEditing ? (
-                  <Input
-                    placeholder="Фамилия"
-                    name="surname"
-                    value={user.surname}
-                    onChange={handleInputChange}
-                    className="bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
-                  />
-                ) : (
-                  <p className="mb-4 text-[#4E3F6F] font-bold text-base break-words">
-                    Surname: {user.surname}
-                  </p>
-                )}
+                <Input
+                  placeholder="Фамилия"
+                  name="surname"
+                  value={user.surname}
+                  onChange={handleInputChange}
+                  disabled={!isEditing}
+                  className="bg-[#F2F2FE] text-base font-bold text-[#4E3F6F] disabled:bg-[#F2F2FE] disabled:text-[#4E3F6F] disabled:opacity-100"
+                />
               </div>
 
               <div className="mb-5">
-                {isEditing ? (
-                  <Input
-                    placeholder="@username"
-                    name="email"
-                    value={user.email}
-                    onChange={handleInputChange}
-                    className="bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
-                  />
-                ) : (
-                  <p className="mb-4 text-[#4E3F6F] font-bold text-base break-words">
-                    Email: {user.email}
-                  </p>
-                )}
+                <Input
+                  placeholder="@username"
+                  name="email"
+                  value={user.email}
+                  onChange={handleInputChange}
+                  disabled={!isEditing}
+                  className="bg-[#F2F2FE] text-base font-bold text-[#4E3F6F] disabled:bg-[#F2F2FE] disabled:text-[#4E3F6F] disabled:opacity-100"
+                />
               </div>
 
               <div>
-                {isEditing ? (
-                  <Textarea
-                    placeholder="Введите информацию о себе"
-                    name="bio"
-                    value={user.bio}
-                    onChange={handleInputChange}
-                    className="text-base text-[#4E3F6F] bg-[#F2F2FE] pl-5 pt-4 h-36"
-                  />
-                ) : (
-                  <p className="text-[#4E3F6F] font-bold text-base max-w-[300px] break-words">
-                    Additional information: {user.bio}
-                  </p>
-                )}
+                <Textarea
+                  placeholder="Введите информацию о себе"
+                  name="bio"
+                  value={user.bio}
+                  onChange={handleInputChange}
+                  disabled={!isEditing}
+                  className="text-base text-[#4E3F6F] bg-[#F2F2FE] pl-5 pt-4 h-36 disabled:bg-[#F2F2FE] disabled:text-[#4E3F6F] disabled:opacity-100"
+                />
               </div>
+
               <Button
                 className="mt-4"
                 onClick={isEditing ? handleSave : toggleEditMode}
