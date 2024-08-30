@@ -1,9 +1,9 @@
-import Daria from '@/assets/Photo (3).png';
-import { Tabs, TabsList, TabsTrigger } from '@radix-ui/react-tabs';
-import { ArrowLeft } from 'lucide-react';
 import { useState } from 'react';
+import { ArrowLeft } from 'lucide-react';
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { GeneralMaterialsItemProps } from './types';
 import { GENERALMATERIALS_ITEMS } from './const';
+import Daria from '@/assets/Photo (3).png';
 
 const GeneralMaterials = () => {
   const [activeTab, setActiveTab] = useState(GENERALMATERIALS_ITEMS[0].title);
