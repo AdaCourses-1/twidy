@@ -10,7 +10,6 @@ const GeneralMaterials = () => {
 
   return (
     <div className="pt-[60px] pb-[38px] ml-[75px] flex relative">
-      <>
         <img
           src={Daria}
           className="w-[93px] h-[109px] rounded-[20px]"
@@ -33,7 +32,7 @@ const GeneralMaterials = () => {
                         : 'bg-white text-black'
                     }`}
                   >
-                    {ganeralmaterial.title} ({ganeralmaterial.counter})
+                    {ganeralmaterial.title} {ganeralmaterial.counter}
                   </TabsTrigger>
                 )
               )}
@@ -43,7 +42,6 @@ const GeneralMaterials = () => {
         <button className="absolute -ml-6 top-[85px] w-[53px] h-[53px] rounded-full bg-[#615DFA] cursor-pointer">
           <ArrowLeft className="text-white w-[25px] h-[25px] flex m-[14px]" />
         </button>
-      </>
     </div>
   );
 };
