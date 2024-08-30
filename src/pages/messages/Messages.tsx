@@ -4,7 +4,7 @@ import VideoSection from '@/shared/video/VideoSection';
 
 const Messages = () => {
   return (
-    <div className="settings-page w-full mb-20">
+    <div className="w-full mb-20">
       <Header />
       <GeneralMaterials />
       <VideoSection />
