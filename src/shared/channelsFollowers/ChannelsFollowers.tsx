@@ -10,7 +10,7 @@ import { Search, X } from 'lucide-react';
 
 import { useEffect, useState } from 'react';
 
-import CreateChannel from '../createChannel/CreateChannel';
+import CreateChannel from '@/shared/createChannel/CreateChannel';
 
 const ChannelsFollowers = () => {
   const [activeTab, setActiveTab] = useState<string>(TAB_ITEM.followers);
