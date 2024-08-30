@@ -1,8 +1,7 @@
 import { COLORS_LIST } from './const';
 import { ColorsItemProps } from './types';
-import { COLORS } from '@/shared/decoration/const';
 
-const EditColor = ({ selectedColor, onColorChange }: ColorsItemProps) => {
+const EditColor = ({ selectedColor, onColorChange }: EditColorProps) => {
   return (
     <div className="ml-9 bg-white p-8 rounded-[20px] w-full">
       <h4 className="text-[#4E3F6F] font-bold text-xl mb-3">Цвет сообщений</h4>
