@@ -143,7 +143,7 @@ export function CreateChannel(props: LayoutProps) {
               <div className="items-center gap-4">
                 <Input
                   id="price"
-                  placeholder="Цена"
+                  placeholder="Цена" type='number'
                   className="col-span-4 text-[#4E3F6F] text-base font-bold bg-[#F2F2FE] w-100%"
                 />
               </div>
