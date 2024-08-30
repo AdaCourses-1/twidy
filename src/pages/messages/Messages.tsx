@@ -1,6 +1,7 @@
-import GeneralMaterials from '@/shared/generalMaterials/GeneralMaterials';
-import Header from '@/shared/header/Header';
 import VideoSection from '@/shared/video/VideoSection';
+import Header from '@/shared/header/Header';
+import GeneralMaterials from '@/shared/generalMaterials/GeneralMaterials';
+
 
 const Messages = () => {
   return (
