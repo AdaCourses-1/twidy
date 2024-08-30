@@ -2,6 +2,8 @@ import Daria from '@/assets/Photo (3).png';
 import { Tabs, TabsList, TabsTrigger } from '@radix-ui/react-tabs';
 import { ArrowLeft } from 'lucide-react';
 import { useState } from 'react';
+import { GeneralMaterialsItem } from './type';
+import { GENERALMATERIALS_ITEMS } from './const';
 
 const GeneralMaterials = () => {
   const [activeTab, setActiveTab] = useState('Фото');
@@ -20,44 +22,26 @@ const GeneralMaterials = () => {
           </h1>
           <Tabs defaultValue="Фото" className="mt-3">
             <TabsList className="flex gap-4">
-              <TabsTrigger
-                value="Фото"
-                onClick={() => setActiveTab('Фото')}
-                className={`font-semibold size-4 w-[150px] h-[58px] rounded-[20px] ${
-                  activeTab === 'Фото'
-                    ? 'bg-[#615DFA] text-white'
-                    : 'bg-white text-black'
-                }`}
-              >
-                Фото (159)
-              </TabsTrigger>
-              <TabsTrigger
-                value="Видео"
-                onClick={() => setActiveTab('Видео')}
-                className={`w-[150px] h-[58px] rounded-[20px] ${
-                  activeTab === 'Видео'
-                    ? 'bg-[#615DFA] text-white'
-                    : 'bg-white text-black'
-                }`}
-              >
-                Видео (32)
-              </TabsTrigger>
-              <TabsTrigger
-                value="Аудио"
-                onClick={() => setActiveTab('Аудио')}
-                className={`w-[150px] h-[58px] rounded-[20px] ${
-                  activeTab === 'Аудио'
-                    ? 'bg-[#615DFA] text-white'
-                    : 'bg-white text-black'
-                }`}
-              >
-                Аудио (3)
-              </TabsTrigger>
+              {GENERALMATERIALS_ITEMS.map(
+                (ganeralmaterial: GeneralMaterialsItem) => (
+                  <TabsTrigger
+                    value={ganeralmaterial.title}
+                    onClick={() => setActiveTab(ganeralmaterial.title)}
+                    className={`font-semibold size-4 w-[150px] h-[58px] rounded-[20px] ${
+                      activeTab === ganeralmaterial.title
+                        ? 'bg-[#615DFA] text-white'
+                        : 'bg-white text-black'
+                    }`}
+                  >
+                    {ganeralmaterial.title} ({ganeralmaterial.description})
+                  </TabsTrigger>
+                )
+              )}
             </TabsList>
           </Tabs>
         </div>
         <button className="absolute -ml-6 top-[85px] w-[53px] h-[53px] rounded-full bg-[#615DFA] cursor-pointer">
-          <ArrowLeft className="text-white w-[25px] h-[25px] flex m-[14px]"/>
+          <ArrowLeft className="text-white w-[25px] h-[25px] flex m-[14px]" />
         </button>
       </>
     </div>
