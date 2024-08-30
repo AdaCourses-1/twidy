@@ -7,7 +7,7 @@ const SocialNetwork = () => {
       <h3 className="text-[#4E3F6F] font-bold text-4xl pl-10 mb-6">
         Социальные сети
       </h3>
-      <div className="ml-8 flex-1 grid grid-cols-2 gap-5">
+      <div className="ml-8 flex flex-wrap gap-5">
         {SOCIAL_NETWORK.map((network: Network) => (
           <div
             key={network.id}
