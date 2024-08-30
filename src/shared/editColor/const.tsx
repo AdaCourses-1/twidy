@@ -1,6 +1,6 @@
-import { ColorsItem } from './types';
+import { ColorsItemProps } from './types';
 
-export const COLORS_LIST: ColorsItem[] = [
+export const COLORS_LIST: ColorsItemProps[] = [
   {
     id: 0,
     name: ' Аспидно-синий',
