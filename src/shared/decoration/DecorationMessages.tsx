@@ -14,7 +14,7 @@ const DecorationMessages = () => {
   return (
     <div>
       <h3
-        className={`text-[${Colors.violet}] font-bold text-4xl pl-10 pt-8 mb-8`}
+        className={`text-[${Colors.violet}] font-bold text-4xl pl-16 pt-8 mb-8`}
       >
         Оформление
       </h3>
@@ -70,7 +70,7 @@ const DecorationMessages = () => {
         <EditFont />
       </div>
       <h3
-        className={`text-[${Colors.violet}] font-bold text-4xl pl-10 pt-8 mb-12`}
+        className={`text-[${Colors.violet}] font-bold text-4xl pl-16 pt-8 mb-12`}
       >
         Безопасность
       </h3>
