@@ -3,8 +3,7 @@ import Instagram from '@/assets/inst.svg';
 import Vk from '@/assets/vk.svg';
 import Facebook from '@/assets/Facebook.svg';
 import Twitch from '@/assets/Twitch.svg';
-import Linkedln from '@/assets/Linkedln.svg';
-
+import Linkedin from '@/assets/Linkedin.svg';
 import { Network } from './types';
 
 export const SOCIAL_NETWORK: Network[] = [
@@ -43,6 +42,6 @@ export const SOCIAL_NETWORK: Network[] = [
     id: 5,
     name: 'Подключить Linkedln',
     description: '',
-    imgURL: Linkedln,
+    imgURL: Linkedin,
   },
 ];
