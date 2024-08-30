@@ -10,6 +10,7 @@ import SocialNetwork from '@/shared/socialNetwork/SocialNetwork';
 
 import { UserInfo } from './types';
 import { INITIAL_USER } from './const';
+import DecorationMessages from '@/shared/decoration/DecorationMessages';
 
 function GeneralSettings() {
   const [isEditing, setIsEditing] = useState<boolean>(true);
@@ -119,6 +120,7 @@ function GeneralSettings() {
           </div>
           <div className="flex-1 -mt-16">
             <SocialNetwork />
+            <DecorationMessages />
           </div>
         </div>
       </div>
