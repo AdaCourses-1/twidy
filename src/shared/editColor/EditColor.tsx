@@ -1,5 +1,5 @@
 import { COLORS_LIST } from './const';
-import { ColorsItemProps } from './types';
+import { ColorsItemProps, EditColorProps } from './types';
 
 const EditColor = ({ selectedColor, onColorChange }: EditColorProps) => {
   return (
