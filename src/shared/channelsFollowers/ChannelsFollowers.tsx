@@ -3,8 +3,8 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
-import { CHANNEL_ITEMS } from './const';
-import { ChannelItem } from './types';
+import { CHANNEL_ITEMS, TAB_ITEM } from './const';
+import { ChannelItemProps} from './types';
 
 import { Search, X } from 'lucide-react';
 
@@ -13,9 +13,9 @@ import { useEffect, useState } from 'react';
 import CreateChannel from '../createChannel/CreateChannel';
 
 const ChannelsFollowers = () => {
-  const [activeTab, setActiveTab] = useState('follower');
+  const [activeTab, setActiveTab] = useState<string>(TAB_ITEM.followers);
   const [channelItems, setChannelItems] =
-    useState<ChannelItem[]>(CHANNEL_ITEMS);
+    useState<ChannelItemProps[]>(CHANNEL_ITEMS);
   const [search, setSearch] = useState<string>('');
 
   const handleSearch = () => {
@@ -45,29 +45,29 @@ const ChannelsFollowers = () => {
       <h3 className="text-[#4E3F6F] font-bold text-4xl pb-4">
         Каналы и подписки
       </h3>
-      <Tabs defaultValue="follower">
+      <Tabs defaultValue={TAB_ITEM.followers}>
         <TabsList className="w-max-[257px] items-center pb-5 pt-3">
           <TabsTrigger
             className="text-[#8C8C6B] hover:text-[#4E3F6F]"
-            value="follower"
-            onClick={() => setActiveTab('follower')}
+            value={TAB_ITEM.followers}
+            onClick={() => setActiveTab(TAB_ITEM.followers)}
           >
             Подписки
           </TabsTrigger>
           <TabsTrigger
             className="text-[#8C8C6B] hover:text-[#4E3F6F]"
-            value="manage"
-            onClick={() => setActiveTab('manage')}
+            value={TAB_ITEM.managing}
+            onClick={() => setActiveTab(TAB_ITEM.managing)}
           >
             Управления
           </TabsTrigger>
-          {activeTab === 'follower' && (
+          {activeTab === TAB_ITEM.followers && (
             <CreateChannel>
                 <Button className="ml-[300px] w-max-[184px]">Создать канал</Button>
             </CreateChannel>
           )}
         </TabsList>
-        <TabsContent value="follower">
+        <TabsContent value={TAB_ITEM.followers}>
           <div className="flex items-center max-w-[716px] max-h-[68px] pt-10">
             <Label className="relative flex-1">
               <Input
@@ -85,7 +85,7 @@ const ChannelsFollowers = () => {
             </Label>
           </div>
           <div className="flex flex-col justify-between gap-5 pt-7">
-            {channelItems.map((channelItem: ChannelItem) => (
+            {channelItems.map((channelItem: ChannelItemProps) => (
               <div
                 key={channelItem.id}
                 className="flex items-center bg-[#Fff] h-max-[74px] max-w-[716px] rounded-[15px]"
@@ -95,7 +95,7 @@ const ChannelsFollowers = () => {
                   src={channelItem.imgUrl}
                   alt={channelItem.title}
                 />
-                <div className="flex  flex-col max-w-[285px]">
+                <div className="flex flex-col max-w-[285px]">
                   <span className="flex gap-2 text-[#4E3F6F] font-bold text-xs pb-2">
                     {channelItem.name}
                     <span className="text-[#FFFF] bg-[#FFA012] font-semibold text-xs rounded-[10px] pl-2 pr-2 pt-[2px] pb-[2px]">

@@ -1,7 +1,7 @@
-import { ChannelItem } from "./types";
+import { ChannelItemProps } from "./types";
 import img1 from '@/assets/channel/channel-1.png';
 
-export const CHANNEL_ITEMS: ChannelItem[] = [
+export const CHANNEL_ITEMS: ChannelItemProps[] = [
     {
         id: 1,
         imgUrl: img1,
@@ -57,3 +57,8 @@ export const CHANNEL_ITEMS: ChannelItem[] = [
         title: 'Актеры/Певцы',
     }
 ]
+
+export const TAB_ITEM = {
+    followers: 'followers',
+    managing: 'managing',
+};
