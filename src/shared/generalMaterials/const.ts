@@ -1,16 +1,19 @@
-import { GeneralMaterialsItem } from "./type";
+import { GeneralMaterialsItemProps } from "./types";
 
-export const GENERALMATERIALS_ITEMS: GeneralMaterialsItem[] = [
+export const GENERALMATERIALS_ITEMS: GeneralMaterialsItemProps [] = [
   {
-    title: "Фото",
-    description: 159,
+    id: 0,
+    title: 'Фото',
+    counter: 159,
   },
   {
-    title: "Видео",
-    description: 32,
+    id: 1,
+    title: 'Видео',
+    counter: 32,
   },
   {
-    title: "Аудио",
-    description: 3,
+    id: 2,
+    title: 'Аудио',
+    counter: 3,
   },
-]
+];

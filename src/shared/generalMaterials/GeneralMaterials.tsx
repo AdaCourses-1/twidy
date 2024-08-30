@@ -2,11 +2,11 @@ import Daria from '@/assets/Photo (3).png';
 import { Tabs, TabsList, TabsTrigger } from '@radix-ui/react-tabs';
 import { ArrowLeft } from 'lucide-react';
 import { useState } from 'react';
-import { GeneralMaterialsItem } from './type';
+import { GeneralMaterialsItemProps } from './types';
 import { GENERALMATERIALS_ITEMS } from './const';
 
 const GeneralMaterials = () => {
-  const [activeTab, setActiveTab] = useState('Фото');
+  const [activeTab, setActiveTab] = useState(GENERALMATERIALS_ITEMS[0].title);
 
   return (
     <div className="pt-[60px] pb-[38px] ml-[75px] flex relative">
@@ -20,10 +20,10 @@ const GeneralMaterials = () => {
           <h1 className="font-bold text-[#4E3F6F] text-4xl">
             Общие материалы с Дарьей Небесной
           </h1>
-          <Tabs defaultValue="Фото" className="mt-3">
+          <Tabs defaultValue={GENERALMATERIALS_ITEMS[0].title} className="mt-3">
             <TabsList className="flex gap-4">
               {GENERALMATERIALS_ITEMS.map(
-                (ganeralmaterial: GeneralMaterialsItem) => (
+                (ganeralmaterial: GeneralMaterialsItemProps) => (
                   <TabsTrigger
                     value={ganeralmaterial.title}
                     onClick={() => setActiveTab(ganeralmaterial.title)}
@@ -33,7 +33,7 @@ const GeneralMaterials = () => {
                         : 'bg-white text-black'
                     }`}
                   >
-                    {ganeralmaterial.title} ({ganeralmaterial.description})
+                    {ganeralmaterial.title} ({ganeralmaterial.counter})
                   </TabsTrigger>
                 )
               )}
