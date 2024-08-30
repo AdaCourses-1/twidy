@@ -22,9 +22,7 @@ const EditColor = ({ selectedColor, onColorChange }: EditColorProps) => {
             />
             <span
               style={{ backgroundColor: colorItem.color }}
-              className={` bg-[${
-                colorItem.color
-              }] block h-12 w-12 rounded-full cursor-pointer relative ${
+              className={`block h-12 w-12 rounded-full cursor-pointer relative ${
                 selectedColor === colorItem.color
                   ? 'after:absolute after:top-1/2 after:left-1/2 after:w-4 after:h-4 after:rounded-full after:bg-white after:transform after:-translate-x-1/2 after:-translate-y-1/2'
                   : ''

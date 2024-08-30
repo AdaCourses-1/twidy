@@ -40,7 +40,7 @@ const DecorationMessages = () => {
         </span>
         <div className="flex items-center justify-end mb-2">
           <p
-            className={`bg-[${messageColorStyle.messageColor}] text-[#fff] font-semibold text-base px-10 py-4 mr-5 mt-3 rounded-3xl rounded-br-none`}
+            className=" text-[#fff] font-semibold text-base px-10 py-4 mr-5 mt-3 rounded-3xl rounded-br-none"
             style={messageColorStyle}
           >
             Сообщение, которое присылает вам собеседник
