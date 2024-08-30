@@ -1,6 +1,6 @@
 import { COLORS_LIST } from './const';
 import { ColorsItemProps } from './types';
-import { COLORS } from '../decoration/const';
+import { COLORS } from '@/shared/decoration/const';
 
 const EditColor = ({ selectedColor, onColorChange }: ColorsItemProps) => {
   return (
@@ -16,7 +16,7 @@ const EditColor = ({ selectedColor, onColorChange }: ColorsItemProps) => {
             <input
               type="radio"
               value={colorItem.color}
-              checked={COLORS[selectedColor]}
+              checked={selectedColor === colorItem.color}
               className="form-radio absolute opacity-0"
               onChange={() => onColorChange(colorItem.color)}
             />
