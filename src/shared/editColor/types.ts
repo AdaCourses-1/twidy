@@ -7,6 +7,6 @@ export interface ColorsItemProps {
 }
 
 export interface EditColorProps {
-  selectedColor?: string;
-  onColorChange?: (color: string) => void;
+  selectedColor: string;
+  onColorChange: (color: string) => void;
 }
