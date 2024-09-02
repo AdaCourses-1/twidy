@@ -1,7 +1,6 @@
 import Card from '@/assets/Card.png';
 import { Button } from '@/components/ui/button';
 
-import { X } from 'lucide-react';
 
 const Finance = () => {
   return (
@@ -27,7 +26,7 @@ const Finance = () => {
         <div>
           <div className="relative mb-5">
             <img src={Card} alt="card" />
-            <X className="absolute top-3 right-3 text-[#fff] cursor-pointer" />
+
             <div className="absolute top-24 left-7">
               <span className="text-[#fff] pr-2 font-bold text-base">••••</span>
               <span className="text-[#fff] font-bold text-base">3456</span>
@@ -40,7 +39,7 @@ const Finance = () => {
             <div className="relative">
               <p className="text-base font-bold text-[#4E3F6F]">Visa *3456</p>
               <p className="text-base font-bold text-[#8C8CB6]">07 / 22</p>
-              <X className="absolute top-3 right-1 text-[#000] cursor-pointer" />
+
             </div>
           </div>
           <p className="text-base font-bold text-[#4E3F6F] pl-7 pt-5 cursor-pointer">
