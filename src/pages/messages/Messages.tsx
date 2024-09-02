@@ -2,7 +2,7 @@
 // import VideoSection from "@/shared/video/VideoSection";
 // import GeneralMaterials from "@/shared/generalMaterials/GeneralMaterials";
 import Chat from '@/shared/chat';
-import Header from '@/shared/header/Header';
+// import Header from '@/shared/header/Header';
 
 const Messages = () => {
   return (
