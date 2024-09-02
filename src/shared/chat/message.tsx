@@ -1,17 +1,26 @@
 import { cn } from '@/lib/utils';
 
 const Message = (props: any) => {
-  const { isMe } = props;
+
+  const { isMe, text } = props;
 
   const messageBgColor = isMe ? 'bg-[#615DFA]' : 'bg-[#F2F2FE]';
   const position = isMe ? 'ml-auto' : 'mr-auto';
-  const padding = 'px-8 py-6';
+  const paddings = 'px-6 py-4';
   const radiuses = isMe
-    ? 'rounded-tr-[20px] rounded-tl-[20px] rounded-bl-[20px]'
-    : 'rounded-tr-[20px] rounded-tl-[20px] rounded-br-[20px]';
-    const textColor = isMe ? 'text-white' : 'text-[#4E3F6F]';
+    ? 'rounded-tl-3xl rounded-tr-lg rounded-bl-lg'
+    : 'rounded-tl-3xl rounded-tr-lg rounded-br-lg';
 
-  return <div className={cn(messageBgColor, position, padding, radiuses, textColor)}>Message</div>;
+  const textColor = isMe ? 'text-white' : 'text-[#4E3F6F]';
+
+  return (
+    <div className={cn(position)}>
+      <div className={cn(messageBgColor, paddings, radiuses, textColor)}>
+        {text}
+      </div>
+      <span>16:36</span>
+    </div>
+  );
 };
 
 export default Message;
