@@ -1,4 +1,5 @@
-import { TabProps } from './types';
+import { TabProps } from "./types";
+
 export const TAB_LIST: TabProps[] = [
   {
     label: 'Общие',

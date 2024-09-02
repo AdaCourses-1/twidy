@@ -1,48 +1,56 @@
 import { useState } from 'react';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { TabsContent } from '@radix-ui/react-tabs';
+import { TabsContent, TabsListProps } from '@radix-ui/react-tabs';
+
 import BlockingDrawer from '../blockingDrawer/BlockingDrawer';
-import { Button } from '@/components/ui/button';
-import { Separator } from '@radix-ui/react-separator';
 import ComplainDrawer from '../complainDrawer/ComplainDrawer';
 import UserServices from '../userServices/UserServices';
 import Answer from '../answer/Answer';
+import { Button } from '@/components/ui/button';
+import { Separator } from '@radix-ui/react-separator';
+
 import userAvatar from '@/assets/Photo (3).png';
 import Twitter from '@/assets/twit.svg';
 import Instagram from '@/assets/inst.svg';
 import Vk from '@/assets/vk.svg';
-import { TabsItem } from './types';
-import { TABS_LIST } from './const';
+import { cn } from '@/lib/utils';
 
-const TabNavigation = () => {
-  const [activeTab, setActiveTab] = useState('tab1');
+const TabNavigation = ({ tabList }:TabsListProps) => {
+  const [activeTab, setActiveTab] = useState(tabList.value);
 
-  const handleTabChange = (value: string) => {
-    setActiveTab(value);
-  };
+  const handleTabChange = (value: string) => setActiveTab(value);
+  const classes = 'text-[#8C8CB6] hover:text-[#4E3F6F] font-bold text-2xl';
 
   return (
-    <div className="mt-12 ml-">
+    <div className="mt-12 ml-12">
       <Tabs value={activeTab}>
-        <TabsList className="gap-4 ml-6 !bg-transparent !shadow-none !border-none">
-          {TABS_LIST.map((tabs: TabsItem) => (
-            <TabsTrigger
-              className={`${
-                activeTab === tabs.value ? '!text-[#4E3F6F]' : 'text-[#8C8CB6]'
-              } font-bold text-2xl !bg-transparent`}
-              value={tabs.value}
-              onClick={() => handleTabChange(tabs.value)}
-            >
-              <div className="relative">
-                {tabs.label}
-                {activeTab === tabs.value && (
-                  <div className="absolute left-0 bottom-[-4px] w-full h-[5px] bg-[#615DFA] rounded-lg" />
-                )}
-              </div>
-            </TabsTrigger>
+        <TabsList className="gap-4 ml-6 !bg-[transparent]">
+          {tabList?.map((tabList) => (
+           <TabsTrigger
+           className={cn(
+             classes,
+             'relative inline-block',
+             tabList.value === activeTab
+               ? '!text-[#4E3F6F] !bg-[transparent] !shadow-none !border-none'
+               : ''
+           )}
+           value={tabList.value}
+           onClick={() => handleTabChange(tabList.value)}
+         >
+           <div className="relative flex flex-col items-center">
+             {tabList.label}
+             <div
+               className={cn(
+                 'h-[5px] bg-[#615DFA] transition-transform duration-300 rounded-lg',
+                 tabList.value === activeTab ? 'w-full' : 'w-0'
+               )}
+             />
+           </div>
+         </TabsTrigger>
+         
           ))}
         </TabsList>
-        <TabsContent value="tab1">
+        <TabsContent value="general">
           <div>
             <h3 className="text-[#4E3F6F] font-bold text-4xl pl-16 pt-10 ">
               Дарья Небесная
@@ -157,10 +165,10 @@ const TabNavigation = () => {
             <div></div>
           </div>
         </TabsContent>
-        <TabsContent value="tab2">
+        <TabsContent value="contact_cost">
           <div>test2</div>
         </TabsContent>
-        <TabsContent value="tab3">
+        <TabsContent value="payment_finances">
           <div>test3</div>
         </TabsContent>
         <TabsContent value="tab4">

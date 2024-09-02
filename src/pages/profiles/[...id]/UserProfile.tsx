@@ -14,7 +14,6 @@ const UserProfile = () => {
   return (
     <div className="settings-page w-full mb-20">
       <Header />
-      
       <div>
         <h3 className="text-[#4E3F6F] font-bold text-4xl pl-16 pt-10 ">
           Дарья Небесная
