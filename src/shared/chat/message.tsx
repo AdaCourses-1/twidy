@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils';
 const Message = (props: any) => {
   const { isMe, text } = props;
 
+  // message classes
   const messageBgColor = isMe ? 'bg-[#615DFA]' : 'bg-[#F2F2FE]';
   const position = isMe ? 'ml-auto' : 'mr-auto';
   const paddings = 'px-6 py-4';
@@ -12,12 +13,15 @@ const Message = (props: any) => {
 
   const textColor = isMe ? 'text-white' : 'text-[#4E3F6F]';
 
+  // date classes
+  const datePosition = isMe ? 'block text-right' : 'block';
+
   return (
-    <div className={cn(position)}>
+    <div className={cn(position, 'pt-2')}>
       <div className={cn(messageBgColor, paddings, radiuses, textColor)}>
         {text}
       </div>
-      <span>16:36</span>
+      <span className={cn(datePosition, 'text-[#8C8CB6] mt-2 text-base font-normal')}>16:36</span>
     </div>
   );
 };
