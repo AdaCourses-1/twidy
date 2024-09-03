@@ -6,7 +6,7 @@ import { PlusIcon } from 'lucide-react';
 
 const Services = () => {
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState<Boolean>(false);
 
   const handleSwitchChange = (index: number) => {
     setActiveIndexes((prevIndexes) =>
@@ -31,7 +31,7 @@ const Services = () => {
         {!isLoading && (
           <div className="flex gap-[30px] flex-wrap">
             {SERVICE_ITEMS.map((services: ServicesItem, index) => (
-              <div
+              <label
                 key={services.name}
                 className={`max-w-[270px]  max-h-[375px] flex flex-col flex-wrap p-8 pl-0  justify-between bg-white rounded-[20px] ${
                   activeIndexes.includes(index) ? 'opacity-100' : 'opacity-60'
@@ -62,7 +62,7 @@ const Services = () => {
                     />
                   </div>
                 </div>
-              </div>
+              </label>
             ))}
             <button
               onClick={handleAddServiceClick}
