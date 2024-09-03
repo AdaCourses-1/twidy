@@ -36,17 +36,21 @@ const ChannelsFollowers = () => {
     setSearch(event.target.value);
   };
 
+  const handleDelete = (id:number) => {
+    setChannelItems((prevItems) => prevItems.filter((item) => item.id !== id));
+  }
+
   useEffect(() => {
     handleSearch();
   }, [search]);
 
   return (
-    <div className="pl-14">
+    <div className="pl-10 pt-5">
       <h3 className="text-[#4E3F6F] font-bold text-4xl pb-4">
         Каналы и подписки
       </h3>
       <Tabs defaultValue={TAB_ITEM.followers}>
-        <TabsList className="items-center pb-5 pt-3">
+        <TabsList className="items-center pb-5 pt-5">
           <TabsTrigger
             className="text-[#8C8C6B] hover:text-[#4E3F6F]"
             value={TAB_ITEM.followers}
@@ -112,7 +116,7 @@ const ChannelsFollowers = () => {
                     {channelItem.title}
                   </span>
                 </div>
-                <X className="ml-auto mr-4 pt-13 pb-13 stroke-[#8C8CB6]" />
+                <X onClick={() => handleDelete(channelItem.id)} className="ml-auto mr-4 pt-13 pb-13 stroke-[#8C8CB6]" />
               </div>
             ))}
           </div>
