@@ -1,14 +1,15 @@
-import Card from '@/assets/Card.png';
+import Card from '@/assets/card.png';
 import { Button } from '@/components/ui/button';
 
+import { X } from 'lucide-react';
 
 const Finance = () => {
   return (
     <div>
-      <h3 className="text-[#4E3F6F] font-bold text-4xl pl-16 pb-10">
+      <h3 className="text-[#4E3F6F] font-bold text-4xl pb-10 pt-10">
         Оплата и финансы
       </h3>
-      <div className="flex gap-40 pl-16 ">
+      <div className="flex gap-40 ">
         <aside>
           <span className="text-base pb-3 text-[#8C8CB6] font-bold">
             Текущий баланс
@@ -33,16 +34,17 @@ const Finance = () => {
               <span className="absolute top-12 left-1 font-bold text-base text-[#fff]">
                 06 / 21
               </span>
+              <X className="text-[#fff] absolute bottom-20 left-64 cursor-pointer" />
             </div>
           </div>
           <div className="bg-white pl-7 pr-5 py-7 rounded-[20px]">
             <div className="relative">
               <p className="text-base font-bold text-[#4E3F6F]">Visa *3456</p>
               <p className="text-base font-bold text-[#8C8CB6]">07 / 22</p>
-
+              <X className="absolute top-3 right-0 cursor-pointer" />
             </div>
           </div>
-          <p className="text-base font-bold text-[#4E3F6F] pl-7 pt-5 cursor-pointer">
+          <p className="text-base font-bold text-[#4E3F6F] pl-7 pt-5 pb-8 cursor-pointer">
             + Добавить карту
           </p>
         </div>

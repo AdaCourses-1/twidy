@@ -1,9 +1,11 @@
 import { HISTORY_ITEMS } from '@/shared/history/const';
 import { HistoryItem } from '@/shared/history/types';
+import Finance from '../finance/Finance';
 
 const HistoryTransaction = () => {
   return (
     <div className="pl-14">
+      <Finance />
       <h3 className="text-[#4E3F6F] font-bold text-4xl pl-10 pt-[17px]">
         История
       </h3>
