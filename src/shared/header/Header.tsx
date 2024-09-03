@@ -6,9 +6,12 @@ import { Separator } from '@/components/ui/separator';
 import { Search } from 'lucide-react';
 
 import AuthrizationDrawer from '../authorizationDrawer/AuthorizationDrawer';
+import { useContext } from 'react';
+import { AuthContext } from '@/context/AuthContext';
+import { UserProfile } from 'firebase/auth';
 
 const Header = () => {
-  const user = null;
+  const user = useContext<UserProfile>(AuthContext);
 
   return (
     <header className="pl-12 pr-14">
@@ -34,7 +37,7 @@ const Header = () => {
                 <AvatarFallback>EV</AvatarFallback>
               </Avatar>
               <span className="text-[#4E3F6F] font-bold text-base">
-                Екатерина Варнава
+                {user.displayName}
               </span>
               <Separator orientation="vertical" className="w-1 rounded-sm" />
               <span className="text-[#4E3F6F] font-bold text-base">Выход</span>

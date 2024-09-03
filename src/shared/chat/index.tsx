@@ -2,8 +2,20 @@ import Photo1 from '@/assets/Photo (1).png';
 import { Separator } from '@/components/ui/separator';
 import { Ellipsis } from 'lucide-react';
 import Message from './message';
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import 'react-perfect-scrollbar/dist/css/styles.css';
+import { useCollection } from '@/hooks/useCollection';
+import { useEffect,useContext } from 'react';
+import { AuthContext } from '@/context/AuthContext';
 
 const Chat = () => {
+  const { documents: messages, error } = useCollection('messages', null, 'createdAt');
+
+  const { user } = useContext(AuthContext);
+
+  useEffect(() => {
+    console.log(messages, user);
+  }, [messages]);
   return (
     <div className="rounded-md overflow-hidden min-h-[50vh] bg-white w-full px-14">
       <div className="flex items-center  bg-white py-10">
@@ -27,41 +39,25 @@ const Chat = () => {
           <Ellipsis color="#4E3F6F" size={36} />
         </div>
       </div>
-      <Separator className="h-[3px] bg-[#F2F2FE] rounded-md" />
-      <div className="flex flex-col items-baseline gap-8 max-h-[700px] overflow-y-auto">
-        <Message text="Салам, Али" />
-        <Message isMe text="И тебе не хворать, Олег" />
-        <Message />
-        <Message />
-        <Message isMe />
-        <Message isMe />
-        <Message />
-        <Message />
-        <Message />
-        <Message isMe />
-        <Message />
-        <Message />
-        <Message isMe />
-        <Message isMe />
-        <Message />
-        <Message />
-        <Message />
-        <Message isMe />
-        <Message />
-        <Message />
-        <Message isMe />
-        <Message isMe />
-        <Message />
-        <Message />
-        <Message />
-        <Message isMe />
-        <Message />
-        <Message />
-        <Message isMe />
-        <Message isMe />
-        <Message />
-        <Message />
-      </div>
+      <Separator className="h-[3px] bg-[#F2F2FE] rounded-md"/>
+      <PerfectScrollbar options={{
+        wheelSpeed: 1,
+        wheelPropagation: true,
+        swipeEasing: true,
+        minScrollbarLength: 20,
+        maxScrollbarLength: 60,
+        useBothWheelAxes: true,
+      }} 
+      className="flex flex-col items-baseline gap-8 min-h-[50vg] max-h-[700px] overflow-y-auto">
+        {messages?.map((message) => (
+          <Message
+            key={message.id}
+            text={message.text}
+            isMe={message.author === user?.uid}
+          />
+        ))}
+      </PerfectScrollbar>
+      {error && error}
     </div>
   );
 };

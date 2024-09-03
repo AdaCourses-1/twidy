@@ -12,12 +12,14 @@ const Message = (props: any) => {
 
   const textColor = isMe ? 'text-white' : 'text-[#4E3F6F]';
 
+  const datePosition = isMe ? 'block text-right' : '';
+
   return (
-    <div className={cn(position)}>
+    <div className={cn(position, 'pt-2')}>
       <div className={cn(messageBgColor, paddings, radiuses, textColor)}>
         {text}
       </div>
-      <span>16:36</span>
+      <span className={cn(datePosition, 'text-[#8C8CB6] mt-2 text-base font-normal')}>16:36</span>
     </div>
   );
 };
