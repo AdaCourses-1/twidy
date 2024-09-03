@@ -36,7 +36,7 @@ const ChannelsFollowers = () => {
     setSearch(event.target.value);
   };
 
-  const handleDelete = (id : number) => {
+  const handleDelete = (id:number) => {
     setChannelItems((prevItems) => prevItems.filter((item) => item.id !== id));
   }
 
