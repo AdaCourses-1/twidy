@@ -3,7 +3,7 @@ import { HistoryItem } from '@/shared/history/types';
 
 const HistoryTransaction = () => {
   return (
-    <div className="pl-14">
+    <div className="pl-10 pt-5">
       <h3 className="text-[#4E3F6F] font-bold text-4xl pl-10 pt-[17px]">
         История
       </h3>
