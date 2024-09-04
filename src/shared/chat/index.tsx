@@ -2,6 +2,8 @@ import Photo1 from '@/assets/Photo (1).png';
 import { Separator } from '@/components/ui/separator';
 import { Ellipsis } from 'lucide-react';
 import Message from './message';
+import 'react-perfect-scrollbar/dist/css/styles.css';
+import PerfectScrollbar from 'react-perfect-scrollbar';
 
 const Chat = () => {
   return (
@@ -28,7 +30,7 @@ const Chat = () => {
         </div>
       </div>
       <Separator className="h-[3px] bg-[#F2F2FE] rounded-md" />
-      <div className="flex flex-col items-baseline gap-8 max-h-[700px] overflow-y-auto">
+      <PerfectScrollbar className="flex flex-col items-baseline gap-8 max-h-[700px] overflow-y-auto smooth">
         <Message text="Салам, Али" />
         <Message isMe text="И тебе не хворать, Олег" />
         <Message />
@@ -61,7 +63,7 @@ const Chat = () => {
         <Message isMe />
         <Message />
         <Message />
-      </div>
+      </PerfectScrollbar>
     </div>
   );
 };
