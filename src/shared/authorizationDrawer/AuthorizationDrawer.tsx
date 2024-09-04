@@ -9,30 +9,12 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { useState } from 'react';
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
 export default function AuthorizationDrawer(props: LayoutProps) {
-
-  const [displayName, setDisplayName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [avatar, setAvatar] = useState<File>();
-
-  const handleSingUp = async () => {
-    if (!avatar) return;
-
-    await signup({
-      displayName,
-      email,
-      password,
-      avatar,
-    });
-  };
-
   return (
     <Sheet>
       <SheetTrigger asChild>{props.children}</SheetTrigger>
@@ -77,9 +59,8 @@ export default function AuthorizationDrawer(props: LayoutProps) {
                 Имя
               </Label>
               <Input
-                onChange={(e) => setDisplayName(e.target.value)}
                 id="name"
-                value={displayName}
+                value="Жылдыз"
                 className=" bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
               />
             </div>
@@ -88,9 +69,8 @@ export default function AuthorizationDrawer(props: LayoutProps) {
                 Почта
               </Label>
               <Input
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
                 id="email"
+                value="Jyldyzakylbekova@gamil.com"
                 className=" bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
               />
             </div>
@@ -99,29 +79,14 @@ export default function AuthorizationDrawer(props: LayoutProps) {
                 Пароль
               </Label>
               <Input
-                onChange={(e) => setPassword(e.target.value)}
-                value={password}
                 id="password"
+                value="ice-capuchino"
                 className=" bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
-              />
-            </div>
-            <div className="mb-4">
-              <Label htmlFor="avavtar" className="inline-block mb-2">
-                Аватарка
-              </Label>
-              <Input
-                onChange={(e) => setAvatar(e.target.files?.[0])}
-                value={avatar}
-                id="avatar"
-                className=" bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
-                type="file"
               />
             </div>
             <SheetFooter>
               <SheetClose asChild>
-                <Button type="submit" onClick={handleSingUp}>
-                  Регистрация
-                </Button>
+                <Button type="submit">Регистрация</Button>
               </SheetClose>
             </SheetFooter>
           </TabsContent>
