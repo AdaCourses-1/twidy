@@ -8,19 +8,19 @@ import {
 } from "firebase/firestore";
 import { db } from "../firebase/config";
 
-export const useFirestore = (collectionName) => {
+export const useFirestore = (collectionName: any) => {
   let ref = collection(db, collectionName);
 
-  const addDocument = async (doc) => {
+  const addDocument = async (doc: any) => {
     try {
       const createdAt = Timestamp.fromDate(new Date());
       await addDoc(ref, { ...doc, createdAt });
-    } catch (err) {
+    } catch (err:any) {
       console.log(err.message);
     }
   };
 
-  const deleteDocument = async (id) => {
+  const deleteDocument = async (id: number) => {
     try {
       const docRef = doc(db, collectionName, id);
       await deleteDoc(docRef);

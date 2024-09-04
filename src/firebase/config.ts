@@ -5,19 +5,19 @@ import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCQp2sVZjmqmdDRCOLXX2whMykGMIhrHpY",
-  authDomain: "twidy-b2a1f.firebaseapp.com",
-  projectId: "twidy-b2a1f",
-  storageBucket: "twidy-b2a1f.appspot.com",
-  messagingSenderId: "826100636009",
-  appId: "1:826100636009:web:a9dcc5c7b047fe047145f8"
+  apiKey: "AIzaSyDIZ8e0pNb-BLvSWnm7yNhGj1a-BHxjF6I",
+  authDomain: "twidy-47d99.firebaseapp.com",
+  projectId: "twidy-47d99",
+  storageBucket: "twidy-47d99.appspot.com",
+  messagingSenderId: "575761208994",
+  appId: "1:575761208994:web:1754637d50337d0a03a9fb"
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig); // Иниализация проекта Firebase
+const app = initializeApp(firebaseConfig); // инициализация проекта Firesbase
 
-const db = getFirestore(); // Инициализация базы данных Firestore
-const auth = getAuth(app); // Инициализация системы верификации
-const storage = getStorage(app); // Инициализация хранилища файлов
+const db = getFirestore(); //  инициализация и подключение к бд
+const auth = getAuth(app); // инициализация аутентификации(авторизации системы верификации)
+const storage = getStorage(app);// инициализация хранилища
 
 export { db, auth, storage };

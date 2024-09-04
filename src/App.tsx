@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import Home from './pages/home/Home';
 import Messages from './pages/messages/Messages';
 import Settings from './pages/settings/Settings';
@@ -9,7 +9,7 @@ import { useContext } from 'react';
 import { AuthContext } from './context/AuthContext';
 
 function App() {
-  const { authIsReady } = useContext(AuthContext);
+  const { authIsReady, user } = useContext(AuthContext);
 
   return (
     <div className="pt-10 bg-[#F2F2FE] min-h-[100vh] max-w-[1440px] mx-auto flex">
@@ -17,10 +17,10 @@ function App() {
         <>
           <Sidebar />
           <Routes>
-            <Route path="/" Component={Home} />
-            <Route path="/messages" Component={Messages} />
-            <Route path="/settings" Component={Settings} />
-            <Route path="/users/:id" Component={UserProfile} />
+            <Route path="/" element={<Home/>} />
+            <Route path="/messages" element={user ? <Messages/> : <Navigate to = "/" replace/>}/>
+            <Route path="/settings" element={user ? <Settings/> : <Navigate to = "/" replace/>} />
+            <Route path="/users/:id" element={<UserProfile/>} />
           </Routes>
         </>
       )}

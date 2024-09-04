@@ -39,7 +39,7 @@ export function CreateChannel(props: LayoutProps) {
   return (
     <Dialog>
       <DialogTrigger asChild>{props.children}</DialogTrigger>
-      <DialogContent className="max-h-[790px]">
+      <DialogContent>
         <DialogTitle className="text-[#4E3F6F] pt-[73px] pb-4 text-3xl font-bold">
           Создать канал  
         </DialogTitle>
@@ -60,7 +60,7 @@ export function CreateChannel(props: LayoutProps) {
               Платный
             </TabsTrigger>
           </TabsList>
-          <TabsContent value={TAB_ITEM.FREE} className="max-w-[454px]">
+          <TabsContent value={TAB_ITEM.FREE}>
             <div className="grid gap-5 py-6">
               <label className="flex items-center gap-7">
                 <div className="grid place-items-center color-[##8C8CB6] bg-[#F2F2FE] pl-[35px] pr-[35px] min-h-[99px] min-w-[99px] rounded-[20px]">
@@ -101,7 +101,7 @@ export function CreateChannel(props: LayoutProps) {
               </div>
             </div>
           </TabsContent>
-          <TabsContent value={TAB_ITEM.PAID} className="max-w-[454px]">
+          <TabsContent value={TAB_ITEM.PAID}>
           <div className="grid gap-5 py-6">
               <label className="flex items-center gap-7">
                 <div className="grid place-items-center color-[##8C8CB6] bg-[#F2F2FE] pl-[35px] pr-[35px] min-h-[99px] min-w-[99px] rounded-[20px]">

@@ -7,14 +7,14 @@ import { doc, updateDoc } from "firebase/firestore";
 export const useLogout = () => {
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
-  const { dispatch } = useContext(AuthContext);
+  const { dispatch } = useContext<any>(AuthContext);
 
   const logout = async () => {
     setError(null);
     setIsPending(true);
 
     try {
-      const { uid } = auth.currentUser;
+      const { uid } = auth.currentUser as any;
 
       const userDoc = doc(db, "users", uid);
       
@@ -22,7 +22,7 @@ export const useLogout = () => {
       await signOut(auth);
 
       dispatch({ type: "LOGOUT" });
-    } catch (err) {
+    } catch (err: any) {
       setError(err.message);
     } finally {
       setIsPending(false);
