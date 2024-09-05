@@ -2,10 +2,18 @@ import Photo1 from '@/assets/Photo (1).png';
 import { Separator } from '@/components/ui/separator';
 import { Ellipsis } from 'lucide-react';
 import Message from './message';
-import PerfectScrollbar from 'react-perfect-scrollbar';
-import 'react-perfect-scrollbar/dist/css/styles.css';
 
 const Chat = () => {
+  const { documents: messages, error } = useCollection(
+    'messages',
+    null,
+    'createdAt'
+  );
+  const { user } = useContext(AuthContext);
+
+  useEffect(() => {
+    console.log(messages, user);
+  }, [messages]);
   return (
     <div className="rounded-md overflow-hidden min-h-[50vh] bg-white w-full px-14">
       <div className="flex items-center  bg-white py-10">
@@ -30,8 +38,7 @@ const Chat = () => {
         </div>
       </div>
       <Separator className="h-[3px] bg-[#F2F2FE] rounded-md" />
-
-      <PerfectScrollbar className="flex flex-col items-baseline gap-8 max-h-[700px] overflow-y-auto pr-4">
+      <div className="flex flex-col items-baseline gap-8 max-h-[700px] overflow-y-auto">
         <Message text="Салам, Али" />
         <Message isMe text="И тебе не хворать, Олег" />
         <Message />
@@ -64,7 +71,7 @@ const Chat = () => {
         <Message isMe />
         <Message />
         <Message />
-      </PerfectScrollbar>
+      </div>
     </div>
   );
 };

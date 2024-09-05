@@ -9,29 +9,17 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { useSignup } from '@/hooks/useSignup';
-import { useState } from 'react';
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
 export default function AuthorizationDrawer(props: LayoutProps) {
-  const [displayName, setDisplayName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [avatar, setAvatar] = useState<File | null>(null);
-  const { signup } = useSignup();
-
-  const handleSignup = async () => {
-    if (!avatar) return;
-
-    await signup({ email, password, displayName, avatar });
-  };
-
   return (
-    <Sheet>
-      <SheetTrigger asChild>{props.children}</SheetTrigger>
+    <Sheet open={isOpen}>
+      <SheetTrigger onClick={handleOpen} asChild>
+        {props.children}
+      </SheetTrigger>
       <SheetContent className="pt-12">
         <Tabs defaultValue="sign-in">
           <TabsList className="grid w-full grid-cols-2">
@@ -45,8 +33,8 @@ export default function AuthorizationDrawer(props: LayoutProps) {
                 Почта
               </Label>
               <Input
-                value="email"
                 id="email"
+                value="Jyldyzakylbekova@gamil.com"
                 className=" bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
               />
             </div>
@@ -55,14 +43,20 @@ export default function AuthorizationDrawer(props: LayoutProps) {
                 Пароль
               </Label>
               <Input
-                value="password"
                 id="password"
+                value="ice-capuchino"
                 className=" bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
               />
             </div>
             <SheetFooter>
               <SheetClose asChild>
-                <Button type="submit">Войти</Button>
+                <Button
+                  onClick={handleLogin}
+                  disabled={isLoading}
+                  type="submit"
+                >
+                  {isLoading ? <Spinner /> : 'Войти'}
+                </Button>
               </SheetClose>
             </SheetFooter>
           </TabsContent>
@@ -73,9 +67,10 @@ export default function AuthorizationDrawer(props: LayoutProps) {
                 Имя
               </Label>
               <Input
-                id="name"
                 onChange={(e) => setDisplayName(e.target.value)}
                 value={displayName}
+                id="name"
+                value="Жылдыз"
                 className=" bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
               />
             </div>
@@ -84,9 +79,10 @@ export default function AuthorizationDrawer(props: LayoutProps) {
                 Почта
               </Label>
               <Input
-                id="email"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
+                id="email"
+                value="Jyldyzakylbekova@gamil.com"
                 className=" bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
               />
             </div>
@@ -95,10 +91,12 @@ export default function AuthorizationDrawer(props: LayoutProps) {
                 Пароль
               </Label>
               <Input
-                id="password"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
+                id="password"
+                value="ice-capuchino"
                 className=" bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
+                type="file"
               />
               <Input
                 onChange={(e) => setAvatar(e.target.files?.[0] || null)}
@@ -109,7 +107,7 @@ export default function AuthorizationDrawer(props: LayoutProps) {
             </div>
             <SheetFooter>
               <SheetClose asChild>
-                <Button type="submit" onClick={handleSignup}>Регистрация</Button>
+                <Button type="submit">Регистрация</Button>
               </SheetClose>
             </SheetFooter>
           </TabsContent>

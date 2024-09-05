@@ -21,14 +21,7 @@ const Message = (props: any) => {
       <div className={cn(messageBgColor, paddings, radiuses, textColor)}>
         {text}
       </div>
-      <span
-        className={cn(
-          datePosition,
-          'text-[#8C8CB6] mt-2 text-base font-normal'
-        )}
-      >
-        16:36
-      </span>
+      <span>16:36</span>
     </div>
   );
 };
