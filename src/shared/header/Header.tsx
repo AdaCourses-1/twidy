@@ -10,7 +10,7 @@ import { useContext } from 'react';
 import { AuthContext } from '@/context/AuthContext';
 
 const Header = () => {
-  const user = useContext(AuthContext)  as boolean;
+  const user = useContext(AuthContext);
 
   return (
     <header className="pl-12 pr-14">
