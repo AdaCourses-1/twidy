@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/sheet';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useSignup } from '@/hooks/useSignup';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLogin } from '@/hooks/useLogin';
 import Spinner from '@/components/ui/spinner';
 
@@ -19,19 +19,19 @@ interface LayoutProps {
 }
 
 export default function AuthorizationDrawer(props: LayoutProps) {
-  const [displayName, setDisplayName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [displayName, setDisplayName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
   const [avatar, setAvatar] = useState<File>();
-  const [isLoading, setIsLoading] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [activeTab, setActiveTab] = useState<string>('sign-in');
+  const [error, setError] = useState<string>('');
 
-  const { signup } = useSignup();
-  const { login } = useLogin();
+  const { signup, error: signupError } = useSignup();
+  const { login, error: loginError } = useLogin();
 
-  const handleOpen = () => {
-    setIsOpen(true);
-  };
+  const handleOpen = () => setIsOpen(true);
 
   const handleClose = () => {
     setIsOpen(false);
@@ -40,8 +40,14 @@ export default function AuthorizationDrawer(props: LayoutProps) {
 
   const handleLogin = async () => {
     setIsLoading(true);
-    await login(email, password);
-    handleClose();
+
+    const res = await login(email, password);
+
+    setError(loginError);
+
+    if (res) return handleClose();
+
+    setIsLoading(false);
   };
 
   const handleSignUp = async () => {
@@ -49,14 +55,30 @@ export default function AuthorizationDrawer(props: LayoutProps) {
 
     setIsLoading(true);
 
-    await signup({
+    const res = await signup({
       displayName,
       email,
       password,
       avatar,
     });
-    handleClose();
+
+    setError(signupError as string);
+
+    if (res) {
+      handleClose();
+      return;
+    }
+
+    setIsLoading(true);
   };
+
+  useEffect(() => {
+    setEmail('');
+    setPassword('');
+    setDisplayName('');
+    setAvatar(undefined);
+    setError('')
+  }, [activeTab]);
 
   return (
     <Sheet open={isOpen}>
@@ -66,8 +88,18 @@ export default function AuthorizationDrawer(props: LayoutProps) {
       <SheetContent className="pt-12">
         <Tabs defaultValue="sign-in">
           <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="sign-in">Авторизация</TabsTrigger>
-            <TabsTrigger value="sign-up">Регистрация</TabsTrigger>
+            <TabsTrigger
+              value="sign-in"
+              onClick={() => setActiveTab('sign-in')}
+            >
+              Авторизация
+            </TabsTrigger>
+            <TabsTrigger
+              value="sign-up"
+              onClick={() => setActiveTab('sign-up')}
+            >
+              Регистрация
+            </TabsTrigger>
           </TabsList>
           {/* Здесь Авторизация */}
           <TabsContent value="sign-in">
@@ -93,6 +125,7 @@ export default function AuthorizationDrawer(props: LayoutProps) {
                 className="bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
               />
             </div>
+            {loginError && <p className="text-red-500">{error}</p>}
             <SheetFooter>
               <SheetClose asChild>
                 <Button
@@ -151,6 +184,7 @@ export default function AuthorizationDrawer(props: LayoutProps) {
                 type="file"
               />
             </div>
+            {signupError && <p className="text-red-500">{error}</p>}
             <SheetFooter>
               <SheetClose asChild>
                 <Button
