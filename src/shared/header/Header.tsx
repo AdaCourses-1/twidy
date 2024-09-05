@@ -8,9 +8,11 @@ import { Search } from 'lucide-react';
 import AuthrizationDrawer from '../authorizationDrawer/AuthorizationDrawer';
 import { useContext } from 'react';
 import { AuthContext } from '@/context/AuthContext';
+import { useLogout } from '@/hooks/useLogout';
 
 const Header = () => {
   const { user } = useContext(AuthContext);
+  const { logout } = useLogout();
 
   return (
     <header className="pl-12 pr-14">
@@ -31,7 +33,7 @@ const Header = () => {
           {user && (
             <>
               <Avatar>
-                <AvatarImage src={user.photoURL} className='object-cover'/>
+                <AvatarImage src={user.photoURL} className="object-cover" />
                 <div></div>
                 <AvatarFallback>EV</AvatarFallback>
               </Avatar>
@@ -39,7 +41,12 @@ const Header = () => {
                 {user.displayName}
               </span>
               <Separator orientation="vertical" className="w-1 rounded-sm" />
-              <span className="text-[#4E3F6F] font-bold text-base">Выход</span>
+              <span
+                onClick={logout}
+                className="text-[#4E3F6F] font-bold text-base"
+              >
+                Выход
+              </span>
             </>
           )}
           {!user && (
