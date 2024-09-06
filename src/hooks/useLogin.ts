@@ -25,7 +25,6 @@ export const useLogin = () => {
       await updateDoc(userDoc, { online: true });
 
       dispatch({ type: 'LOGIN', payload: response.user });
-      return response;
     } catch (err: any) {
       setError(err.message);
     } finally {
