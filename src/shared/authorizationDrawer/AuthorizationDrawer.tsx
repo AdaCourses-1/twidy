@@ -9,12 +9,75 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useSignup } from '@/hooks/useSignup';
+import { useEffect, useState } from 'react';
+import { useLogin } from '@/hooks/useLogin';
+import Spinner from '@/components/ui/spinner';
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
 export default function AuthorizationDrawer(props: LayoutProps) {
+  const [displayName, setDisplayName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [avatar, setAvatar] = useState<File>();
+  const [isLoading, setIsLoading] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState<string>('sign-in');
+  const [error, setError] = useState<string>('');
+
+  const { signup, error: signupError } = useSignup();
+  const { login, error: loginError } = useLogin();
+
+  const handleOpen = () => {
+    setIsOpen(true);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+    setIsLoading(false);
+  };
+
+  const handleLogin = async () => {
+    setIsLoading(true);
+    const res = await login(email, password);
+
+    if (res) return handleClose();
+
+    setIsLoading(false);
+  };
+
+  const handleSignUp = async () => {
+    if (!avatar) return;
+
+    setIsLoading(true);
+
+    const res = await signup({
+      displayName,
+      email,
+      password,
+      avatar,
+    });
+
+    setError(signupError as string);
+
+    if (res) {
+      handleClose();
+      return;
+    }
+
+    setIsLoading(true);
+  };
+
+  useEffect(() => {
+    setEmail('');
+    setPassword('');
+    setDisplayName('');
+    setAvatar(undefined);
+  }, [activeTab]);
+
   return (
     <Sheet open={isOpen}>
       <SheetTrigger onClick={handleOpen} asChild>
@@ -23,8 +86,18 @@ export default function AuthorizationDrawer(props: LayoutProps) {
       <SheetContent className="pt-12">
         <Tabs defaultValue="sign-in">
           <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="sign-in">Авторизация</TabsTrigger>
-            <TabsTrigger value="sign-up">Регистрация</TabsTrigger>
+            <TabsTrigger
+              value="sign-in"
+              onClick={() => setActiveTab('sign-in')}
+            >
+              Авторизация
+            </TabsTrigger>
+            <TabsTrigger
+              value="sign-up"
+              onClick={() => setActiveTab('sign-up')}
+            >
+              Регистрация
+            </TabsTrigger>
           </TabsList>
           {/* Здесь Авторизация */}
           <TabsContent value="sign-in">
@@ -33,8 +106,9 @@ export default function AuthorizationDrawer(props: LayoutProps) {
                 Почта
               </Label>
               <Input
+                onChange={(e) => setEmail(e.target.value)}
                 id="email"
-                value="Jyldyzakylbekova@gamil.com"
+                placeholder="Jyldyzakylbekova@gamil.com"
                 className=" bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
               />
             </div>
@@ -43,11 +117,13 @@ export default function AuthorizationDrawer(props: LayoutProps) {
                 Пароль
               </Label>
               <Input
+                onChange={(e) => setPassword(e.target.value)}
                 id="password"
-                value="ice-capuchino"
-                className=" bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
+                placeholder="ice-capuchino"
+                className="bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
               />
             </div>
+            {loginError && <p className="text-red-500">{error}</p>}
             <SheetFooter>
               <SheetClose asChild>
                 <Button
@@ -70,7 +146,6 @@ export default function AuthorizationDrawer(props: LayoutProps) {
                 onChange={(e) => setDisplayName(e.target.value)}
                 value={displayName}
                 id="name"
-                value="Жылдыз"
                 className=" bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
               />
             </div>
@@ -82,7 +157,6 @@ export default function AuthorizationDrawer(props: LayoutProps) {
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 id="email"
-                value="Jyldyzakylbekova@gamil.com"
                 className=" bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
               />
             </div>
@@ -94,20 +168,30 @@ export default function AuthorizationDrawer(props: LayoutProps) {
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
                 id="password"
-                value="ice-capuchino"
-                className=" bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
-                type="file"
+                className="bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
               />
+            </div>
+            <div className="mb-4">
+              <Label htmlFor="avatar" className="inline-block mb-2">
+                Аватарка
+              </Label>
               <Input
-                onChange={(e) => setAvatar(e.target.files?.[0] || null)}
+                onChange={(e) => setAvatar(e.target.files?.[0])}
                 id="avatar"
                 className=" bg-[#F2F2FE] text-base font-bold text-[#4E3F6F]"
                 type="file"
               />
             </div>
+            {signupError && <p className="text-red-500">{error}</p>}
             <SheetFooter>
               <SheetClose asChild>
-                <Button type="submit">Регистрация</Button>
+                <Button
+                  type="submit"
+                  disabled={isLoading}
+                  onClick={handleSignUp}
+                >
+                  {isLoading ? <Spinner /> : 'Зарегистрироваться'}
+                </Button>
               </SheetClose>
             </SheetFooter>
           </TabsContent>
