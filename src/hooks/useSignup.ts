@@ -49,6 +49,8 @@ export const useSignup = () => {
       });
 
       dispatch({ type: 'LOGIN', payload: response.user });
+      
+      return response
     } catch (err: any) {
       setError(err.message);
     } finally {

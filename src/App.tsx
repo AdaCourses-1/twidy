@@ -17,10 +17,10 @@ function App() {
         <>
           <Sidebar />
           <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="/messages" element={user ? <Messages/> : <Navigate to = "/" replace/>}/>
-            <Route path="/settings" element={user ? <Settings/> : <Navigate to = "/" replace/>} />
-            <Route path="/users/:id" element={<UserProfile/>} />
+            <Route path="/" element={<Home />} />
+            <Route path="/messages" element={user ? <Messages /> : <Navigate to="/" replace/>} />
+            <Route path="/settings" element={user ? <Settings /> : <Navigate to="/" replace/>} />
+            <Route path="/users/:id" element={<UserProfile />} />
           </Routes>
         </>
       )}
