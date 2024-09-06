@@ -5,20 +5,47 @@ import Message from './message';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import { useCollection } from '@/hooks/useCollection';
-import { useContext } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { AuthContext } from '@/context/AuthContext';
+import { useFirestore } from '@/hooks/useFirestore'; // Импорт хука
 
 const Chat = () => {
-  const { documents: messages, error } = useCollection(
-    'messages',
-    null,
-    'createdAt'
-  );
+  const { documents: messages, error } = useCollection('messages', null, 'createdAt');
   const { user } = useContext(AuthContext);
+  const { addDocument } = useFirestore('messages'); // Используем хук
+  const [messageText, setMessageText] = useState(''); // Состояние для хранения текста сообщения
+  const messagesEndRef = useRef<HTMLDivElement>(null); // Реф для контейнера сообщений
+
+  // Функция для прокрутки вниз
+  const scrollToBottom = () => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Прокручиваем вниз при добавлении новых сообщений
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
+  const handleSendMessage = async () => {
+    if (messageText.trim() === '') return; // Не отправляем пустое сообщение
+
+    try {
+      await addDocument({
+        author: user.uid, // Идентификатор пользователя
+        text: messageText, // Текст сообщения
+        createdAt: new Date() // Дата создания сообщения
+      });
+      setMessageText(''); // Очистить поле ввода после отправки
+    } catch (err) {
+      console.error("Ошибка при отправке сообщения:", err.message);
+    }
+  };
 
   return (
     <div className="rounded-md overflow-hidden bg-white px-14 pb-10 w-full">
-      <div className="flex items-center  bg-white py-10">
+      <div className="flex items-center bg-white py-10">
         <div className="flex relative mr-10">
           <img
             className="rounded-sm"
@@ -50,10 +77,12 @@ const Chat = () => {
         {messages?.map((message: any) => (
           <Message
             key={message.id}
-            isMe={message.author === user.uid}
+            isMe={message.author === user.uid as string}
             text={message.text}
           />
         ))}
+        {/* Реф для скролла в конец */}
+        <div ref={messagesEndRef} />
       </PerfectScrollbar>
 
       <div className="flex py-5 gap-7 items-end w-full mt-auto">
@@ -62,8 +91,15 @@ const Chat = () => {
           <div
             className="w-full bg-transparent border-none outline-none"
             contentEditable
+            onInput={(e) => setMessageText(e.currentTarget.textContent || '')}
+            // Делаем поле редактируемым, чтобы можно было вводить текст
+            dangerouslySetInnerHTML={{ __html: messageText }} // Установка HTML-содержимого
           />
-          <SendHorizontal color="#8C8CB6" className="cursor-pointer" />
+          <SendHorizontal
+            color="#8C8CB6"
+            className="cursor-pointer"
+            onClick={handleSendMessage}
+          />
         </div>
       </div>
       {error && error}
