@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 
 const Message = (props: any) => {
-  const { isMe, text } = props;
+  const { isMe, text, isLastMsg } = props;
 
   // message classes
   const messageBgColor = isMe ? 'bg-[#615DFA]' : 'bg-[#F2F2FE]';
@@ -15,13 +15,21 @@ const Message = (props: any) => {
 
   // date classes
   const datePosition = isMe ? 'block text-right' : 'block';
+  const lastMsg = isLastMsg ? 'mb-6' : '';
 
   return (
-    <div className={cn(position, 'pt-2')}>
+    <div className={cn(position, lastMsg, 'pt-2 max-w-[50%]')}>
       <div className={cn(messageBgColor, paddings, radiuses, textColor)}>
         {text}
       </div>
-      <span className={cn(datePosition, 'text-[#8C8CB6] mt-2 text-base font-normal')}>16:36</span>
+      <span
+        className={cn(
+          datePosition,
+          'text-[#8C8CB6] mt-2 text-base font-normal'
+        )}
+      >
+        16:36
+      </span>
     </div>
   );
 };
