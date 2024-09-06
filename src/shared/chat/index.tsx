@@ -45,28 +45,27 @@ const Chat = () => {
           wheelSpeed: 2,
           useBothWheelAxes: true,
         }}
-        className="flex flex-col items-baseline gap-8 overflow-y-auto pr-4 h-[80vh]"
+        className="flex flex-col items-baseline gap-8 min-h-[70vh] max-h-[700px] overflow-y-auto pr-4"
       >
-        {messages?.map((message) => (
+        {messages?.map((message: any) => (
           <Message
             key={message.id}
             isMe={message.author === user.uid}
             text={message.text}
           />
         ))}
-
-        <div className="flex py-5 items-end gap-7 w-full mt-auto">
-          <Paperclip className='mb-4'/>
-          <div className="flex justify-between items-end bg-[#F2F2FE] text-[#8C8CB6] px-6 py-4 w-full rounded-[20px] font-bold">
-            <div
-              className="w-full bg-transparent border-none outline-none"
-              contentEditable
-            />
-            <SendHorizontal color="#8C8CB6" className="cursor-pointer" />
-          </div>
-        </div>
       </PerfectScrollbar>
 
+      <div className="flex py-5 gap-7 items-end w-full mt-auto">
+        <Paperclip className="mb-4 " />
+        <div className="flex justify-between items-end bg-[#F2F2FE] text-[#8C8CB6] px-6 py-4 w-full rounded-[20px] font-bold">
+          <div
+            className="w-full bg-transparent border-none outline-none"
+            contentEditable
+          />
+          <SendHorizontal color="#8C8CB6" className="cursor-pointer" />
+        </div>
+      </div>
       {error && error}
     </div>
   );
