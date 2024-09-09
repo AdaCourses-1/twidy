@@ -5,18 +5,43 @@ import Message from './message';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import { useCollection } from '@/hooks/useCollection';
-import { useContext } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { AuthContext } from '@/context/AuthContext';
-import { Paperclip } from 'lucide-react';
+import { useFirestore } from '@/hooks/useFirestore';
+import { Textarea } from '@/components/ui/textarea';
 
-import { SendHorizontal } from 'lucide-react';
 const Chat = () => {
   const { documents: messages, error } = useCollection(
     'messages',
     null,
     'createdAt'
   );
+  const { addDocument } = useFirestore('messages');
+  const [messageText, setMessageText] = useState<string>('');
   const { user } = useContext(AuthContext);
+
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+   if (textareaRef.current) {
+      (textareaRef.current.style.height = 'auto');
+      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+    }
+  }, [messageText]);
+
+  const handleSendMessage = async () => {
+    if (!messageText.trim()) return;
+
+    try {
+      await addDocument({
+        author: user.uid,
+        text: messageText,
+      });
+      setMessageText('');
+    } catch (error) {
+      console.log(err.message);
+    }
+  };
 
   return (
     <div className="rounded-md overflow-hidden bg-white px-14 pb-10 w-full">
@@ -58,16 +83,24 @@ const Chat = () => {
         ))}
 
         <div className="flex py-5 items-end gap-7 w-full mt-auto">
-          <Paperclip className='mb-4'/>
+          <Paperclip className="mb-4" />
           <div className="flex justify-between items-end bg-[#F2F2FE] text-[#8C8CB6] px-6 py-4 w-full rounded-[20px] font-bold">
-            <div
-              className="w-full bg-transparent border-none outline-none"
-              contentEditable
+            <Textarea
+            ref={textareaRef}
+              className="w-full bg-transparent border-none"
+              onChange={(e) => setMessageText(e.target.value)}
+              value={messageText}
+              placeholder="Введите сообщение"
             />
-            <SendHorizontal color="#8C8CB6" className="cursor-pointer" />
+            <SendHorizontal
+              color="#8C8CB6"
+              className="cursor-pointer"
+              onClick={handleSendMessage}
+            />
           </div>
         </div>
       </PerfectScrollbar>
+
       {error && error}
     </div>
   );

@@ -6,9 +6,17 @@ import { Separator } from '@/components/ui/separator';
 import { Search } from 'lucide-react';
 
 import AuthrizationDrawer from '../authorizationDrawer/AuthorizationDrawer';
+import { useContext, useEffect } from 'react';
+import { AuthContext } from '@/context/AuthContext';
+import { useLogout } from '@/hooks/useLogout';
 
 const Header = () => {
-  const user = null;
+  const { user } = useContext(AuthContext);
+  const { logout } = useLogout();
+
+  useEffect(() => {
+    console.log(user)
+  }, [user])
 
   return (
     <header className="pl-12 pr-14">

@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { useContext, useState } from 'react';
 import { auth, db, storage } from '../firebase/config';
-import { AuthContext } from '@/context/AuthContext';
+import { AuthContext } from '../context/AuthContext';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import { doc, setDoc } from 'firebase/firestore';
 
@@ -49,6 +49,8 @@ export const useSignup = () => {
       });
 
       dispatch({ type: 'LOGIN', payload: response.user });
+      
+      return response
     } catch (err: any) {
       setError(err.message);
     } finally {

@@ -23,8 +23,10 @@ export default function AuthorizationDrawer(props: LayoutProps) {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [avatar, setAvatar] = useState<File>();
-  const [isLoading, setIsLoading] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [activeTab, setActiveTab] = useState<string>('sign-in');
+  const [error, setError] = useState<string>('');
 
   const { signup, error: signupError } = useSignup();
   const { login, error: loginError } = useLogin();
@@ -38,8 +40,17 @@ export default function AuthorizationDrawer(props: LayoutProps) {
 
   const handleLogin = async () => {
     setIsLoading(true);
-    await login(email, password);
-    handleClose();
+
+    const res = await login(email, password);
+    
+    console.log(res);
+    
+
+    setError(loginError);
+
+    if (res) return handleClose();
+
+    setIsLoading(false);
   };
 
   const handleSignUp = async () => {
@@ -53,8 +64,24 @@ export default function AuthorizationDrawer(props: LayoutProps) {
       password,
       avatar,
     });
-    handleClose();
+
+    setError(signupError as string);
+
+    if (res) {
+      handleClose();
+      return;
+    }
+
+    setIsLoading(true);
   };
+
+  useEffect(() => {
+    setEmail('');
+    setPassword('');
+    setDisplayName('');
+    setAvatar(undefined);
+    setError('')
+  }, [activeTab]);
 
   return (
     <Sheet open={isOpen}>
