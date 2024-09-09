@@ -11,7 +11,7 @@ import { useFirestore } from '@/hooks/useFirestore';
 import { orderBy } from 'firebase/firestore';
 
 const Chat = () => {
-  const { documents: messages, error } = useCollection('messages',null,orderBy('createdAt'));
+  const { documents: messages, error } = useCollection('messages',null,orderBy('createdAt','asc'));
   const { addDocument } = useFirestore('messages');
   const [messageText, setMessageText] = useState<string>('');
   const { user } = useContext(AuthContext);
