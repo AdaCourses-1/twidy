@@ -7,45 +7,42 @@ import 'react-perfect-scrollbar/dist/css/styles.css';
 import { useCollection } from '@/hooks/useCollection';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { AuthContext } from '@/context/AuthContext';
-import { useFirestore } from '@/hooks/useFirestore'; // Импорт хука
+import { useFirestore } from '@/hooks/useFirestore';
+import { orderBy } from 'firebase/firestore';
 
 const Chat = () => {
-  const { documents: messages, error } = useCollection('messages', null, 'createdAt');
+  const { documents: messages, error } = useCollection('messages',null,orderBy('createdAt'));
+  const { addDocument } = useFirestore('messages');
+  const [messageText, setMessageText] = useState<string>('');
   const { user } = useContext(AuthContext);
-  const { addDocument } = useFirestore('messages'); // Используем хук
-  const [messageText, setMessageText] = useState(''); // Состояние для хранения текста сообщения
-  const messagesEndRef = useRef<HTMLDivElement>(null); // Реф для контейнера сообщений
 
-  // Функция для прокрутки вниз
-  const scrollToBottom = () => {
-    if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  // Прокручиваем вниз при добавлении новых сообщений
   useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
+    if(textareaRef.current){
+      textareaRef.current.style.height = 'auto';
+      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+    }
+  },[messageText])
+
 
   const handleSendMessage = async () => {
-    if (messageText.trim() === '') return; // Не отправляем пустое сообщение
+    if(!messageText.trim()) return
 
-    try {
+    try{
       await addDocument({
-        author: user.uid, // Идентификатор пользователя
-        text: messageText, // Текст сообщения
-        createdAt: new Date() // Дата создания сообщения
+        author: user.uid,
+        text: messageText,
       });
-      setMessageText(''); // Очистить поле ввода после отправки
-    } catch (err) {
-      console.error("Ошибка при отправке сообщения:", err.message);
+      setMessageText('');
+    }catch(err){
+      console.log(err.message);
     }
-  };
+  }
 
   return (
     <div className="rounded-md overflow-hidden bg-white px-14 pb-10 w-full">
-      <div className="flex items-center bg-white py-10">
+      <div className="flex items-center  bg-white py-10">
         <div className="flex relative mr-10">
           <img
             className="rounded-sm"
@@ -77,29 +74,23 @@ const Chat = () => {
         {messages?.map((message: any) => (
           <Message
             key={message.id}
-            isMe={message.author === user.uid as string}
+            isMe={message.author === user.uid}
             text={message.text}
           />
         ))}
-        {/* Реф для скролла в конец */}
-        <div ref={messagesEndRef} />
       </PerfectScrollbar>
 
       <div className="flex py-5 gap-7 items-end w-full mt-auto">
         <Paperclip className="mb-4 " />
         <div className="flex justify-between items-end bg-[#F2F2FE] text-[#8C8CB6] px-6 py-4 w-full rounded-[20px] font-bold">
-          <div
-            className="w-full bg-transparent border-none outline-none"
-            contentEditable
-            onInput={(e) => setMessageText(e.currentTarget.textContent || '')}
-            // Делаем поле редактируемым, чтобы можно было вводить текст
-            dangerouslySetInnerHTML={{ __html: messageText }} // Установка HTML-содержимого
-          />
-          <SendHorizontal
-            color="#8C8CB6"
-            className="cursor-pointer"
-            onClick={handleSendMessage}
-          />
+          <textarea
+            className="w-full bg-transparent border-none outline-none overflow-y-hidden h-auto"
+            onChange={(e) => setMessageText(e.target.value || '')}
+            value={messageText}
+          >
+            {messageText}
+          </textarea>
+          <SendHorizontal color="#8C8CB6" className="cursor-pointer" onClick={handleSendMessage} />
         </div>
       </div>
       {error && error}
