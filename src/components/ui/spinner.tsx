@@ -1,6 +1,6 @@
-const Spinner = () => {
+const Spinner = (props: any) => {
   return (
-    <div role="status">
+    <div role="status" {...props}>
       <svg
         aria-hidden="true"
         className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
