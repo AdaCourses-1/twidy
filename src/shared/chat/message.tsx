@@ -18,7 +18,7 @@ const Message = (props: any) => {
   const datePosition = isMe ? 'block text-right' : 'block';
   const lastMsg = isLastMsg ? 'mb-10' : '';
 
-const formateDate = format(fromUnixTime(createdAt.seconds), 'dd.MM.yyyy HH:mm' );
+  const formattedDate = format(fromUnixTime(createdAt.seconds),  'dd.MM.yyyy HH:mm');
 
   return (
     <div className={cn(position, lastMsg, 'pt-2 max-w-[50%]')}>
@@ -31,7 +31,7 @@ const formateDate = format(fromUnixTime(createdAt.seconds), 'dd.MM.yyyy HH:mm' )
           'text-[#8C8CB6] mt-2 text-base font-normal'
         )}
       >
-        {formateDate}
+        {formattedDate}
       </span>
     </div>
   );

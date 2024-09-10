@@ -64,12 +64,12 @@ const Chat = () => {
       <div className="flex">
         <Chats />
         <div
-        className='relative w-full pl-16 overflow-hidden bg-white px-14 rounded-[50px]'
+          className="relative w-full rounded-[50px] bg-white pb-28 px-14 overflow-hidden"
           style={{
             transform: 'translateZ(0)',
           }}
         >
-          <div className="flex items-center  bg-white py-10">
+          <div className="flex items-center py-10">
             <div className="flex relative mr-10">
               <img
                 className="rounded-sm"
@@ -93,7 +93,7 @@ const Chat = () => {
             </div>
           </div>
           <Separator className="h-[3px] bg-[#F2F2FE] rounded-md" />
-          <PerfectScrollbar className="flex flex-col items-baseline gap-8 overflow-y-auto pr-4 h-[50vh] last:bg-black">
+          <PerfectScrollbar className="flex flex-col items-baseline gap-8 overflow-y-auto pr-4 h-[60vh] last:bg-black">
             {messages?.map((message: any) => (
               <Message
                 key={message.id}
