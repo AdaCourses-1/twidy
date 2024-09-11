@@ -8,6 +8,7 @@ import { Search } from 'lucide-react';
 import AuthrizationDrawer from '../authorizationDrawer/AuthorizationDrawer';
 import { useLogout } from '@/hooks/useLogout';
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 const Header = () => {
   const { info: user } = useSelector((state) => state.user);
