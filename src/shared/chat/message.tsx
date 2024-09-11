@@ -18,11 +18,25 @@ const Message = (props: any) => {
   const datePosition = isMe ? 'block text-right' : 'block';
   const lastMsg = isLastMsg ? 'mb-10' : '';
 
-  const formattedDate = format(fromUnixTime(createdAt.seconds),  'dd.MM.yyyy HH:mm');
+  const formattedDate = format(
+    fromUnixTime(createdAt.seconds),
+    'dd.MM.yyyy HH:mm'
+  );
 
   return (
     <div className={cn(position, lastMsg, 'pt-2 max-w-[50%]')}>
-      <div className={cn(messageBgColor, paddings, radiuses, textColor, 'break-words')} style={{ overflowX: 'hidden' }}> 
+      <div
+        className={cn(
+          messageBgColor,
+          paddings,
+          radiuses,
+          textColor,
+          'break-words'
+        )}
+        style={{
+          overflowX: 'hidden',
+        }}
+      >
         {text}
       </div>
       <span

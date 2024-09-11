@@ -1,5 +1,5 @@
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import {  useState } from 'react';
+import { useState } from 'react';
 import { auth, db } from '../firebase/config';
 import { doc, updateDoc } from 'firebase/firestore';
 import { useDispatch } from 'react-redux';
@@ -27,8 +27,9 @@ export const useLogin = () => {
 
       await updateDoc(userDoc, { online: true });
 
-      dispatch( setUser(response.user) );
+      dispatch(setUser(response.user));
 
+      return response;
     } catch (err: any) {
       setError(err.message);
     } finally {

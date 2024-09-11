@@ -6,12 +6,11 @@ import { Separator } from '@/components/ui/separator';
 import { Search } from 'lucide-react';
 
 import AuthrizationDrawer from '../authorizationDrawer/AuthorizationDrawer';
-import { useEffect } from 'react';
 import { useLogout } from '@/hooks/useLogout';
 import { useSelector } from 'react-redux';
 
 const Header = () => {
-  const { info: user } = useSelector((state: any) => state.user);
+  const { info: user } = useSelector((state) => state.user);
   const { logout } = useLogout();
 
   useEffect(() => {

@@ -18,7 +18,12 @@ export const useSignup = () => {
   const [isPending, setIsPending] = useState<boolean>(false);
   const dispatch = useDispatch();
 
-  const signup = async ({ email, password, displayName, avatar }: SignupProps) => {
+  const signup = async ({
+    email,
+    password,
+    displayName,
+    avatar,
+  }: SignupProps) => {
     setError(null);
     setIsPending(true);
 
@@ -49,9 +54,9 @@ export const useSignup = () => {
         photoURL,
       });
 
-      dispatch( setUser(response.user) );
-      
-      return response
+      dispatch(setUser(response.user));
+
+      return response;
     } catch (err: any) {
       setError(err.message);
     } finally {

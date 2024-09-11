@@ -1,11 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { UserDate } from './type';
+import { UserData } from './types';
 
-
-const initialState: UserDate = {
+const initialState: UserData = {
   info: null,
   authIsReady: false,
-}
+};
 
 const userSlice = createSlice({
   name: 'user',

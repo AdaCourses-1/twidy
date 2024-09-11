@@ -5,7 +5,7 @@ import Message from './message';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import { useCollection } from '@/hooks/useCollection';
-import {  useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useFirestore } from '@/hooks/useFirestore';
 import { Textarea } from '@/components/ui/textarea';
 import { orderBy } from 'firebase/firestore';
@@ -20,7 +20,8 @@ const Chat = () => {
   );
   const { addDocument } = useFirestore('messages');
   const [messageText, setMessageText] = useState('');
-  const { info: user } = useSelector((state: any) => state.user);
+  const { info: user } = useSelector((state) => state.user);
+  const selectedChat = useSelector((state) => state.chat.selectedChat);
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -72,20 +73,22 @@ const Chat = () => {
           <div className="flex items-center py-10">
             <div className="flex relative mr-10">
               <img
-                className="rounded-sm"
+                className="rounded-sm w-[68px] h-[76px] object-cover"
                 width={68}
                 height={76}
-                src={Photo1}
+                src={selectedChat?.photoURL}
                 alt="Анастасия Евлеева"
               />
-              <span className="absolute right-0 top-2/4 translate-y-[-50%] -translate-x-[-50%] inline-block w-4 h-4 bg-[#57BB34] rounded-sm border-4 border-white"></span>
+              {selectedChat?.online && (
+                <span className="absolute right-0 top-2/4 translate-y-[-50%] -translate-x-[-50%] inline-block w-4 h-4 bg-[#57BB34] rounded-sm border-4 border-white"></span>
+              )}
             </div>
             <div className="">
               <h2 className="text-[#4E3F6F] font-bold text-lg">
-                Анастасия Евлеева
+                {selectedChat?.displayName}
               </h2>
               <span className="text-[#8C8CB6] text-base font-semibold">
-                Онлайн
+                {selectedChat?.online ? 'Онлайн' : 'Оффлайн'}
               </span>
             </div>
             <div className="bg-[#F2F2FE] w-14 h-14 rounded-full ml-auto flex items-center justify-center cursor-pointer">

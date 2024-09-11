@@ -5,15 +5,14 @@ import Messages from './pages/messages/Messages';
 import Settings from './pages/settings/Settings';
 import Sidebar from './shared/sidebar/Sidebar';
 import UserProfile from './pages/profiles/[...id]/UserProfile';
-import {  useEffect } from 'react';
+import { useEffect } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase/config';
 import { setAuthState, setUser } from './features/user/userSlice';
-import { onAuthStateChanged } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
 
 function App() {
   const { authIsReady, info: user } = useSelector((state: any) => state.user);
-
   const dispatch = useDispatch();
 
   useEffect(() => {

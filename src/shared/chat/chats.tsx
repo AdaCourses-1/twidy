@@ -8,13 +8,20 @@ import { useState } from 'react';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import { useCollection } from '@/hooks/useCollection';
 import Spinner from '@/components/ui/spinner';
+import { useDispatch } from 'react-redux';
+import { setChat } from '@/features/chat/chatSlice';
 
 const Chats = () => {
   const { documents: users, error } = useCollection('users', null, null);
+  const dispatch = useDispatch();
 
   const [activeChat, setActiveChat] = useState(5);
   const handleClickActiveChat = (id: number) => {
     setActiveChat(id);
+
+    const selectedUser = users?.find((user) => user.id === id);
+    
+    dispatch(setChat(selectedUser));
   };
 
   return (
@@ -44,7 +51,7 @@ const Chats = () => {
           </TabsList>
           <TabsContent value="choose" className="mt-6">
             {!users && <Spinner className="flex justify-center mt-20" />}
-            {!users?.lenght > 0 && (
+            {users?.length > 0 && (
               <PerfectScrollbar className="flex flex-col max-h-[700px] overflow-y-auto">
                 {users?.map((user: any) => (
                   <Chat
