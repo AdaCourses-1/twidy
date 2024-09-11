@@ -5,11 +5,23 @@ import Messages from './pages/messages/Messages';
 import Settings from './pages/settings/Settings';
 import Sidebar from './shared/sidebar/Sidebar';
 import UserProfile from './pages/profiles/[...id]/UserProfile';
-import { useContext } from 'react';
-import { AuthContext } from './context/AuthContext';
+import { useEffect } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './firebase/config';
+import { setAuthState, setUser } from './features/user/userSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 function App() {
-  const { authIsReady, user } = useContext(AuthContext);
+  const { authIsReady, info: user } = useSelector((state: any) => state.user);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (user) => {
+      dispatch(setUser(user));
+      dispatch(setAuthState(true));
+      return unsub();
+    });
+  }, []);
 
   return (
     <div className="pt-10 bg-[#F2F2FE] min-h-[100vh] max-w-[1440px] mx-auto flex">
@@ -18,8 +30,14 @@ function App() {
           <Sidebar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/messages" element={user ? <Messages /> : <Navigate to="/" replace/>} />
-            <Route path="/settings" element={user ? <Settings /> : <Navigate to="/" replace/>} />
+            <Route
+              path="/messages"
+              element={user ? <Messages /> : <Navigate to="/" replace />}
+            />
+            <Route
+              path="/settings"
+              element={user ? <Settings /> : <Navigate to="/" replace />}
+            />
             <Route path="/users/:id" element={<UserProfile />} />
           </Routes>
         </>

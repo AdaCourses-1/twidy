@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import { format,fromUnixTime } from 'date-fns';
+import { format, fromUnixTime } from 'date-fns';
 
 const Message = (props: any) => {
   const { isMe, text, isLastMsg, createdAt } = props;
@@ -16,13 +16,27 @@ const Message = (props: any) => {
 
   // date classes
   const datePosition = isMe ? 'block text-right' : 'block';
-  const lastMsg = isLastMsg ? 'mb-6' : '';
+  const lastMsg = isLastMsg ? 'mb-10' : '';
 
-  const formattedDate = format(fromUnixTime(createdAt.seconds), 'dd.MM.yyyy HH:mm');
+  const formattedDate = format(
+    fromUnixTime(createdAt.seconds),
+    'dd.MM.yyyy HH:mm'
+  );
 
   return (
     <div className={cn(position, lastMsg, 'pt-2 max-w-[50%]')}>
-      <div className={cn(messageBgColor, paddings, radiuses, textColor)}>
+      <div
+        className={cn(
+          messageBgColor,
+          paddings,
+          radiuses,
+          textColor,
+          'break-words'
+        )}
+        style={{
+          overflowX: 'hidden',
+        }}
+      >
         {text}
       </div>
       <span
