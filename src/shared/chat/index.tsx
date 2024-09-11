@@ -9,12 +9,13 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import { AuthContext } from '@/context/AuthContext';
 import { useFirestore } from '@/hooks/useFirestore';
 import { Textarea } from '@/components/ui/textarea';
+import { orderBy } from 'firebase/firestore';
 
 const Chat = () => {
   const { documents: messages, error } = useCollection(
     'messages',
     null,
-    'createdAt'
+    orderBy('createdAt', 'asc')
   );
   const { addDocument } = useFirestore('messages');
   const [messageText, setMessageText] = useState('');
@@ -64,6 +65,13 @@ const Chat = () => {
         transform: 'translateZ(0)',
       }}
     >
+      <div className='flex'>
+        <Chats />
+        <div className="rounded-md overflow-hidden bg-white px-14 pb-10 w-full relative"
+      style={{
+        transform: 'translateZ(0)',
+      }}></div>
+      </div>
       <div className="flex items-center  bg-white py-10">
         <div className="flex relative mr-10">
           <img
@@ -93,6 +101,7 @@ const Chat = () => {
             isMe={message.author === user.uid}
             text={message.text}
             isLastMsg={messages.length - 1 === messages.indexOf(message)}
+            createdAt={message.createdAt}
           />
         ))}
         <div ref={messagesEndRef} />
