@@ -7,6 +7,7 @@ import Chat from './chat';
 import { useState } from 'react';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import { useCollection } from '@/hooks/useCollection';
+import Spinner from '@/components/ui/spinner';
 
 const Chats = () => {
   const { documents: users, error } = useCollection('users', null, null);
@@ -42,16 +43,19 @@ const Chats = () => {
             <TabsTrigger value="delete">Удалить</TabsTrigger>
           </TabsList>
           <TabsContent value="choose" className="mt-6">
-            <PerfectScrollbar className="flex flex-col max-h-[700px] overflow-y-auto">
-              {users?.map((user: any) => (
-                <Chat
-                  key={user.id}
-                  isActive={activeChat === user.id}
-                  handleClickActiveChat={handleClickActiveChat}
-                  {...user}
-                />
-              ))}
-            </PerfectScrollbar>
+            {!users && <Spinner className="flex justify-center mt-20" />}
+            {!users?.lenght > 0 && (
+              <PerfectScrollbar className="flex flex-col max-h-[700px] overflow-y-auto">
+                {users?.map((user: any) => (
+                  <Chat
+                    key={user.id}
+                    isActive={activeChat === user.id}
+                    handleClickActiveChat={handleClickActiveChat}
+                    {...user}
+                  />
+                ))}
+              </PerfectScrollbar>
+            )}
             {error && error}
           </TabsContent>
         </Tabs>

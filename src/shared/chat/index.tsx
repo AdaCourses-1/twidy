@@ -5,12 +5,12 @@ import Message from './message';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import { useCollection } from '@/hooks/useCollection';
-import { useContext, useEffect, useRef, useState } from 'react';
-import { AuthContext } from '@/context/AuthContext';
+import {  useEffect, useRef, useState } from 'react';
 import { useFirestore } from '@/hooks/useFirestore';
 import { Textarea } from '@/components/ui/textarea';
 import { orderBy } from 'firebase/firestore';
 import Chats from './chats';
+import { useSelector } from 'react-redux';
 
 const Chat = () => {
   const { documents: messages, error } = useCollection(
@@ -20,7 +20,7 @@ const Chat = () => {
   );
   const { addDocument } = useFirestore('messages');
   const [messageText, setMessageText] = useState('');
-  const { user } = useContext(AuthContext);
+  const { info: user } = useSelector((state: any) => state.user);
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);

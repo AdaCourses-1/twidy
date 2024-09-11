@@ -22,7 +22,7 @@ const Message = (props: any) => {
 
   return (
     <div className={cn(position, lastMsg, 'pt-2 max-w-[50%]')}>
-      <div className={cn(messageBgColor, paddings, radiuses, textColor)}>
+      <div className={cn(messageBgColor, paddings, radiuses, textColor, 'break-words')} style={{ overflowX: 'hidden' }}> 
         {text}
       </div>
       <span
